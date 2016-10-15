@@ -13,11 +13,15 @@ body {
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	webkit-tap-highlight-color: #5cb85c
 }
-
+.h4 ,h4
+{
+	font-size: 15px;
+}
 .btn-primary, .btn-xl, h1, h2, h3, h4, h5, h6 {
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700
+	
 }
 
 .text-muted {
@@ -495,7 +499,7 @@ footer span.copyright, footer ul.quicklinks {
 		left: 50%
 	}
 	.timeline>li {
-		margin-bottom: 100px;
+		margin-bottom: 0px;
 		min-height: 100px
 	}
 	.timeline>li .timeline-panel {
@@ -518,48 +522,16 @@ footer span.copyright, footer ul.quicklinks {
 	.timeline>li.timeline-inverted>.timeline-panel {
 		float: right;
 		text-align: left;
-		padding: 0 30px 20px 20px
+		padding: 0 0px 0px 10px
 	}
 }
 
 @media ( min-width :992px) {
-	.timeline>li .timeline-panel, .timeline>li.timeline-inverted>.timeline-panel
-		{
-		padding: 0 20px 20px
-	}
-	.timeline>li {
-		min-height: 150px
-	}
-	.timeline>li .timeline-image {
-		width: 150px;
-		height: 150px;
-		margin-left: -75px
-	}
-	.timeline>li .timeline-image h4 {
-		font-size: 18px;
-		margin-top: 30px;
-		line-height: 26px
-	}
+
 }
 
 @media ( min-width :1200px) {
-	.timeline>li {
-		min-height: 170px
-	}
-	.timeline>li .timeline-panel {
-		padding: 0 20px 20px 100px
-	}
-	.timeline>li .timeline-image {
-		width: 170px;
-		height: 170px;
-		margin-left: -85px
-	}
-	.timeline>li .timeline-image h4 {
-		margin-top: 40px
-	}
-	.timeline>li.timeline-inverted>.timeline-panel {
-		padding: 0 100px 20px 20px
-	}
+
 }
 
 .team-member {
