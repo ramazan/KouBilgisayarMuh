@@ -58,3 +58,40 @@ a, a.active, a:active, a:focus, a:hover {
     transition: all .3s ease-in-out;
     margin-top: 15px;
 }
+.zundi {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+}
+.zundi > li {
+    display: inline;
+    box-sizing: border-box;
+    font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+}
+.zundi > li:first-child > a, .zundi > li:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.zundi > .active > a, .zundi > .active > a:focus, .zundi > .active > a:hover, .zundi > .active > span, .zundi > .active > span:focus, .zundi > .active > span:hover {
+    z-index: 3;
+    cursor: default;
+    color:#fff;
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+.zundi > li > a, .zundi > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
