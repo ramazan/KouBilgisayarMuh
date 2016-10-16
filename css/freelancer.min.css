@@ -127,11 +127,33 @@ color: #333;
     text-align: center;
     line-height: 1; 
 }
-.pano
-{
-    font-size:10px;
+
+
+
+
+@media (min-width:768px) {
+    .col-md-2{ 
+    width: 19%;}
 }
-/*.navbar-inverse {
+
+
+ul.list-inline {
+    margin-top: 10px;
+    display: inline-block;
+    margin-top: 0
+}
+
+
+
+
+
+
+.nav-item:hover,.nav-item:active  {
+    color: red;
+    background: #fff;
+}
+
+.navbar-inverse {
      background-color: #F2F1EB;
     background-color: rgba(242, 241, 235, 0.75);
     background: rgba(0,0,0,0.75);
