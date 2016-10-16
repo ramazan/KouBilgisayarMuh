@@ -95,3 +95,69 @@ color: #333;
     text-decoration: none;
     border: 1px solid #ddd;
 }
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 90%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+}
+.carousel-caption {
+    right: 5%;
+    left: 5%;
+    padding-bottom: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.carousel-caption {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    bottom: 0px;
+    z-index: 10;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #F2F1EB;
+    background-color: rgba(242, 241, 235, 0.75);
+    background: rgba(0,0,0,0.75);
+    color: #ffffff;
+    text-align: center;
+    line-height: 1; 
+}
+.pano
+{
+    font-size:10px;
+}
+/*.navbar-inverse {
+     background-color: #F2F1EB;
+    background-color: rgba(242, 241, 235, 0.75);
+    background: rgba(0,0,0,0.75);
+    border-color: #080808;
+}
+/*
+div.carousel div.carousel-caption, div.carousel div.carousel-caption p, div.carousel div.carousel-caption h1, div.carousel div.carousel-caption h2, div.carousel div.carousel-caption h3, div.carousel div.carousel-caption h4, div.carousel div.carousel-caption h5, div.carousel div.carousel-caption span, div.carousel div.carousel-caption a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+.carousel-caption {
+    background-color: #F2F1EB;
+    background-color: rgba(242, 241, 235, 0.75);
+    width: 46%;
+}
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    background: #333;
+    background: rgba(0,0,0,0.75);
+}
+.carousel {
+    line-height: 1;
+}
+
