@@ -154,9 +154,7 @@ ul.list-inline {
 }
 
 .navbar-inverse {
-     background-color: #F2F1EB;
-    background-color: rgba(242, 241, 235, 0.75);
-    background: rgba(0,0,0,0.75);
+    background:#333;
     border-color: #080808;
 }
 /*
