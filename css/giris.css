@@ -1,0 +1,53 @@
+body {
+    background-image: url(../img/umuttepe_bg.jpg);
+    background-color: #444;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.vertical-offset-100 {
+    padding-top: 100px;
+}
+
+.login .user-row {
+    text-align: center;
+    font-size: 30px;
+}
+
+.login .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.login.panel {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.login label {
+    display: block;
+    width: 100%;
+    color: #449d44;
+    text-shadow: #4cae4c;
+    text-align: center;
+}
+
+.login hr {
+    margin: 5px;
+}
+
+.panel-title user-row {
+    color: #0000;
+    font-weight: italic;
+}
+
+label{
+	font-size: 20px;
+}

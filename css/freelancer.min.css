@@ -1,3 +1,6 @@
+
+
+
 footer {
 	color: #fff;
 	overflow-x: hidden;
@@ -128,56 +131,16 @@ color: #333;
     line-height: 1; 
 }
 
-
-
-
-@media (min-width:768px) {
-    .col-md-2{ 
-    width: 19%;}
-}
-
-
 ul.list-inline {
     margin-top: 10px;
     display: inline-block;
     margin-top: 0
 }
 
-
-
-
-
-
-.nav-item:hover,.nav-item:active  {
-    color: red;
-    background: #fff;
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 1.42857143;
 }
-
-.navbar-inverse {
-    background:#333;
-    border-color: #080808;
-}
-/*
-div.carousel div.carousel-caption, div.carousel div.carousel-caption p, div.carousel div.carousel-caption h1, div.carousel div.carousel-caption h2, div.carousel div.carousel-caption h3, div.carousel div.carousel-caption h4, div.carousel div.carousel-caption h5, div.carousel div.carousel-caption span, div.carousel div.carousel-caption a {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-}
-.carousel-caption {
-    background-color: #F2F1EB;
-    background-color: rgba(242, 241, 235, 0.75);
-    width: 46%;
-}
-.carousel-caption {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 15px;
-    background: #333;
-    background: rgba(0,0,0,0.75);
-}
-.carousel {
-    line-height: 1;
-}
-
