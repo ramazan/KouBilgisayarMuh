@@ -22,17 +22,13 @@ yetkiKontrol($kullaniciAdi,$sifre);
 
 ############################### YETKİ KONTROLU ############################
 
-
-
-
-session_start();
-
 include_once 'dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 $error = false;
 
 if (isset($_POST['kaydet'])) {
 
     #formdan alınan veriler..
+    $name = mysqli_real_escape_string($con, $_POST['NAME']);
     $email = mysqli_real_escape_string($con, $_POST['E-MAIL']);
     $password = mysqli_real_escape_string($con, $_POST['PASSWORD']);
     $cpassword = mysqli_real_escape_string($con, $_POST['PASSWORD_AGAIN']);
@@ -41,6 +37,10 @@ if (isset($_POST['kaydet'])) {
     if (strlen($email) < 10) {
         $error = true;
         $mail_error = "Mail 10 karakterden kısa olamaz !";
+    }
+    if (strlen($name) < 4) {
+        $error = true;
+        $name_error = "Ad Soyad 4 karakterden kısa olamaz !";
     }
     if(strlen($password) < 4) {
         $error = true;
@@ -51,7 +51,10 @@ if (isset($_POST['kaydet'])) {
         $cpassword_error = "Şifreler eşleşmiyor  .!";
     }
     if (!$error) {
-        if(mysqli_query($con, "INSERT INTO users (EMAIL,PASSWORD) VALUES('" . $email . "', MD5('" . $password . "'))")) {
+
+	  	#echo " İSİM : " . $name . "  email : " .$email ." şifre :  " .$password;
+
+    	if(mysqli_query($con, "INSERT INTO users (NAME,EMAIL,PASSWORD) VALUES('" . $name . "','" . $email . "', MD5('" . $password . "'))")) {
             $successmsg = " <div class='alert alert-success'><strong> Kaydınız Başarıyla Gerçekleşti.</strong></div>";
           ?>
            <style type="text/css">#warn_alert{display:none;}</style>
@@ -59,6 +62,7 @@ if (isset($_POST['kaydet'])) {
         } else {
             $errormsg = "<div class='alert alert-danger'><strong> Bi' Şeyler Ters Gitti  .. Lütfen Tekrar Deneyiniz. </strong></div>";
         }
+        
     }
 }
 
@@ -71,10 +75,9 @@ if (isset($_POST['kaydet'])) {
 
 <head>
 	<title>Bilgisayar Mühendisliği - Akademisyen Ekleme</title>
-	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/giris.css">
-	    <meta charset="utf-8">
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 </head>
 
@@ -101,8 +104,13 @@ if (isset($_POST['kaydet'])) {
 									   <span><?php if (isset($successmsg)) { echo $successmsg; } ?></span>
                                        <span><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
 
+                                  <div class="form-group">
+									<input class="form-control" required value="<?php if($error) echo $name_error; ?>" placeholder="Ad Soyad giriniz" name="NAME" type="text">
+									<span class="text-danger"><strong><?php if (isset($name_error)) echo $name_error; ?></strong></span>
+								</div>     
+
 								<div class="form-group">
-									<input class="form-control" required value="<?php if($error) echo $name; ?>" placeholder="E-mail giriniz" name="E-MAIL" type="text">
+									<input class="form-control" required value="<?php if($error) echo $mail_error; ?>" placeholder="E-mail giriniz" name="E-MAIL" type="text">
 									<span class="text-danger"><strong><?php if (isset($mail_error)) echo $mail_error; ?></strong></span>
 								</div>
 								<div class="form-group">
@@ -126,8 +134,8 @@ if (isset($_POST['kaydet'])) {
 	</div>
 
 	<!-- JAVASCRIPT SOURCES -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
