@@ -12,20 +12,15 @@
       $sql = "SELECT ID FROM users WHERE EMAIL = '$myemail' and PASSWORD = md5('$mypassword')";
       $result = mysqli_query($con,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
       
       #Tablodan donen satır sayısı
       $count = mysqli_num_rows($result);
-
-      $sorgu = "SELECT NAME form users WHERE EMAIL = '$myemail'";
-      $sonuc = mysqli_query($con,$sorgu); 
-    
-
+   
       # Eğer sonuç $myemail ve md5('$mypassword') ile eşleşirse , tablodan bir satır dönmesi gerek.
       # eğer dönen sayı 1 ise giriş başarılıdır...
       if($count == 1) {
          $error = "<div style='text-align:center' class='alert alert-success'>Giriş Başarılı.</div>";
-         $_SESSION['login_user'] = $myemail;         
+         $_SESSION['login_user_email'] = $myemail;         
          header("location: panel.php");
 		 exit;
       }else {
