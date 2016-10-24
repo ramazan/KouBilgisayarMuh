@@ -289,7 +289,7 @@
 				<div class="timeline-panel">
 
 					<div class="timeline-heading">
-						<h4>Bana Acil Ulaşın</h4>
+						<h4>Bana Acil Ulaşın diyorum size siz kim siniz</h4>
 
 					</div>
 					<div class="timeline-body">
@@ -350,6 +350,11 @@
 			</ul>
 		</div>
 
+			  </li>
+			  </li>
+			  <li class="list-group-item" >
+    			<h4><span class="badge" style="float:right;" >Tüm Genel Duyurular</span></h4>
+    			<br/>
 			  </li>
 
   </ul>
@@ -376,7 +381,7 @@
 				<div class="timeline-panel">
 
 					<div class="timeline-heading">
-						<h4>Bana Acil Ulaşın</h4>
+						<h4>Edestek.kocaeli.edu.tr Sistemini Kullandığım Dersleri Alan Öğrencilerin Dikkatine </h4>
 
 					</div>
 					<div class="timeline-body">
@@ -436,7 +441,10 @@
 				<li><a href="#">5</a></li>
 			</ul>
 		</div>
-
+			  </li>
+			  <li class="list-group-item" >
+    			<h4><span class="badge" style="float:right;" >Tüm Bölüm Duyuruları</span></h4>
+    			<br/>
 			  </li>
 
   </ul>
@@ -552,10 +560,16 @@
 			</ul>
 		</div>
 			  </li>
-
+			  <li class="list-group-item" >
+    			<h4><span class="badge" style="float:right;" >Tüm Haberler</span></h4>
+    			<br/>
+			  </li>
 	</ul>
 
 			  </li>
+			  
+			  </li>
+			  
 
 
   </ul>
