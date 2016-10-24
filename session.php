@@ -24,6 +24,6 @@
    # eğer sessiondaki kullanıcı mail alanı boş ise giris sayfasına yönlendir.
    if(!isset($_SESSION['login_user_email'])){
    	echo "Bu sayfayı görüntüleme yetkiniz yoktur!";
-      header("location:giris.php");
+      header("location:../giris.php");
    }
 ?>
