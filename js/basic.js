@@ -44,15 +44,59 @@ function kullaniciEkle(){
 
 }
 
+function KullaniciSil(ID){
+ // console.log("siilinecek ID : " + ID);
+    $('#KullaniciSilModal').modal('show');
+    $('#kullaniciSilMesaj').text("Emin misiniz?");
+
+
+
+
+    $("#kullaniciSilButton").click(function(){
+        console.log(" ID : " + ID);
+
+        var dataString = 'ID=' + ID; 
+         $.ajax({
+            type: "POST",
+            url: "kullaniciSil.php",
+            data: dataString,
+            cache: false,
+              success: function() {
+              $("#kullaniciSilMesaj").text("Kullanıcı Silindi!");
+               $("#users_page").load("kullanicilar.php"); // tablo yeniden yüklenmesi!.
+
+         setTimeout(function() {
+            $("#kullaniciSilMesaj").text("");
+
+              $("#KullaniciSilModal").modal('hide');
+        }, 2000);
+      },
+      error: function() {
+        $("#pass_validate").text("Boku yedik!");
+        alert("sictik pnp");
+      }
+            });
+
+        
+    }); // click fonksiyonu
+
+
+}
+
 
 $("#profileGuncelle").click(function(){
       var password = $("#user_new_pass").val();
+      var password_again = $("#user_new_pass").val();
+
       
        var dataString = 'password='+ password;
 
         if(password=='')
         {
-          alert("Please Fill All Fields");
+            $("#pass_validate").text("Şifre Boş");
+        }
+        else if(password != password_again){
+          $("pass_validate").text("Şifreler Eşleşmiyor!");
         }
         else
         {

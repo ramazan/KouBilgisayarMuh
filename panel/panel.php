@@ -97,7 +97,7 @@
 	</div>
 	<!-- Sayfalar div'i-->
 
-	<!-- Add User Modal -->
+		<!-- Add User Modal -->
 	<div id="kullanici_ekle_modal" class="modal fade" role="dialog">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
@@ -145,6 +145,30 @@
 		</div>
 	</div>
 	<!-- Add User Modal end -->
+
+
+
+		<!-- Kullanici Sil Modal -->
+	<div id="KullaniciSilModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Seçimi Onayla</h4>
+				</div>
+				<div class="modal-body" style="text-align: center;">
+					<p style="text-align: center; font-size: 15px;" id="kullaniciSilMesaj" class="label label-danger"></p>
+					<br>
+					<br>
+					<div style="text-align: center;"> <button id="kullaniciSilButton" class="btn btn-success">Sil</button>
+					<button class="btn btn-primary" data-dismiss="modal">Kapat</button></div>
+					     
+				</div>
+						</div>
+		</div>
+	</div>
+	<!-- Add User Modal end -->
+
 
 
 		<!-- JAVASCRIPT Dosyaları -->

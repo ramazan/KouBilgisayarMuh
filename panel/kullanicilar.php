@@ -18,6 +18,7 @@
 						if($result = mysqli_query($con, $sql)){
 						    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
 						       
+						     
 						        echo "<div> <br>";
 						        echo "<table class='table table-bordered  table-inverse'>";
 						            echo "<thead><tr  class='bg-success' >";
@@ -25,13 +26,17 @@
 						                echo "<th>AD SOYAD</th>";
 						                echo "<th>E-MAIL</th>";
 						                echo "<th>ROL</th>";
+						                 echo "<th>SİL</th>";
 						            echo "</tr></thead><tbody>";
+						            $sayac=0;
 						        while($row = mysqli_fetch_array($result)){
 						            echo "<tr>";
-						                echo "<td>" . $row['ID'] . "</td>";
+						            $sayac++;
+						                echo "<td>" . $sayac . "</td>";
 						                echo "<td>" . $row['NAME'] . "</td>";
 						                echo "<td>" . $row['EMAIL'] . "</td>";
 						                echo "<td>" . $row['ROLE'] . "</td>";
+						                echo "<td><button class='btn btn-danger btn-sm' data-title='Delete' data-toggle='modal' onclick='KullaniciSil(".$row['ID'].")'><span class='glyphicon glyphicon-trash'></span></button</td>";
 						            echo "</tr>";
 						        }
 
@@ -53,3 +58,7 @@
 		        </div>
 		    </div>
 		<!-- Kullanıcılar Sayfası Sonu -->
+
+
+
+	
