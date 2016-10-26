@@ -1,3 +1,12 @@
+function LinkEkleCheckBox()
+{
+    if($('.linkEkle').is(":checked"))   
+        $("#LinkDiv").show();
+    else
+        $("#LinkDiv").hide();
+}
+
+
 function duyuruGoster() {
 
   $("#navs li").removeClass("active");
@@ -42,6 +51,11 @@ function kullaniciDivGizle() {
 function kullaniciEkle(){
   $('#kullanici_ekle_modal').modal('show');
 
+}
+
+
+function duyuruEkle(){
+  $('#duyur_ekle_modal').modal('show');
 }
 
 function KullaniciSil(ID){

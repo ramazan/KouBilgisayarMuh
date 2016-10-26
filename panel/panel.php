@@ -72,11 +72,8 @@
 
 	<!-- Duyurular Sayfası Başlangıcı -->
 		<div id="duyurular_page">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<h3>Duyurular Sayfası!!!!</h3>
-				</div>
-			</div>
+					<?php include('duyuru.php');  ?>
+
 		</div>
 	<!-- Duyurular Sayfası Bitişi -->
 
@@ -170,11 +167,84 @@
 	<!-- Add User Modal end -->
 
 
+		<!-- Add User Modal -->
+	<div id="duyur_ekle_modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Yeni Duyuru Ekle</h4>
+				</div>
+				<div class="modal-body">
+					<p style="text-align: center; font-size: 15px;" id="duyuruEkleMesaj" class="label label-danger"></p>
+					<br>
+					<br>
+					      <fieldset>
+                                <div class="form-group">
+                              		<label for="duyuruBasligi">Duyuru Başlığı:</label>
+                                   <input class="form-control" required placeholder="Duyuru Başlığı" id="duyuruBasligi" type="text">
+                                </div>
+                                <div class="form-group">
+                              		<label for="duyuruIcerigi">Duyuru İçeriği:</label>
+                                    <textarea class="form-control"  required rows="5" placeholder="Duyuru İçeriği" id="duyuruIcerigi"></textarea>
+
+                                </div>
+
+								<div class="checkbox">
+								  <label><input class="linkEkle"  type="checkbox" value="1" name="linkEkle"  onchange="LinkEkleCheckBox()"> Link Ekle</label>
+								</div>
+
+								<div id="LinkDiv" style="display: none;">
+		                                <div class="form-group">
+		                              		<label for="duyuruLinkiAdi">Linkin Adı:</label>
+		                                    <input class="form-control" placeholder="" id="duyuruLinkiAdi">
+
+		                                </div>
+		                                 <div class="form-group">
+		                              		<label for="duyuruLinki">Duyuruya eklenecek Link:</label>
+		                                   <input class="form-control"  placeholder="" id="duyuruLinki" type="text">
+		                                </div>
+                                </div>
+                                <div>
+                                     	<b>Duyuru Türü :</b></br>
+											<label class="radio-inline">
+											<input type="radio" name="duyuruTur" id="genelDuyuru" checked="checked"> Genel Duyuru
+											</label>
+											<label class="radio-inline">
+												<input type="radio" name="duyuruTur" id="bolumDuyuru"> Bölüm Duyurusu
+											</label>
+
+											<label class="radio-inline">
+												<input type="radio" name="duyuruTur" id="etkinlikDuyuru"> Etkinlik Duyurusu
+											</label>
+
+								</div>
+
+
+
+
+                           </fieldset>
+				</div>
+				<div class=" modal-footer" style="text-align: center;">
+					<button id="duyuruKaydetButton" class="btn btn-success">Yayınla</button>
+					<button class="btn btn-primary" data-dismiss="modal">Vazgeç</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Add User Modal end -->
+
+
+
+
+
+
+
 
 		<!-- JAVASCRIPT Dosyaları -->
 		<script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="../vendor/bootstrap/js/bootstrap.js"></script>
-		<script type="text/javascript" src="../js/basic.js"></script>
+		<script type="text/javascript" src="../js/basic.js"></script>			
    </body>
    
 </html>
