@@ -1,7 +1,7 @@
 <?php
 
 //Database bağlantı bilgileri..
-$con = mysqli_connect("sql7.freemysqlhosting.net", "sql7141099", "SbIhUpDVHn", "sql7141099") 
+$con = mysqli_connect("sql8.freemysqlhosting.net", "sql8142119", "9F6iaaTMW9", "sql8142119") 
 	or die("Error " . sqli_error($con));
 
 $con->set_charset("utf8");
