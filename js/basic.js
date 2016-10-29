@@ -63,9 +63,6 @@ function KullaniciSil(ID){
     $('#KullaniciSilModal').modal('show');
     $('#kullaniciSilMesaj').text("Emin misiniz?");
 
-
-
-
     $("#kullaniciSilButton").click(function(){
         console.log(" ID : " + ID);
 
@@ -194,4 +191,80 @@ $("#kullaniciKaydetButton").click(function(){
     }
           });
   }
+});
+
+
+
+$("#duyuruKaydetButton").click(function(){
+
+  var baslik = $("#duyuruBasligi").val();
+  var icerik   = $("#duyuruIcerigi").val();
+  var duyuruTuru;
+
+  if(baslik=="" || icerik ==""){
+      $("#duyuruEkleMesaj").text("Lütfen Bütün Alanları Doldurun!");
+  }
+  else{
+
+    if($("#genelDuyuru").is(":checked")){
+      duyuruTuru = 1 ;
+    } else if($("#bolumDuyuru").is(":checked")){
+      duyuruTuru = 2 ;
+    } else{
+      duyuruTuru = 3;
+    }    
+
+
+    // parametrelerin geçirilmesi
+    var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
+
+
+
+
+    $.ajax({
+          type: "POST",
+          url: "duyuruEkle.php",
+          data: dataString,
+          cache: false,
+            success: function() {
+            $("#duyuruEkleMesaj").text("duyuru başarıyla kaydedildi.");
+            $("#duyuruEkleMesaj").show();
+
+            //inputların temizlenme işlemi
+            $("#duyuruBasligi").val('');
+            $("#duyuruIcerigi").val('');
+
+           $("#duyurular_page").load("duyurular.php"); // tablo yeniden yüklenmesi!.
+            
+              setTimeout(function() {
+              $("#duyuruEkleMesaj").hide();  // mesajın gizlenmesi
+              $('#duyuru_ekle_modal').modal('hide'); // modalin kapanması
+               }, 2500);
+             },
+            error: function() {
+              $("#kullaniciEkleMesaj").text("Boku yedik!");
+            }
+    });
+
+  }  // else
+
+   console.log(dataString); 
+
+ 
+});
+
+$("#LinkEkleButton").click(function(){
+
+    var linkAdi = $("#duyuruLinkiAdi").val();
+    var link   = $("#duyuruLinki").val();
+
+    var linkOlustur = "<a href=\""+link+"\">"+linkAdi+"</a>";
+
+    var mesaj =$("#duyuruIcerigi").val();
+
+    var yeniMesaj = mesaj + linkOlustur;
+
+    $('#duyuruIcerigi').val(yeniMesaj);
+    $('#duyuruLinkiAdi').val("");  
+    $('#duyuruLinki').val("");
 });

@@ -3,17 +3,17 @@
 ?>
 <!-- Kullanıcılar Sayfası Başlangıcı -->
 			<div class="row">
-				<div class="col-md-7 col-md-offset-2">
-                <button  class="btn btn-success" onclick="kullaniciEkle()">Kullanıcı Ekle</button>
-
-					<?php
+			<div class="col-md-8 col-md-offset-2">
+                <button  class="btn btn-success" onclick="duyuruEkle()">Duyuru Ekle</button>
+            
+            		<?php
 
 						if($con === false){
 					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
 						}
 
 						#Sorgu yapılıyor..
-						$sql = "SELECT * FROM users ORDER BY ID";
+						$sql = "SELECT * FROM announcements ORDER BY ID";
 
 						if($result = mysqli_query($con, $sql)){
 						    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
@@ -23,20 +23,20 @@
 						        echo "<table class='table table-bordered  table-inverse'>";
 						            echo "<thead><tr  class='bg-success' >";
 						                echo "<th>ID</th>";
-						                echo "<th>AD SOYAD</th>";
-						                echo "<th>E-MAIL</th>";
-						                echo "<th>ROL</th>";
-						                 echo "<th>SİL</th>";
+						                echo "<th>BAŞLIK</th>";
+						                echo "<th>İÇERİK</th>";
+						                echo "<th>EKLEYEN</th>";
+						                 echo "<th>TARİH</th>";
 						            echo "</tr></thead><tbody>";
 						            $sayac=0;
 						        while($row = mysqli_fetch_array($result)){
 						            echo "<tr>";
 						            $sayac++;
 						                echo "<td>" . $sayac . "</td>";
-						                echo "<td>" . $row['NAME'] . "</td>";
-						                echo "<td>" . $row['EMAIL'] . "</td>";
-						                echo "<td>" . $row['ROLE'] . "</td>";
-						                echo "<td><button class='btn btn-danger btn-sm' data-title='Delete' data-toggle='modal' onclick='KullaniciSil(".$row['ID'].")'><span class='glyphicon glyphicon-trash'></span></button</td>";
+						                echo "<td>" . $row['TITLE'] . "</td>";
+						                echo "<td>" . $row['MESSAGE'] . "</td>";
+						                echo "<td>" . $row['USER_ID'] . "</td>";
+						                echo "<td>" . $row['DATE'] . "</td>";
 						            echo "</tr>";
 						        }
 

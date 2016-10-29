@@ -6,7 +6,7 @@
    
    $user_check = $_SESSION['login_user_email'];
    
-   $ses_sql = mysqli_query($con,"select NAME,ROLE,EMAIL from users where EMAIL = '$user_check' ");
+   $ses_sql = mysqli_query($con,"select ID,NAME,ROLE,EMAIL from users where EMAIL = '$user_check' ");
    
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
       
@@ -16,6 +16,7 @@
    $count = mysqli_fetch_array($kullaniciSayi_sql,MYSQLI_ASSOC);
    
    $login_session_email = $row['EMAIL'];   #giriş yapan kullanıcının mailini sesion'a atıyorum.
+   $login_session_user_id = $row['ID'];   #giriş yapan kullanıcının mailini sesion'a atıyorum.
    $login_session_name  = $row['NAME'];    #giriş yapan kullanıcının adını sesion'a atıyorum.
    $login_session_role  = $row['ROLE'];    #giriş yapan kullanıcının rolünü panel yetkilendirmesi için sesion'a atıyorum.
    $kullanici_sayisi = $count['COUNT(*)']; #Kayıtlı Kullanıcı sayısını değişkene atama yapıyorum. 

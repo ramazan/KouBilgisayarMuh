@@ -72,7 +72,7 @@
 
 	<!-- Duyurular Sayfası Başlangıcı -->
 		<div id="duyurular_page">
-					<?php include('duyuru.php');  ?>
+					<?php include('duyurular.php');  ?>
 
 		</div>
 	<!-- Duyurular Sayfası Bitişi -->
@@ -195,15 +195,32 @@
 								</div>
 
 								<div id="LinkDiv" style="display: none;">
+														<div class="row">
+
+    								<div class="form-group col-sm-4">
+
 		                                <div class="form-group">
 		                              		<label for="duyuruLinkiAdi">Linkin Adı:</label>
 		                                    <input class="form-control" placeholder="" id="duyuruLinkiAdi">
 
 		                                </div>
+		                            </div>
+		                           <div class="form-group col-sm-6">   
 		                                 <div class="form-group">
 		                              		<label for="duyuruLinki">Duyuruya eklenecek Link:</label>
-		                                   <input class="form-control"  placeholder="" id="duyuruLinki" type="text">
+		                                   <input class="form-control" placeholder="" id="duyuruLinki" type="text">
 		                                </div>
+
+		                            </div>   
+
+									<div class="form-group col-sm-2">   
+		                                 <div style="padding-top: 23px;">
+		                                   <button id="LinkEkleButton" class="btn btn-success">Ekle</button>
+
+		                                </div>
+
+		                            </div>  
+                                </div>
                                 </div>
                                 <div>
                                      	<b>Duyuru Türü :</b></br>
@@ -243,6 +260,7 @@
 
 		<!-- JAVASCRIPT Dosyaları -->
 		<script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../vendor/jquery/jquery.js"></script>
 		<script type="text/javascript" src="../vendor/bootstrap/js/bootstrap.js"></script>
 		<script type="text/javascript" src="../js/basic.js"></script>			
    </body>
