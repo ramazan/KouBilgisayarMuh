@@ -55,7 +55,7 @@ function kullaniciEkle(){
 
 
 function duyuruEkle(){
-  $('#duyur_ekle_modal').modal('show');
+  $('#duyuru_ekle_modal').modal('show');
 }
 
 function KullaniciSil(ID){
@@ -83,14 +83,12 @@ function KullaniciSil(ID){
         }, 2000);
       },
       error: function() {
-        $("#pass_validate").text("Boku yedik!");
         alert("sictik pnp");
       }
             });
 
         
     }); // click fonksiyonu
-
 
 }
 
@@ -143,6 +141,7 @@ $("#kullaniciKaydetButton").click(function(){
   var Email   = $("#mailAdresi").val();
   var Sifre   = $("#sifre").val();
   var SifreTekrar = $("#sifreTekrar").val();
+  var UnvanAdSoyad = $( "#unvan option:selected" ).text() +" " + AdSoyad;
 
   if(AdSoyad=="" || Email =="" || Sifre=="" || SifreTekrar==""){
       $("#kullaniciEkleMesaj").text("Lütfen Bütün Alanları Doldurun!");
@@ -161,7 +160,7 @@ $("#kullaniciKaydetButton").click(function(){
    //console.log("AdSoyad: " + AdSoyad+"  Email: " + Email +" Sifre : " +Sifre + "  Rol : " + Rol  ); 
 
     // parametrelerin geçirilmesi
-    var dataString = 'adSoyad='+ AdSoyad + '&email='+ Email + '&sifre='+ Sifre +'&rol='+ Rol ;
+    var dataString = 'adSoyad='+ UnvanAdSoyad + '&email='+ Email + '&sifre='+ Sifre +'&rol='+ Rol ;
 
 
     $.ajax({
@@ -227,7 +226,7 @@ $("#duyuruKaydetButton").click(function(){
           data: dataString,
           cache: false,
             success: function() {
-            $("#duyuruEkleMesaj").text("duyuru başarıyla kaydedildi.");
+            $("#duyuruEkleMesaj").text("Duyuru eklendi.");
             $("#duyuruEkleMesaj").show();
 
             //inputların temizlenme işlemi
@@ -242,7 +241,7 @@ $("#duyuruKaydetButton").click(function(){
                }, 2500);
              },
             error: function() {
-              $("#kullaniciEkleMesaj").text("Boku yedik!");
+              $("#duyuruEkleMesaj").text("Boku yedik!");
             }
     });
 
@@ -253,12 +252,47 @@ $("#duyuruKaydetButton").click(function(){
  
 });
 
+function duyuruSil(ID){
+ // console.log("siilinecek ID : " + ID);
+    $('#DuyuruSilModal').modal('show');
+    $('#duyuruSilMesaj').text("Emin misiniz?");
+
+    $("#duyuruSilButton").click(function(){
+        console.log(" ID : " + ID);
+
+        var dataString = 'ID=' + ID; 
+        
+         $.ajax({
+                type: "POST",
+                url: "duyuruSil.php",
+                data: dataString,
+                cache: false,
+                  success: function() {
+                  $("#duyuruSilMesaj").text("Duyuru Silindi!");
+                  $("#duyurular_page").load("duyurular.php"); // tablo yeniden yüklenmesi!.
+
+             setTimeout(function() {
+                $("#duyuruSilMesaj").text("");
+                $("#DuyuruSilModal").modal('hide');
+            }, 2000);
+          },
+          error: function() {
+            alert("sictik pnp");
+          }
+                });
+
+        
+    }); // click fonksiyonu
+
+}
+
+
 $("#LinkEkleButton").click(function(){
 
     var linkAdi = $("#duyuruLinkiAdi").val();
     var link   = $("#duyuruLinki").val();
 
-    var linkOlustur = "<a href=\""+link+"\">"+linkAdi+"</a>";
+    var linkOlustur = "<a href=\""+link+"\" target=\"_blank\">"+linkAdi+"</a>";
 
     var mesaj =$("#duyuruIcerigi").val();
 
