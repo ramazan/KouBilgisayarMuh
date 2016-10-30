@@ -2,9 +2,8 @@
 	include_once '../dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 ?>
 <!-- Kullanıcılar Sayfası Başlangıcı -->
-			<div class="row">
-				<div class="col-md-7 col-md-offset-2">
-                <button  class="btn btn-success" onclick="kullaniciEkle()">Kullanıcı Ekle</button>
+				<div class="col-md-8 col-md-offset-1">
+             
 
 					<?php
 
@@ -19,14 +18,24 @@
 						    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
 						       
 						     
-						        echo "<div> <br>";
-						        echo "<table class='table table-bordered  table-inverse'>";
-						            echo "<thead><tr  class='bg-success' >";
-						                echo "<th>ID</th>";
-						                echo "<th>AD SOYAD</th>";
-						                echo "<th>E-MAIL</th>";
-						                echo "<th>ROL</th>";
-						                 echo "<th>SİL</th>";
+						        echo "<div id='page-modal' class='container' style='padding-top: 20px;'>
+						        <div class='row'><div class='panel panel-primary'><br><div  style='padding-left: 20px'>";
+
+						        echo " <button  class='btn btn-primary' onclick='kullaniciEkle()'><span class='glyphicon glyphicon-plus'></span> Kullanıcı Ekle</button>";
+
+						            echo "</div><br><div class='panel-heading'><h2 class='panel-title'
+						            style='text-align:center'>Kişiler Listesi</h2></div><br>";
+
+						                echo "<div id='personsList'><table class='table'><thead style='text-align:center;'><tr class='filters'>
+											<th><input type='text' class='form-control'
+												placeholder='#' disabled></th>
+											<th><input type='text' class='form-control'
+												placeholder='AD' disabled></th>
+											<th><input type='text' class='form-control'
+												placeholder='Soyad' disabled></th>
+											<th><input type='text' class='form-control'
+												placeholder='Rol' disabled></th>";
+
 						            echo "</tr></thead><tbody>";
 						            $sayac=0;
 						        while($row = mysqli_fetch_array($result)){
@@ -41,7 +50,7 @@
 						        }
 
 						        echo "</tbody></table>";
-						        echo "</div></body></html>";
+						        echo "</div></div></div></body></html>";
 
 						        mysqli_free_result($result);
 						    } else{
@@ -51,8 +60,7 @@
 						    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
 						}
 
-						mysqli_close($con);
-				
+			
 					?>
            
 		        </div>

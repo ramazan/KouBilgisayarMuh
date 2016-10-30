@@ -94,27 +94,42 @@
 	</div>
 	<!-- Sayfalar div'i-->
 
-		<!-- Add User Modal -->
-	<div id="kullanici_ekle_modal" class="modal fade" role="dialog">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				<div class="modal-header" align="center">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Yeni Kullanıcı Ekle</h4>
-				</div>
-				<div class="modal-body">
-					<p style="text-align: center; font-size: 15px;" id="kullaniciEkleMesaj" class="label label-danger"></p>
-					<br>
-					<br>
-					      <fieldset>
+		  <!-- Add User Modal -->
+  <div id="kullanici_ekle_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header" align="center">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Yeni Kullanıcı Ekle</h4>
+        </div>
+        <div class="modal-body">
+          <p style="text-align: center; font-size: 15px;" id="kullaniciEkleMesaj" class="label label-danger"></p>
+          <br>
+          <br>
+                <fieldset>
+
+                        <div class="form-group">
+                      <label for="unvan">Ünvan Seçiniz:</label>
+                      <select class="form-control" id="unvan">
+                        <option>Arş.Gör.</option>
+                        <option>Okutman</option>
+                        <option>Uzman</option>
+                        <option>Öğr. Gör. Dr.</option>        
+                        <option>Dr.</option>
+                        <option>Yrd.Doç.Dr.</option>
+                         <option>Doç.Dr.</option>
+                        <option>Prof.Dr.</option>
+                      </select>
+                    </div>
+                        
                                         <div class="form-group">
-                                           <input class="form-control" required placeholder="Ünvan , Ad ve Soyad Giriniz" id="adSoyad" type="text">
+                                           <input class="form-control" required placeholder="Ad ve Soyad Giriniz" id="adSoyad" type="text">
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control" required placeholder="E-mail Giriniz" id="mailAdresi" type="text">
                            
                                         </div>
-                                        	
+                                          
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Şifreyi Giriniz" id="sifre" type="password" required value="">
                                         </div>
@@ -122,26 +137,26 @@
                                             <input class="form-control" placeholder="Şifreyi tekrar Giriniz" id="sifreTekrar" required type="password" value="">
                                         </div>
                                         <div>
-                                        	<b>Rol:</b>
-												<div id="selectedUserRoles" class="checkbox form-control">
-													<label class="checkbox-inline">
-													<input type="radio" name="userRole" id="" checked="checked" >   Normal Kullanıcı
-													</label>
-													<label class="checkbox-inline">
-														<input type="radio" name="userRole" id="adminRadio">   Admin
-													</label>
-												</div>
-											</div>
+                                          <b>Rol:</b>
+                        <div id="selectedUserRoles" class="checkbox form-control">
+                          <label class="checkbox-inline">
+                          <input type="radio" name="userRole" id="" checked="checked" >   Normal Kullanıcı
+                          </label>
+                          <label class="checkbox-inline">
+                            <input type="radio" name="userRole" id="adminRadio">   Admin
+                          </label>
+                        </div>
+                      </div>
                                    </fieldset>
-				</div>
-				<div class=" modal-footer">
-					<button id="kullaniciKaydetButton" class="btn btn-success">Kaydet</button>
-					<button class="btn btn-primary" data-dismiss="modal">Kapat</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Add User Modal end -->
+        </div>
+        <div class=" modal-footer">
+          <button id="kullaniciKaydetButton" class="btn btn-success">Kaydet</button>
+          <button class="btn btn-primary" data-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Add User Modal end -->
 
 
 
@@ -164,11 +179,11 @@
 						</div>
 		</div>
 	</div>
-	<!-- Add User Modal end -->
+	<!-- Kullanici Sil-->
 
 
-		<!-- Add User Modal -->
-	<div id="duyur_ekle_modal" class="modal fade" role="dialog">
+		<!-- DUYURU EKLE Modal -->
+	<div id="duyuru_ekle_modal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header" align="center">
@@ -249,7 +264,29 @@
 			</div>
 		</div>
 	</div>
-	<!-- Add User Modal end -->
+	<!-- DUYURU EKLEModal end -->
+
+
+  <!-- DuyuruSilModal Sil Modal -->
+  <div id="DuyuruSilModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header" align="center">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Seçimi Onayla</h4>
+        </div>
+        <div id="duyuruSilDiv" class="modal-body" style="text-align: center;">
+          <p style="text-align: center; font-size: 15px;" id="duyuruSilMesaj" class="label label-danger"></p>
+          <br>
+          <br>
+          <div style="text-align: center;"> <button id="duyuruSilButton" class="btn btn-success">Sil</button>
+          <button class="btn btn-primary" data-dismiss="modal">Kapat</button></div>
+               
+        </div>
+            </div>
+    </div>
+  </div>
+  <!-- DuyuruSilModal Modal end -->
 
 
 

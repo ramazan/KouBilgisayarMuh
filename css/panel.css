@@ -2,3 +2,11 @@
     padding-right: 17px;
     padding-bottom: 20px;
 }
+
+.form-control,td {
+    text-align: center;
+}
+
+.badge{
+	    background-color: #0980ff;
+}

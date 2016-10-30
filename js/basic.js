@@ -268,6 +268,9 @@ function duyuruSil(ID){
                 data: dataString,
                 cache: false,
                   success: function() {
+
+                $("#duyuruSilDiv").find(".label-danger").addClass("label-success").removeClass("label-danger");
+
                   $("#duyuruSilMesaj").text("Duyuru Silindi!");
                   $("#duyurular_page").load("duyurular.php"); // tablo yeniden yüklenmesi!.
 
@@ -292,6 +295,16 @@ $("#LinkEkleButton").click(function(){
     var linkAdi = $("#duyuruLinkiAdi").val();
     var link   = $("#duyuruLinki").val();
 
+     if(linkAdi=="" || link ==""){
+      $("#duyuruEkleMesaj").text("Lütfen Link Adı ve linki ekleyin!");
+
+       setTimeout(function() {
+            $("#duyuruEkleMesaj").text("");
+        }, 2000);
+
+    }else{
+
+
     var linkOlustur = "<a href=\""+link+"\" target=\"_blank\">"+linkAdi+"</a>";
 
     var mesaj =$("#duyuruIcerigi").val();
@@ -301,4 +314,5 @@ $("#LinkEkleButton").click(function(){
     $('#duyuruIcerigi').val(yeniMesaj);
     $('#duyuruLinkiAdi').val("");  
     $('#duyuruLinki').val("");
+    }
 });
