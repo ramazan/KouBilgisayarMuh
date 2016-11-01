@@ -417,7 +417,13 @@
                               // OP requested to close the modal
                               $('#messages').addClass('alert alert-success').text("Dosya yükleme başarılı!");
                               $('#duyuruLinki').val(response);
+							  $("#duyuruLinki").prop('disabled', true);
 
+					
+								
+								
+							  
+							  
                               setTimeout(function() {
                                $('#dosyaYukleModal').modal('hide');
                               }, 2000);

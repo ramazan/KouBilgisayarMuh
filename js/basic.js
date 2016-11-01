@@ -391,6 +391,8 @@ function duyuruSil(ID){
 
 
 $("#LinkEkleButton").click(function(){
+			  $("#duyuruLinki").prop('disabled', false);
+
 
     var linkAdi = $("#duyuruLinkiAdi").val();
     var link   = $("#duyuruLinki").val();
