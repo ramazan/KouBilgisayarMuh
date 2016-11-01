@@ -31,6 +31,13 @@ function etkinlikGoster(){
       $("#tarihDiv").hide();
       $("#resimEkleDiv").show();
 
+  }else if($("#is-stajDuyuru").is(":checked")){
+     $("#linkEkleDiv").hide();
+      $("#LinkDiv").hide();
+      $("#duyuruDivIcerik").show();
+      $("#tarihDiv").hide();
+      $("#resimEkleDiv").hide();
+
   }
 
 
@@ -236,6 +243,7 @@ $("#duyuruKaydetButton").click(function(){
 
   if(baslik=="" || icerik ==""){
       $("#duyuruEkleMesaj").text("Lütfen Bütün Alanları Doldurun!");
+	  $("#duyuruEkleMesaj").show();
   }
   else{
 
@@ -269,6 +277,7 @@ $("#duyuruKaydetButton").click(function(){
      
       if(resimLink == ""){
               $("#duyuruEkleMesaj").text("Lütfen Habere Resim Ekleyin!");
+			  $("#duyuruEkleMesaj").show();
       }else{
       var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
         + '&resimLink='+ resimLink;
@@ -282,6 +291,7 @@ $("#duyuruKaydetButton").click(function(){
      
       if(resimLink == ""){
               $("#duyuruEkleMesaj").text("Lütfen Slider'a Resim Ekleyin!");
+			  $("#duyuruEkleMesaj").show();
       }else{
       var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
         + '&resimLink='+ resimLink; 
@@ -289,6 +299,20 @@ $("#duyuruKaydetButton").click(function(){
       }
 
     }    
+	
+	else if ($("#is-stajDuyuru").is(":checked")) {
+
+      duyuruTuru = "is-staj";
+     
+     
+      var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
+       duyuruAjaxPost(dataString);
+      
+
+    }  
+	
+	
+	
 
   }  // içerik else
 

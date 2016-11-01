@@ -203,11 +203,11 @@
                       <input type="radio" name="duyuruTur" id="genelDuyuru" onchange="etkinlikGoster()"> Genel Duyuru
                       </label>
                       <label class="radio-inline">
-                        <input type="radio" name="duyuruTur" id="bolumDuyuru" onchange="etkinlikGoster()"> Bölüm Duyurusu
+                        <input type="radio" name="duyuruTur" id="bolumDuyuru" onchange="etkinlikGoster()"> Bölüm D.
                       </label>
 
                       <label class="radio-inline">
-                        <input type="radio" name="duyuruTur" id="etkinlikDuyuru" onchange="etkinlikGoster()"> Etkinlik Duyurusu
+                        <input type="radio" name="duyuruTur" id="etkinlikDuyuru" onchange="etkinlikGoster()"> Etkinlik Duyuru
                       </label>
 
                        <label class="radio-inline">
@@ -218,6 +218,9 @@
                         <input type="radio" name="duyuruTur" id="Slider" onchange="etkinlikGoster()"> Slider
                       </label>
 
+					   <label class="radio-inline">
+                        <input type="radio" name="duyuruTur" id="is-stajDuyuru" onchange="etkinlikGoster()"> İş-Staj
+                      </label>
                 </div>    
 
                   <div id="duyuruDivIcerik" style="display: none;">
@@ -281,11 +284,12 @@
                                 <select class="form-control" id="tarihGun">
                                   
                                  <?php
-                                      for ($i=1; $i <32 ; $i++) { 
+                                      for ($i=1; $i <=31 ; $i++) { 
                                       
                                          echo "<option>".$i."</option>"; 
                                       }
                                   ?>
+								  
                                 </select>
                               </div>
                             <div class="form-group col-sm-5">

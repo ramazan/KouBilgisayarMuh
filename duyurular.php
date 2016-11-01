@@ -1,7 +1,8 @@
 
 	<?php
 	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
-?>
+	include_once './session.php';  
+	?>
 <!-- Kullanıcılar Sayfası Başlangıcı -->
 				<div class="col-md-12 col-md-offset-0">
              
