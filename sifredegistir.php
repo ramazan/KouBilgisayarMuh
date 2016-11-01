@@ -1,7 +1,7 @@
 <?php
 
-   include('../session.php');
-   include_once '../dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
+   include('session.php');
+   include_once 'dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 
 	$newPassword=$_POST['password'];
 

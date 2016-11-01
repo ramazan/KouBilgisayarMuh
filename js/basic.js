@@ -7,6 +7,36 @@ function LinkEkleCheckBox()
 }
 
 
+function etkinlikGoster(){
+
+  if($("#genelDuyuru").is(":checked") || $("#bolumDuyuru").is(":checked") ){
+     
+     LinkEkleCheckBox();
+     $("#linkEkleDiv").show();
+     $("#duyuruDivIcerik").show();
+     $("#tarihDiv").hide();
+     $("#resimEkleDiv").hide();
+  
+  }else if ($("#etkinlikDuyuru").is(":checked")){
+      $("#linkEkleDiv").hide();
+      $("#LinkDiv").hide();
+      $("#duyuruDivIcerik").show();
+      $("#tarihDiv").show();
+      $("#resimEkleDiv").hide();
+
+  }else if($("#haberDuyuru").is(":checked") || $("#Slider").is(":checked") ){
+     $("#linkEkleDiv").hide();
+      $("#LinkDiv").hide();
+      $("#duyuruDivIcerik").show();
+      $("#tarihDiv").hide();
+      $("#resimEkleDiv").show();
+
+  }
+
+
+}
+
+
 function duyuruGoster() {
 
   $("#navs li").removeClass("active");
@@ -73,6 +103,8 @@ function KullaniciSil(ID){
             data: dataString,
             cache: false,
               success: function() {
+         $("#kullaniciSilMesaj").find(".label-danger").addClass("label-success").removeClass("label-danger");
+         
               $("#kullaniciSilMesaj").text("Kullanıcı Silindi!");
                $("#users_page").load("kullanicilar.php"); // tablo yeniden yüklenmesi!.
 
@@ -169,6 +201,8 @@ $("#kullaniciKaydetButton").click(function(){
           data: dataString,
           cache: false,
             success: function() {
+              $("#kullaniciEkleMesaj").find(".label-danger").addClass("label-success").removeClass("label-danger");
+ 
             $("#kullaniciEkleMesaj").text("Kullanıcı başarıyla kaydedildi.");
             $("#kullaniciEkleMesaj").show();
 
@@ -206,32 +240,80 @@ $("#duyuruKaydetButton").click(function(){
   else{
 
     if($("#genelDuyuru").is(":checked")){
-      duyuruTuru = 1 ;
+      duyuruTuru = "Genel" ;
+
+          // parametrelerin geçirilmesi
+    var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
+    duyuruAjaxPost(dataString)
+    
     } else if($("#bolumDuyuru").is(":checked")){
-      duyuruTuru = 2 ;
-    } else{
-      duyuruTuru = 3;
+      duyuruTuru = "Bolum" ;
+          // parametrelerin geçirilmesi
+    var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
+    duyuruAjaxPost(dataString)
+
+    } else if($("#etkinlikDuyuru").is(":checked")){
+      var etlinlikGun = $("#tarihGun").val();
+      var etlinlikAy   = $("#tarihAy").val();
+      duyuruTuru = "Etkinlik";
+
+          // parametrelerin geçirilmesi
+         var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
+        + '&etlinlikGun='+ etlinlikGun + '&etlinlikAy='+ etlinlikAy;
+        duyuruAjaxPost(dataString)
+
+    }else if($("#haberDuyuru").is(":checked")){
+     
+      duyuruTuru = "Haber";
+      var resimLink   = $("#ResimLinki").val();
+     
+      if(resimLink == ""){
+              $("#duyuruEkleMesaj").text("Lütfen Habere Resim Ekleyin!");
+      }else{
+      var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
+        + '&resimLink='+ resimLink;
+        duyuruAjaxPost(dataString)
+      }
+
+    }else if ($("#Slider").is(":checked")) {
+
+      duyuruTuru = "Slider";
+      var resimLink   = $("#ResimLinki").val();
+     
+      if(resimLink == ""){
+              $("#duyuruEkleMesaj").text("Lütfen Slider'a Resim Ekleyin!");
+      }else{
+      var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
+        + '&resimLink='+ resimLink; 
+        duyuruAjaxPost(dataString);
+      }
+
     }    
 
+  }  // içerik else
 
-    // parametrelerin geçirilmesi
-    var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
+ 
+});
 
 
 
+function duyuruAjaxPost(dataString){
 
-    $.ajax({
+  $.ajax({
           type: "POST",
           url: "duyuruEkle.php",
           data: dataString,
           cache: false,
             success: function() {
+             $("#duyuruEkleMesaj").find(".label-danger").addClass("label-success").removeClass("label-danger");
+
             $("#duyuruEkleMesaj").text("Duyuru eklendi.");
             $("#duyuruEkleMesaj").show();
 
             //inputların temizlenme işlemi
             $("#duyuruBasligi").val('');
             $("#duyuruIcerigi").val('');
+            $("#ResimLinki").val('');
 
            $("#duyurular_page").load("duyurular.php"); // tablo yeniden yüklenmesi!.
             
@@ -244,13 +326,7 @@ $("#duyuruKaydetButton").click(function(){
               $("#duyuruEkleMesaj").text("Boku yedik!");
             }
     });
-
-  }  // else
-
-   console.log(dataString); 
-
- 
-});
+}
 
 function duyuruSil(ID){
  // console.log("siilinecek ID : " + ID);
@@ -316,3 +392,5 @@ $("#LinkEkleButton").click(function(){
     $('#duyuruLinki').val("");
     }
 });
+
+

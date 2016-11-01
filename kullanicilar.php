@@ -1,9 +1,10 @@
 <?php
-	include_once '../dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
+	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 ?>
 <!-- Kullanıcılar Sayfası Başlangıcı -->
+		
 				<div class="col-md-8 col-md-offset-1">
-             
+            
 
 					<?php
 
@@ -18,7 +19,7 @@
 						    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
 						       
 						     
-						        echo "<div id='page-modal' class='container' style='padding-top: 20px;'>
+						        echo "<div id='page-modal' class='container' style='padding-top: 20px;padding-left:100px;'>
 						        <div class='row'><div class='panel panel-primary'><br><div  style='padding-left: 20px'>";
 
 						        echo " <button  class='btn btn-primary' onclick='kullaniciEkle()'><span class='glyphicon glyphicon-plus'></span> Kullanıcı Ekle</button>";
@@ -65,6 +66,7 @@
            
 		        </div>
 		    </div>
+
 		<!-- Kullanıcılar Sayfası Sonu -->
 
 

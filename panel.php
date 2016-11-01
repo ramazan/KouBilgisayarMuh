@@ -1,6 +1,6 @@
 <?php
-   include('../session.php');
-   include_once '../dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
+   include('./session.php');
+   include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 
 ?>
 
@@ -10,8 +10,8 @@
    <head>
 	    <title>Koü Ceng</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css" />
-	    <link rel="stylesheet" href="../css/panel.css" />
+		<link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css" />
+	    <link rel="stylesheet" href="./css/panel.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
    </head>
    
@@ -21,7 +21,7 @@
 			<div class="container-fluid">
 				<div class="navbar-header" style="padding-right: 10px;">
 					<a href=".">
-						<img id="brand_img" alt="Brand" width="60" height="60" src="../img/kou_logo.png">
+						<img id="brand_img" alt="Brand" width="60" height="60" src="./img/kou_logo.png">
 						Bilgisayar Mühendisliği
 					</a>
 				</div>
@@ -80,7 +80,7 @@
 
 	<!-- Kullanıcılar Sayfası Başlangıcı -->
 		<div id="users_page" style="display: none;">
-		<?php include('kullanicilar.php');  ?>
+		    <?php include('kullanicilar.php');  ?>
 		</div>
 		<!-- Kullanıcılar Sayfası Sonu -->
 
@@ -195,7 +195,33 @@
 					<br>
 					<br>
 					      <fieldset>
-                                <div class="form-group">
+
+
+                <div>
+                                      <b>Duyuru Türü :</b></br>
+                      <label class="radio-inline">
+                      <input type="radio" name="duyuruTur" id="genelDuyuru" onchange="etkinlikGoster()"> Genel Duyuru
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="duyuruTur" id="bolumDuyuru" onchange="etkinlikGoster()"> Bölüm Duyurusu
+                      </label>
+
+                      <label class="radio-inline">
+                        <input type="radio" name="duyuruTur" id="etkinlikDuyuru" onchange="etkinlikGoster()"> Etkinlik Duyurusu
+                      </label>
+
+                       <label class="radio-inline">
+                        <input type="radio" name="duyuruTur" id="haberDuyuru" onchange="etkinlikGoster()"> Haber
+                      </label>
+
+                      <label class="radio-inline">
+                        <input type="radio" name="duyuruTur" id="Slider" onchange="etkinlikGoster()"> Slider
+                      </label>
+
+                </div>    
+
+                  <div id="duyuruDivIcerik" style="display: none;">
+                                <div class="form-group" >
                               		<label for="duyuruBasligi">Duyuru Başlığı:</label>
                                    <input class="form-control" required placeholder="Duyuru Başlığı" id="duyuruBasligi" type="text">
                                 </div>
@@ -205,53 +231,94 @@
 
                                 </div>
 
-								<div class="checkbox">
-								  <label><input class="linkEkle"  type="checkbox" value="1" name="linkEkle"  onchange="LinkEkleCheckBox()"> Link Ekle</label>
-								</div>
+
+                    </div>            
+
+                      <div id="linkEkleDiv" style="display: none;">
+                         <div  class="checkbox">
+                          <label><input class="linkEkle"  type="checkbox" value="1" name="linkEkle"  onchange="LinkEkleCheckBox()"> Link & Dosya Ekle</label>
+                        </div>
+                    </div>
+
 
 								<div id="LinkDiv" style="display: none;">
-														<div class="row">
+												<div class="row">
 
-    								<div class="form-group col-sm-4">
+          							   	<div class="form-group col-sm-4">
 
-		                                <div class="form-group">
-		                              		<label for="duyuruLinkiAdi">Linkin Adı:</label>
-		                                    <input class="form-control" placeholder="" id="duyuruLinkiAdi">
+      		                                <div class="form-group">
+      		                              		<label for="duyuruLinkiAdi">Linkin Adı:</label>
+      		                                    <input class="form-control" placeholder="" id="duyuruLinkiAdi">
 
-		                                </div>
-		                            </div>
-		                           <div class="form-group col-sm-6">   
-		                                 <div class="form-group">
-		                              		<label for="duyuruLinki">Duyuruya eklenecek Link:</label>
-		                                   <input class="form-control" placeholder="" id="duyuruLinki" type="text">
-		                                </div>
+      		                                </div>
+      		                        </div>
+      		                           <div class="form-group col-sm-6">   
+      		                                 <div class="form-group">
+      		                              		<label for="duyuruLinki">Duyuruya eklenecek Link:</label>
+      		                                   <input class="form-control" placeholder="" id="duyuruLinki" type="text">
+      		                                </div>
 
-		                            </div>   
+      		                          </div>   
 
-									<div class="form-group col-sm-2">   
-		                                 <div style="padding-top: 23px;">
-		                                   <button id="LinkEkleButton" class="btn btn-success">Ekle</button>
+          									           <div class="form-group col-sm-2">   
+          		                                 <div style="padding-top: 23px;">
+          		                                   <button id="LinkEkleButton" class="btn btn-success">Ekle</button>
 
-		                                </div>
+          		                                </div>
 
-		                            </div>  
-                                </div>
-                                </div>
-                                <div>
-                                     	<b>Duyuru Türü :</b></br>
-											<label class="radio-inline">
-											<input type="radio" name="duyuruTur" id="genelDuyuru" checked="checked"> Genel Duyuru
-											</label>
-											<label class="radio-inline">
-												<input type="radio" name="duyuruTur" id="bolumDuyuru"> Bölüm Duyurusu
-											</label>
+    		                            </div>  
+                          </div>
+                      <button class="btn btn-primary" data-toggle="modal" data-target="#dosyaYukleModal">Dosya Ekle</button>
 
-											<label class="radio-inline">
-												<input type="radio" name="duyuruTur" id="etkinlikDuyuru"> Etkinlik Duyurusu
-											</label>
+                  </div>
 
-								</div>
+                <div id="tarihDiv" style="display: none;"> 
 
+                   <div class="row">
+
+                            <div class="form-group col-sm-5">
+                                <label for="tarih">Gün Seçiniz:</label>
+                                <select class="form-control" id="tarihGun">
+                                  
+                                 <?php
+                                      for ($i=1; $i <32 ; $i++) { 
+                                      
+                                         echo "<option>".$i."</option>"; 
+                                      }
+                                  ?>
+                                </select>
+                              </div>
+                            <div class="form-group col-sm-5">
+                                <label for="tarih">Ay Seçiniz:</label>
+                                <select class="form-control" id="tarihAy">
+                                  <option>Oca</option>
+                                  <option>Şub</option>
+                                  <option>Mar</option>
+                                  <option>Nis</option>        
+                                  <option>May</option>
+                                  <option>Haz</option>
+                                  <option>Tem</option>
+                                  <option>Agu</option>
+                                  <option>Eyl</option>
+                                  <option>Eki</option>        
+                                  <option>Kas</option>
+                                  <option>Ara</option>
+                                </select>
+                              </div>  
+
+                      </div>
+                </div>   
+
+
+                <div id="resimEkleDiv" style="display: none;">
+                     <div class="row">
+
+                          <div class="form-group col-sm-8">   
+                                            <label for="ResimLinki">Duyuruya eklenecek resmin Linki:</label>
+                                             <input class="form-control" placeholder="" id="ResimLinki" type="text">
+                            </div> 
+                    </div>
+               </div>  
 
 
 
@@ -290,16 +357,76 @@
 
 
 
-
-
+  <!-- dosya yükle Modal  -->
+             <div class="modal fade" id="dosyaYukleModal">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <form id="yukleForm" enctype="multipart/form-data" role="form">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title">Dosya Yükle</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div id="messages"></div>
+                                <input type="file" name="file" id="file">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                                <button type="submit" class="btn btn-primary">Yükle</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+  <!-- dosya yükle Modal end -->
 
 
 
 		<!-- JAVASCRIPT Dosyaları -->
-		<script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
-		<script type="text/javascript" src="../vendor/jquery/jquery.js"></script>
-		<script type="text/javascript" src="../vendor/bootstrap/js/bootstrap.js"></script>
-		<script type="text/javascript" src="../js/basic.js"></script>			
+		<script type="text/javascript" src="./vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="./vendor/jquery/jquery.js"></script>
+		<script type="text/javascript" src="./vendor/bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="./js/basic.js"></script>			
+   <script>
+    //dosya yukleme işlemi          
+   $('#yukleForm').submit(function(e) {
+
+                  var form = $(this);
+                  var formdata = false;
+                  if(window.FormData){
+                      formdata = new FormData(form[0]);
+                  }
+
+                  var formAction = form.attr('action');
+
+                  $.ajax({
+                      type        : 'POST',
+                      url         : 'dosyaYukle.php',
+                      cache       : false,
+                      data        : formdata ? formdata : form.serialize(),
+                      contentType : false,
+                      processData : false,
+
+                      success: function(response) {
+                          if(response != 'error') {
+                              //$('#messages').addClass('alert alert-success').text(response);
+                              // OP requested to close the modal
+                              $('#messages').addClass('alert alert-success').text("Dosya yükleme başarılı!");
+                              $('#duyuruLinki').val(response);
+
+                              setTimeout(function() {
+                               $('#dosyaYukleModal').modal('hide');
+                              }, 2000);
+                          } else {
+                              $('#messages').addClass('alert alert-danger').text("Hata oluştu.");
+                          }
+                      }
+                  });
+                  e.preventDefault();
+              });
+          </script>
+
+
    </body>
    
 </html>

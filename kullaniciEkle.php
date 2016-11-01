@@ -1,6 +1,6 @@
 <?php
 
-   include_once '../dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
+   include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 
     $adSoyad=$_POST['adSoyad'];
     $email=$_POST['email'];

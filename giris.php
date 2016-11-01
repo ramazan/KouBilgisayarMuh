@@ -21,10 +21,10 @@
       if($count == 1) {
          $error = "<div style='text-align:center' class='alert alert-success'>Giriş Başarılı.</div>";
          $_SESSION['login_user_email'] = $myemail;         
-         header("location: panel/panel.php");
+         header("location:/panel.php");
 		 exit;
       }else {
-         $error = "<div style='text-align:center' class='alert alert-danger'>Kullanıcı Adı veya Şifre yanlış</div>";
+         $error = "<div style='text-align:center' class='alert alert-danger'><b>Kullanıcı Adı veya Şifre yanlış<b></div>";
       }
    }
 ?>

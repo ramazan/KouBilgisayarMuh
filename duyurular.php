@@ -1,6 +1,6 @@
 
 	<?php
-	include_once '../dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
+	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 ?>
 <!-- Kullanıcılar Sayfası Başlangıcı -->
 				<div class="col-md-12 col-md-offset-0">
@@ -28,7 +28,7 @@
 								        echo " <button  class='btn btn-success' onclick='duyuruEkle()'><span class='glyphicon glyphicon-plus'></span> Duyuru Ekle</button>";
 
 								            echo "</div><br><div class='panel-heading'><h2 class='panel-title'
-								            style='text-align:center'>Kişiler Listesi</h2></div><br>";
+								            style='text-align:center'>Duyurular Listesi</h2></div><br>";
 
 								                echo "<div id='personsList'><table class='table'><thead style='text-align:center;'><tr class='filters'>
 													<th><input type='text' class='form-control'
@@ -38,7 +38,7 @@
 													<th><input type='text' class='form-control'
 														placeholder='İÇERİK' disabled></th>
 													<th><input type='text' class='form-control'
-														placeholder='TARİH' disabled></th>";
+														placeholder='TÜR' disabled></th>";
 
 								            echo "</tr></thead><tbody>";
 								            $sayac=0;
@@ -48,7 +48,7 @@
 								                echo "<td>" . $sayac . "</td>";
 								                echo "<td>" . $row['TITLE'] . "</td>";
 								                echo "<td>" . $row['MESSAGE'] . "</td>";
-								                echo "<td>" . $row['DATE'] . "</td>";
+								                echo "<td>" . $row['DUYURU_TURU'] . "</td>";
 								                echo "<td><button class='btn btn-danger btn-sm' data-title='Delete' data-toggle='modal' onclick='duyuruSil(".$row['ID'].")'><span class='glyphicon glyphicon-trash'></span></button</td>";
 								            echo "</tr>";
 								        }
@@ -68,7 +68,7 @@
 						 }else{
 
 
-						 $sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DATE , announcements.ID
+						 $sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DUYURU_TURU,announcements.DATE , announcements.ID
 						FROM announcements INNER JOIN users ON users.ID=announcements.USER_ID ORDER BY ID";
 
 								if($result = mysqli_query($con, $sql)){
@@ -81,7 +81,7 @@
 								        echo " <button  class='btn btn-success' onclick='duyuruEkle()'><span class='glyphicon glyphicon-plus'></span> Duyuru Ekle</button>";
 
 								            echo "</div><br><div class='panel-heading'><h2 class='panel-title'
-								            style='text-align:center'>Kişiler Listesi</h2></div><br>";
+								            style='text-align:center'>Duyurular Listesi</h2></div><br>";
 
 								                echo "<div id='personsList'><table class='table'><thead style='text-align:center;'><tr class='filters'>
 													<th><input type='text' class='form-control'
@@ -91,7 +91,7 @@
 													<th><input type='text' class='form-control'
 														placeholder='İÇERİK' disabled></th>
 													<th><input type='text' class='form-control'
-														placeholder='TARİH' disabled></th>
+														placeholder='TÜR' disabled></th>
 													<th><input type='text' class='form-control'
 														placeholder='EKLEYEN' disabled></th>"	;
 
@@ -103,7 +103,7 @@
 								                echo "<td>" . $sayac . "</td>";
 								                echo "<td>" . $row['TITLE'] . "</td>";
 								                echo "<td>" . $row['MESSAGE'] . "</td>";
-								                echo "<td>" . $row['DATE'] . "</td>";
+								                echo "<td>" . $row['DUYURU_TURU'] . "</td>";
 								                echo "<td>" . $row['NAME'] . "</td>";
 								                echo "<td><button class='btn btn-danger btn-sm' data-title='Delete' data-toggle='modal' onclick='duyuruSil(".$row['ID'].")'><span class='glyphicon glyphicon-trash'></span></button</td>";
 								            echo "</tr>";
