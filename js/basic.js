@@ -46,9 +46,8 @@ function etkinlikGoster(){
 
 function duyuruGoster() {
 
-  $("#navs li").removeClass("active");
-  $("#nav_duyurular").addClass("active");
-  $("#pages > div").hide();
+
+  $("#page-wrapper > div").hide();
   $('#duyurular_page').show();
 
   console.log("duyurlar acildi");
@@ -57,9 +56,7 @@ function duyuruGoster() {
 
 function kullaniciGoster() {
 
-  $("#navs li").removeClass("active");
-  $("#nav_users").addClass("active");
-  $("#pages > div").hide();
+  $("#page-wrapper > div").hide();
   $('#users_page').show();
 
   console.log("kullaniciGoster acildi");
@@ -67,10 +64,8 @@ function kullaniciGoster() {
 }
 
 function profilGoster() {
-
-  $("#navs li").removeClass("active");
-  $("#nav_profile").addClass("active")    
-  $("#pages > div").hide();
+   
+  $("#page-wrapper > div").hide();
   $('#profile_page').show();
 
   console.log("Profil sayfasi acildi");
@@ -80,7 +75,9 @@ function profilGoster() {
 function kullaniciDivGizle() {
   
   console.log( "user giris yaptı pnp! Kullanıcılar Sekmesi gizlendi!" );
-  $("#navLinks > #nav_users").hide();
+  $("#side-menu > #nav_users").hide();
+    $('#users_page').hide();
+
 
 }; 
 
@@ -99,6 +96,7 @@ function KullaniciSil(ID){
  // console.log("siilinecek ID : " + ID);
     $('#KullaniciSilModal').modal('show');
     $('#kullaniciSilMesaj').text("Emin misiniz?");
+     console.log(" ID : " + ID);
 
     $("#kullaniciSilButton").click(function(){
         console.log(" ID : " + ID);
@@ -134,7 +132,7 @@ function KullaniciSil(ID){
 
 $("#profileGuncelle").click(function(){
       var password = $("#user_new_pass").val();
-      var password_again = $("#user_new_pass").val();
+      var password_again = $("#user_new_pass_c").val();
 
       
        var dataString = 'password='+ password;

@@ -3,19 +3,15 @@
 	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 	include_once './session.php';  
 	?>
-<!-- Kullanıcılar Sayfası Başlangıcı -->
-			 <script src="./vendor/metisMenu/metisMenu.min.js"></script>
+		<script>
+		    $(document).ready(function() {
+		        $('#dataTables-example').DataTable({
+		            responsive: true
+		        })
 
-    <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-    </script>
+
+		    });
+		    </script>
 				<div class="row">
                 <div class="col-lg-12" style="margin-top: 15px">
                 <button  class='btn btn-success' onclick='duyuruEkle()'><span class='glyphicon glyphicon-plus'></span> Duyuru Ekle</button>
@@ -71,7 +67,7 @@
 								       
 								        mysqli_free_result($result);
 								    } else{
-								        echo "Aranan kayıtlar bulunamadı :( .";
+								       echo "<div style='text-align:center' class='alert alert-danger'><b>Henüz Hiç Duyurunuz Yok!<b></div>";
 								    }
 								} else{
 								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
@@ -116,12 +112,12 @@
 								            echo "</tr>";
 								        }
 
-								        echo "</tbody></table>";
+								        echo "</tbody></table></div>";
 								        
 
 								        mysqli_free_result($result);
 								    } else{
-								        echo "Aranan kayıtlar bulunamadı :( .";
+								        echo "<div style='text-align:center' class='alert alert-danger'><b>Henüz Hiç Duyurunuz Yok!<b></div>";
 								    }
 								} else{
 								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
@@ -137,9 +133,11 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->
-           
-		<!-- Kullanıcılar Sayfası Sonu -->
-
+        <?php
+   if ($login_session_role == "user") {
+   	echo "</div>";
+   }
+   ?>
 
 
 	

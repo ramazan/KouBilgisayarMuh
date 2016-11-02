@@ -1,27 +1,17 @@
 <?php
 	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 ?>
-<!-- Kullanıcılar Sayfası Başlangıcı -->
-		<script src="./vendor/metisMenu/metisMenu.min.js"></script>
 
-    <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-    </script>
+    
+
 				<div class="row">
                 <div class="col-lg-12" style="margin-top: 15px">
-                <button  class='btn btn-success' onclick='duyuruEkle()'><span class='glyphicon glyphicon-plus'></span> Duyuru Ekle</button>
+                <button  class='btn btn-success' onclick='kullaniciEkle()'><span class='glyphicon glyphicon-plus'></span> Kullanıcı Ekle</button>
                 <br/>
                 <br/>
              			<div class="panel panel-default">
                         <div class="panel-heading">
-                            Duyurular Listesi
+                            Kullanıcılar Listesi
                         </div>
 
 					<?php
@@ -37,11 +27,11 @@
 						    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
 						       
 						     
-						        echo "<div class='panel-body'><table width='100%'' class='table table-striped table-bordered table-hover' id='dataTables-example'>";
+						        echo "<div class='panel-body'><table width='100%'' class='table table-striped table-bordered table-hover' id='dataTables-kullanici'>";
 
 								            
 
-								                echo "<thead>
+								     echo "<thead>
                                     <tr>
                                         <th>#</th>
                                         <th>İsim</th>
@@ -62,7 +52,7 @@
 						            echo "</tr>";
 						        }
 
-						        echo "</tbody></table>";
+						        echo "</tbody></table></div>";
 
 						        mysqli_free_result($result);
 						    } else{
@@ -83,7 +73,15 @@
                 <!-- /.col-lg-12 -->
 
 		<!-- Kullanıcılar Sayfası Sonu -->
+<script>
+    $(document).ready(function() {
+        $('#dataTables-kullanici').DataTable({
+            responsive: true
+        });
 
+
+    });
+    </script>
 
 
 	

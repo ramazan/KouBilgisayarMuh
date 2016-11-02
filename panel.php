@@ -63,11 +63,11 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Duyurular</a>
+                            <a href="#" onclick="duyuruGoster()"><i class="fa fa-dashboard fa-fw"></i> Duyurular</a>
                         </li>
                        
-                        <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Kullanıcılar</a>
+                        <li id="nav_users">
+                            <a href="#" onclick="kullaniciGoster()"><i class="fa fa-table fa-fw"></i> Kullanıcılar</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> İstatistik</a>
@@ -101,7 +101,7 @@
 		<!-- Kullanıcılar Sayfası Sonu -->
 
 		<!-- Profilim Sayfası Başlangıcı -->
-		<div id="profile_page" class="row" style="display: none;">
+		<div id="profile_page" style="display: none;">
 			<?php include('profile.php') ?>
 		</div>
 		<!-- Profilim Sayfası Bitişi -->
@@ -463,6 +463,13 @@
         $('#dataTables-example').DataTable({
             responsive: true
         });
+
+        $('#dataTables-kullanici').DataTable({
+            responsive: true
+        });
+
+
+        
     });
     </script>
 
