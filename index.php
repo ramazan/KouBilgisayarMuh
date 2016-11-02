@@ -162,11 +162,10 @@
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Personel</li>
-							<li><a href="#section41">Dilekçe Formları</a></li>
-								<li><a href="#section41">Öğretim Üyeleri</a></li>
-								<li><a href="#section42">Öğretim Elemanları</a></li>
-								<li><a href="#section40">İdari Personel</a></li>
-								<li><a href="/giris.php">Sisteme Giriş</a></li>
+								<li><a href="contacts.php">Öğretim Üyeleri</a></li>
+								<li><a href="kadro.php">Öğretim Elemanları</a></li>
+								<li><a href="sekreter.php">İdari Personel</a></li>
+								<li><a href="giris.php">Sisteme Giriş</a></li>
 							<li class="divider ek"></li>
 							
 						</ul>
@@ -595,7 +594,7 @@
 									echo "<h3 style='margin: 0 0 5px 0;'><a href='#' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']." </a></h3>";
 									echo "<p class='text-muted'>".$row['MESSAGE']."</p>";
 									$originalDate = $row['DATE'];
-									$newDate = date("d F Y l", strtotime($originalDate));
+									$newDate = date("d F l", strtotime($originalDate));
 									
 									$ing_aylar = array("January","February","March","May","April","June","July","August","September","October","November","December");
 									    $tr_aylar = array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");
