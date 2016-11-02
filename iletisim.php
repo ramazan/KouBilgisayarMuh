@@ -31,7 +31,6 @@
 <!-- Theme CSS -->
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -202,72 +201,62 @@
 		</ul>
 
 		
-	</div><!-- /.nav-collapse -->
+	</div>
             
         </div>
-        <!-- /.container -->
     </nav>
     <span class="header_shadow" style="top:74px"></span>
 	
-<div class="wrapper">
-      <!-- Categories Homepage Section Start -->
-      <section id="categories-homepage">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 class="section-title" style="text-align:center">İdari Personel</h2>
-			  </br>
-            </div>          
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="category-box border-1 wow fadeInUpQuick animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;">
-                <div class="icon">
-                  <a href="http://bilgisayar.kocaeli.edu.tr/img/kadro/ResulOzkan.jpg"><img width="120" height="120" style="border-radius:50%"  src="http://bilgisayar.kocaeli.edu.tr/img/kadro/ResulOzkan.jpg"></a>
-                </div>
+	<!---iletisim tasarım--->
+	</br></br></br></br></br>
+			<h2 style="text-align:center;color:#009846">İletişim/Ulaşım</h3></br>
+	<div class="container">
+	<div class="row-fluid">
+        <div class="span8">
+        	<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.284502305772!2d29.92107871509908!3d40.82171417932007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb4ef527001f97%3A0x97e142f7c07f82f0!2sKocaeli+%C3%9Cniversitesi+M%C3%BChendislik+Fak%C3%BCltesi+B-blok!5e0!3m2!1str!2str!4v1478117164708" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>    	</div>
+    	<div class="container-fluid" style="margin-top:20px" >
+    	<div class="row" >
+    		<div class="col-md-6"  >
+			<li class="list-group-item" style="background-color:#ebf9e0">
+			  <div>
+    			<h4 style="color:#009846; text-align:center">İletisim Bilgileri</h4>
+    			</div>
+			  </li>
+      	
+    		<address>
+    			<i class="fa fa-map-marker" style="color:#009846"></i><strong style="color:#009846"> Adres : </strong><span>KOÜ Mühendislik Fakültesi (B Blok) Bilgisayar Mühendisliği / Umuttepe Yerleşkesi 41380 Kocaeli</span>
+				</br><i class="fa fa-phone" style="color:#009846"></i><strong style="color:#009846"> Telefon : </strong><span>(262) 303 35 60</span>
+				</br><i class="fa fa-envelope" style="color:#009846"></i><strong style="color:#009846"> E-Posta : </strong><span>bilgisayar@kocaeli.edu.tr</span>
+				</br><i class="fa fa-globe" style="color:#009846"></i><strong style="color:#009846"> Web : </strong><a href="http://bilgisayar.kocaeli.edu.tr">	http://bilgisayar.kocaeli.edu.tr</a>
+    			
+    		</address>
+    	</div>
+		<div class="col-md-6" style="float:right;" >
+			<li class="list-group-item" style="background-color:#ebf9e0">
+			  <div>
+    			<h4 style="color:#009846; text-align:center">Ulaşım Bilgileri</h4>
+    			</div>
+			  </li>
+      	
+    		<address>
+    			<i class="fa fa-bus" style="color:#009846;padding-right:5px;"></i><a   href="http://e-komobil.com/#">Umuttepe'ye nasıl giderim?</a>
+				</br><i class="fa fa-clock-o" style="color:#009846;padding-right:5px;"></i><a  href="http://www.kocaeli.bel.tr/OtobusSaatleri.aspx">Minibüs Hatlarının Hareket Saatlerini Öğren </a>
+				</br><i class="fa fa-picture-o" style="color:#009846;padding-right:5px;"></i><a   href="http://bilgisayar.kocaeli.edu.tr/img/maket.gif">Üniversitenin Maket Görünümü </a>
+    			
+    		</address>
+    	</div>
+		
+		</div>
+		
+		</div>
+    </div>
+</div>
+	
+	
+	
+	
 
-                <div class="category-header">  
-                  <a href="http://www.gezginresul.com/"><h4>Bölüm Sekreteri Resul ÖZKAN</h4></a>
-                </div>
-                <div class="category-content">
-                  <ul>
-                    <li>
-                      <a href="mailto:bilgisayar@kocaeli.edu.tr" style="color:#333">E-posta :</a>
-                      <sapn class="category-counter"> bilgisayar@kocaeli.edu.tr</sapn>
-                    </li>
-                    <li>
-                      <a style="color:#333">Oda No :</a>
-                      <sapn class="category-counter">3003</sapn>
-                    </li>
-                    <li>
-                      <a style="color:#333">Telefon :</a>
-                      <sapn class="category-counter">303 3560</sapn>
-                    </li>
-                    <li>
-                      <a style="color:#333" >Ana Bilim Dalı :</a>
-                      <sapn class="category-counter">Bilgisayar Bilimleri</sapn>
-                    </li>
-                    <li>
-                      <a style="color:#333">Araştırma Alanları :</a>
-                      <sapn class="category-counter">----</sapn>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          
-			
-          </div>
-        </div>
-      </section>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	<script src="vendor/jquery/jquery.min.js"></script>

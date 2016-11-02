@@ -190,7 +190,7 @@
 				</ul>
 				
 			</li>
-			<li><a href="#section42">Ulaşım/İletişim</a>				
+			<li><a href="iletisim.php">Ulaşım/İletişim</a>				
 
 					</li>
 			
