@@ -71,9 +71,9 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-                <a class="navbar-brand"><img
+                <a class="navbar-brand" href="index.php"><img
 					src="img/kou_logo.png" alt="KOÜ" width="50" height="50"/></a> <a
-					class="navbar-brand">Kocaeli
+					class="navbar-brand" href="index.php">Kocaeli
 					Üniversitesi</br>Bilgisayar Muhendisligi
 				</a>
 				
