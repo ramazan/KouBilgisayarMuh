@@ -38,27 +38,6 @@
 <link href="css/dummy.css" rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<script>
-	$(document).ready(function() {
-		$("#oku").click(function() {
-			$('#myModal').modal('show');
-		});
-
-	});
-</script>
-<script>
-	$(document).ready(function() {
-		$("#mundi").click(function() {
-			$('#myModal').find('p').html('<p>Jiraya Bitch </p>');
-			$('#myModal').find('h4').html('<h4 class="modal-title"> Yemek Hane Listesi BITCH !</h4>')
-			$('#myModal').modal('show');
-		});
-
-	});
-</script>
-
-
 </head>
 
 <body id="page-top" class="index" style="background:#f8f8f8;">
@@ -219,6 +198,7 @@
 
     				<div id="myCarousel" class="carousel slide"  data-ride="carousel" style="border: 3px solid #d9d4c6;" >
 				  <div class="carousel-inner"  role="listbox" style="border: 1px solid #fff; background-color:#d9d4c6">
+				   
 				    <div class="item active" style="height:310px; background-color:#d9d4c6" >
 				      <img src="http://bilgisayar.kocaeli.edu.tr/img/slider/30_SantekAna.jpg" width="1100" height="400" alt="">
 				      <div class="carousel-caption">
@@ -244,6 +224,7 @@
 
 				      </div>
 				    </div>
+
   					</div>
 
 					  <!-- Controls -->
