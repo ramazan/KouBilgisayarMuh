@@ -595,7 +595,7 @@
 									echo "<h3 style='margin: 0 0 5px 0;'><a href='#' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']." </a></h3>";
 									echo "<p class='text-muted'>".$row['MESSAGE']."</p>";
 									$originalDate = $row['DATE'];
-									$newDate = date("d F l Y", strtotime($originalDate));
+									$newDate = date("d F Y l", strtotime($originalDate));
 									
 									$ing_aylar = array("January","February","March","May","April","June","July","August","September","October","November","December");
 									    $tr_aylar = array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");

@@ -139,7 +139,7 @@ $("#profileGuncelle").click(function(){
       
        var dataString = 'password='+ password;
 
-        if(password=='')
+        if(password=='' || password_again=='')
         {
             $("#pass_validate").text("Şifre Boş");
         }
