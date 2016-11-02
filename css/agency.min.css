@@ -675,6 +675,7 @@ footer span.copyright, footer ul.quicklinks {
 	position: absolute;
 	z-index: 100;
 	background-color: #009745;
+	border: 2px solid #253036;
 	color: #fff;
 	border-radius: 100%;
 	text-align: center;
