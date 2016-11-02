@@ -13,62 +13,78 @@
 		<link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css" />
 	    <link rel="stylesheet" href="./css/panel.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+    <link href="./vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <link href="./vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <!-- Custom CSS -->
    </head>
    
    <body>
-	<header>
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
+   
+	
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			
 				<div class="navbar-header" style="padding-right: 10px;">
-					<a href=".">
-						<img id="brand_img" alt="Brand" width="60" height="60" src="./img/kou_logo.png">
-						Bilgisayar Mühendisliği
-					</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+					        <a class="navbar-brand" style="    padding: 1px 8px;"><img
+                    src="img/kou_logo.png" alt="KOÜ" width="50" height="50"/></img> <a
+                    class="navbar-brand">Bilgisayar Muhendisligi
+                  </a>
+        
 				</div>
 
-				<div style="padding-top:5px;" id="navs" class="collapse navbar-collapse">
-					<ul id="navLinks" class="nav navbar-nav">
-						
-						<li id="nav_duyurular" class="active">
-								<a href="#" onclick="duyuruGoster()">
-									<span class="glyphicon glyphicon-inbox"></span> Duyurular
-								</a>
-						</li>
-
-						<li id="nav_users">
-								<a href="#" onclick="kullaniciGoster()">
-									<i class="fa fa-users" aria-hidden="true"></i> 
-									Kullanıcılar 
-									<span id="usersBadge" class="badge"><?php echo $kullanici_sayisi?></span>
-								</a>
-						</li>
-
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						
-						<li><a>Sayın,<b> <?php echo $login_session_name?></b> Hoşgeldiniz!</a></li>
-						
-						<li id="nav_profile">
-							<a href="#" onclick="profilGoster()">
-								<span class="glyphicon glyphicon-user"></span> Profilim
-							</a>
-						</li>
-						
-						<li> 
-								<a href="logout.php">
-									<i class="fa fa-sign-out" aria-hidden="true"></i> Çıkış
-								</a>
-						</li>
-					
-					</ul>
-				</div>
-			</div>
+				
+          <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown nav-item"><a>Sayın,<b> <?php echo $login_session_name?></b> Hoşgeldiniz!</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#" onclick="profilGoster()"><i class="fa fa-user fa-fw"></i> Profilim</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Çıkış</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+				
+			<div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Duyurular</a>
+                        </li>
+                       
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Kullanıcılar</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> İstatistik</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Dosya Yükle</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
 		</nav>
-	</header>
+
 
 	<!-- Sayfalar div başlangıcı -->
-	<div id="pages" class="container-fluid">
-
+	<div id="page-wrapper" class="ekran">
 
 	<!-- Duyurular Sayfası Başlangıcı -->
 		<div id="duyurular_page">
@@ -89,9 +105,10 @@
 			<?php include('profile.php') ?>
 		</div>
 		<!-- Profilim Sayfası Bitişi -->
-		
-
-	</div>
+        
+		  
+    </div>
+	
 	<!-- Sayfalar div'i-->
 
 		  <!-- Add User Modal -->
@@ -436,10 +453,27 @@
               });
           </script>
 
+          <script src="./vendor/metisMenu/metisMenu.min.js"></script>
 
+    <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+
+          
    </body>
    
 </html>
+ 
+
+    <!-- Metis Menu Plugin JavaScript -->
+    
 
 
 <?php
