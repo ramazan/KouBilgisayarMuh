@@ -1,5 +1,6 @@
 	<?php
 	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
+
 	?>
 
 <!DOCTYPE html>
@@ -590,9 +591,23 @@
 										
 								        while($row = mysqli_fetch_array($result)){
 									echo "<li class='list-group-item' style='background: #ebf9e0;'><div class='team-member'>";
+								
 									echo "<h3 style='margin: 0 0 5px 0;'><a href='#' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']." </a></h3>";
 									echo "<p class='text-muted'>".$row['MESSAGE']."</p>";
-									echo "<h4  style='text-align:right; color:#009745;'>".$row['DATE']."</h4></div></li>";
+									$originalDate = $row['DATE'];
+									$newDate = date("d F l Y", strtotime($originalDate));
+									
+									$ing_aylar = array("January","February","March","May","April","June","July","August","September","October","November","December");
+									    $tr_aylar = array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");
+									    
+									    $ing_gunler = array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
+									    $tr_gunler = array("Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar");
+									    $newDate = str_replace($ing_aylar,$tr_aylar,$newDate);
+									    $newDate = str_replace($ing_gunler,$tr_gunler,$newDate);
+
+									echo "<h4  style='text-align:right; color:#009745;'>".$newDate."</h4></div></li>";
+  
+
 			
 								        }
 
