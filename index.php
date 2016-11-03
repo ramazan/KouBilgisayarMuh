@@ -600,7 +600,20 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
 									echo "<p class='text-muted'>".$row['MESSAGE']."</p>";
 
 							  
-						 echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
+						 					$originalDate = $row['DATE'];
+									$newDate = date("d F l", strtotime($originalDate));
+									
+									$ing_aylar = array("January","February","March","May","April","June","July","August","September","October","November","December");
+									    $tr_aylar = array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");
+									    
+									    $ing_gunler = array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
+									    $tr_gunler = array("Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar");
+									    $newDate = str_replace($ing_aylar,$tr_aylar,$newDate);
+									    $newDate = str_replace($ing_gunler,$tr_gunler,$newDate);
+
+									echo "<h4  style='text-align:right; color:#009745;'>".$newDate."</h4></div></li>";
+
+									echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
                     <div class='modal-dialog'>
                       <div class='modal-content'>
                         <div class='modal-header' style='background-color: #009E49;'>
@@ -616,21 +629,6 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
                           echo " <div class='modal-footer'>
                           <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
                         </div></div></div></div></div>";
-
-
-
-									$originalDate = $row['DATE'];
-									$newDate = date("d F l", strtotime($originalDate));
-									
-									$ing_aylar = array("January","February","March","May","April","June","July","August","September","October","November","December");
-									    $tr_aylar = array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");
-									    
-									    $ing_gunler = array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
-									    $tr_gunler = array("Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar");
-									    $newDate = str_replace($ing_aylar,$tr_aylar,$newDate);
-									    $newDate = str_replace($ing_gunler,$tr_gunler,$newDate);
-
-									echo "<h4  style='text-align:right; color:#009745;'>".$newDate."</h4></div></li>";
   
 
 			
