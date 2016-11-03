@@ -434,6 +434,8 @@
                           echo " <div class='modal-footer'>
                           <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
                         </div></div></div></div></div>";
+
+
                         echo "<div class='timeline-body'><p class='text-muted'>".$row['MESSAGE']."<br /></p></div>";
 
 								  echo "<div class='timeline-heading'><h5 class='subheading'>".$row['NAME']."</h5></div></div></li>";
@@ -593,8 +595,30 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
 									echo "<li class='list-group-item'><div class='team-member'>";
 								        	}
 								$sayac++;
-									echo "<h3 style='margin: 0 0 5px 0;'><a href='#' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']." </a></h3>";
+									
+								echo "<h3 style='margin: 0 0 5px 0;'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']." </a></h3>";
 									echo "<p class='text-muted'>".$row['MESSAGE']."</p>";
+
+							  
+						 echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
+                    <div class='modal-dialog'>
+                      <div class='modal-content'>
+                        <div class='modal-header' style='background-color: #009E49;'>
+                          <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>×</span><span class='sr-only'>Close</span></button>
+                          <h4 style='color:white;' class='modal-title' id='myModalLabel'>";
+                          echo "<div>".$row['TITLE']."</div></h4></div>";
+                          
+                          $bosluk = array("\n","/g");
+                          $row['MESSAGE'] = str_replace($bosluk, "<br />", $row['MESSAGE']); 
+
+                          echo " <div class='modal-body'>
+                          <div class='duyuruMetni'>".$row['MESSAGE']."</div>";
+                          echo " <div class='modal-footer'>
+                          <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
+                        </div></div></div></div></div>";
+
+
+
 									$originalDate = $row['DATE'];
 									$newDate = date("d F l", strtotime($originalDate));
 									
@@ -652,43 +676,107 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
             </div>
             <div class="col-sm-12" style="    background-clip: content-box; background-color: #fff">
 
+<?php
 
-                <div class="col-sm-3 news-item">
-  <div class="news-img">
-    <a href="http://news.stanford.edu/2016/10/26/super-emitters-responsible-bulk-u-s-methane-emissions/" class="su-link" data-ua-action="hp-news" title="Photo Credit: Shutterstock"><img src="https://www.ceu.edu/sites/default/files/main_image/basic_page/85/students.jpg" class="img-responsive" alt="Natural gas field" /></a>
-  </div>
-  <div class="news-text">
-    <h3><a href="http://news.stanford.edu/2016/10/26/super-emitters-responsible-bulk-u-s-methane-emissions/" class="su-link" data-ua-action="hp-news">2016-2017 Vize Sınavları Hk.</a></h3>
-    <p>Bölümümüz 2016-2017 Vize Sınav Programı ektedir.</p>
-  </div>
-</div>
-                        <div class="col-sm-3 news-item">
-  <div class="news-img">
-    <a href="http://news.stanford.edu/2016/10/26/super-emitters-responsible-bulk-u-s-methane-emissions/" class="su-link" data-ua-action="hp-news" title="Photo Credit: Shutterstock"><img src="http://www.stanford.edu/rw_includes/homepage/images/2016-10-25_cooperation_home.jpg" class="img-responsive" alt="Natural gas field" /></a>
-  </div>
-  <div class="news-text">
-    <h3><a href="http://news.stanford.edu/2016/10/26/super-emitters-responsible-bulk-u-s-methane-emissions/" class="su-link" data-ua-action="hp-news">2016-2017 Güz Dönemi Lisans Ders Programları</a></h3>
-    <p>2016-2017 Eğitim-Öğretim yılında Fakültenize Yüksekokulunuza...</p>
-  </div>
-</div>
-                             <div class="col-sm-3 news-item">
-  <div class="news-img">
-    <a href="http://news.stanford.edu/2016/10/26/super-emitters-responsible-bulk-u-s-methane-emissions/" class="su-link" data-ua-action="hp-news" title="Photo Credit: Shutterstock"><img src="http://www.davevoyles.com/wp-content/uploads/2015/01/Microsoft-Students.jpg" class="img-responsive" alt="Natural gas field" /></a>
-  </div>
-  <div class="news-text">
-    <h3><a href="http://news.stanford.edu/2016/10/26/super-emitters-responsible-bulk-u-s-methane-emissions/" class="su-link" data-ua-action="hp-news">Microsoft Dreamspark Üyeliği Hakk.</a></h3>
-    <p>Bir çok Microsoft ürününü ücretsiz indirebileceğiniz Microsoft Dreamspark...</p>
-  </div>
- 
-</div>
+
+						if($con === false){
+					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
+						}
+
+								 	#Sorgu yapılıyor..
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Haber' LIMIT 3;";
+
+								if($result = mysqli_query($con, $sql)){
+								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
+										$sayac=1;
+								        while($row = mysqli_fetch_array($result)){
+								        	
+								      	echo "  <div class='col-sm-3 news-item'> <div class='news-img'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'><img src='".$row['RESIM_LINK']."' 
+								      		class='img-responsive'/></a></div>";
+
+
+						      		echo " <div class='news-text'><h3><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'>".$row['TITLE']."</a></h3>";
+						      		echo " <p><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'>".$row['MESSAGE']."</a></p></div></div>";
+
+						 echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
+                    <div class='modal-dialog'>
+                      <div class='modal-content'>
+                        <div class='modal-header' style='background-color: #009E49;'>
+                          <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>×</span><span class='sr-only'>Close</span></button>
+                          <h4 style='color:white;' class='modal-title' id='myModalLabel'>";
+                          echo "<div>".$row['TITLE']."</div></h4></div>";
+                          
+                          $bosluk = array("\n","/g");
+                          $row['MESSAGE'] = str_replace($bosluk, "<br />", $row['MESSAGE']); 
+
+                          echo " <div class='modal-body'>
+                          <div class='duyuruMetni'>".$row['MESSAGE']."</div>";
+                          echo " <div class='modal-footer'>
+                          <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
+                        </div></div></div></div></div>";
+			
+								        }
+
+
+								        mysqli_free_result($result);
+								    } else{
+								        echo "Aranan kayıtlar bulunamadı :( .";
+								    }
+								} else{
+								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
+								}						
+			
+	?>
 <div class="col-sm-3" id="more-news">
             <h4 style="color: #5cb85c">Daha Fazla Haber</h4>
             <ul>
-              <!-- More Headlines include file --> 
-              <li><a style="    font-size: 14px; font-weight: 700;" class="su-link"  data-ua-action="hp-news" data-ua-label="How+physicians+can+handle+discrimination+by+patients%2C+families">İngilizce Muafiyet Sınav Sonuçları</a></li>
-			 <li><a  style="    font-size: 14px; font-weight: 700;" class="su-link"  >15 Temmuz Dayanışma Kampanyası</a></li>
-			 <li><a  style="    font-size: 14px; font-weight: 700;" class="su-link" >2016-2017 Güz Dönemi Lisans Ders Programları</a></li>
+             <?php
 
+
+						if($con === false){
+					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
+						}
+
+								 	#Sorgu yapılıyor..
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Haber' LIMIT 3 OFFSET 3;";
+
+								if($result = mysqli_query($con, $sql)){
+								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
+										$sayac=1;
+								        while($row = mysqli_fetch_array($result)){
+								      
+echo "<li><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' style='font-size: 14px; font-weight: 700;' class='su-link'  data-ua-action='hp-news'>".$row['TITLE']."</a></li>";
+			
+
+						 echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
+                    <div class='modal-dialog'>
+                      <div class='modal-content'>
+                        <div class='modal-header' style='background-color: #009E49;'>
+                          <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>×</span><span class='sr-only'>Close</span></button>
+                          <h4 style='color:white;' class='modal-title' id='myModalLabel'>";
+                          echo "<div>".$row['TITLE']."</div></h4></div>";
+                          
+                          $bosluk = array("\n","/g");
+                          $row['MESSAGE'] = str_replace($bosluk, "<br />", $row['MESSAGE']); 
+
+                          echo " <div class='modal-body'>
+                          <div class='duyuruMetni'>".$row['MESSAGE']."</div>";
+                          echo " <div class='modal-footer'>
+                          <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
+                        </div></div></div></div></div>";
+			
+								        }
+
+
+								        mysqli_free_result($result);
+								    } else{
+								        echo "Aranan kayıtlar bulunamadı :( .";
+								    }
+								} else{
+								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
+								}						
+			
+	?>
 
             </ul>
             <p class="more-link"><a href="http://news.stanford.edu" class="su-link" data-ua-action="news.stanford.edu"><i class="fa fa-chevron-circle-right"></i> <span>Tümü</span></a></p>
