@@ -405,8 +405,9 @@ $("#LinkEkleButton").click(function(){
     }else{
 
 
-    var linkOlustur = "<a href=\""+link+"\" target=\"_blank\">"+linkAdi+"</a>";
+    var linkOlustur = "<br>Ek : <a style=\"color:#428bca\" href=\""+link+"\" target=\"_blank\">"+linkAdi+"</a>";
 
+console.log(linkOlustur);
     var mesaj =$("#duyuruIcerigi").val();
 
     var yeniMesaj = mesaj + linkOlustur;

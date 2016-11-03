@@ -199,42 +199,57 @@
     				<div id="myCarousel" class="carousel slide"  data-ride="carousel" style="border: 3px solid #d9d4c6;" >
 				  <div class="carousel-inner"  role="listbox" style="border: 1px solid #fff; background-color:#d9d4c6">
 				   
-				    <div class="item active" style="height:310px; background-color:#d9d4c6" >
-				      <img src="http://bilgisayar.kocaeli.edu.tr/img/slider/30_SantekAna.jpg" width="1100" height="400" alt="">
-				      <div class="carousel-caption">
-				      <h3 style="font-size: 20px">Ar-ge Proje Pazarı Tübitak Projesinde Üçüncülük Ödülü </h3>
-				      <p>PMI (Project Magement Institute) Türkiye Ve Kocaeli Üniversitesi işbirliği ile düzenenecek PMI-TR ve Proje Yönetimine Giriş Ve Tanıtım Etkinliğine tüm öğrencilerimiz davetlidir.</p>
-				      </div>
-				    </div>
+				    
+<?php
 
-				    <div class="item" style="height:310px; background-color:#d9d4c6">
-				      <img src="http://bilgisayar.kocaeli.edu.tr/img/slider/8_80_Tubitak02.jpg" width="1100" height="400"  alt="Chania">
-				      <div class="carousel-caption">
-				      <h3 style="font-size: 20px">Öğrencilerimizin Projelerinin Tübitak Başarısı  </h3>
-				      				      <p>PMI (Project Magement Institute) Türkiye Ve Kocaeli Üniversitesi işbirliği ile düzenenecek PMI-TR ve Proje Yönetimine Giriş Ve Tanıtım Etkinliğine tüm öğrencilerimiz davetlidir.</p>
+						if($con === false){
+					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
+						}
 
-				      </div>
-				    </div>
-				      
-				    <div class="item" style="height:310px; background-color:#d9d4c6">
-				      <img src="http://bilgisayar.kocaeli.edu.tr/img/slider/37_CepGozAna.jpg" width="1100" height="400" alt="Flower">
-				      <div class="carousel-caption">
-				      <h3 style="font-size: 20px">PMI-TR ve Proje Yönetimine Giriş Tanıtım Etkinliği </h3>
-				      				      <p>PMI (Project Magement Institute) Türkiye Ve Kocaeli Üniversitesi işbirliği ile düzenenecek PMI-TR ve Proje Yönetimine Giriş Ve Tanıtım Etkinliğine tüm öğrencilerimiz davetlidir.</p>
+								 	#Sorgu yapılıyor..
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Slider';";
 
-				      </div>
-				    </div>
+								if($result = mysqli_query($con, $sql)){
+								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
+										
+										 $sayac=0;
+								        while($row = mysqli_fetch_array($result)){
+								        	if($sayac==0){
+								        	echo "<div class='item active' style='height:310px; background-color:#d9d4c6'>";
+								        	$sayac=1;
+								        	}else{
+								       			echo "<div class='item' style='height:310px; background-color:#d9d4c6'>";
+
+								        	}
+
+								        	echo "<img src=".$row['RESIM_LINK']." width='1100' height='400' alt=''>";
+								        	echo "<div class='carousel-caption'>";
+								        	echo " <h3 style='font-size: 20px'>".$row['TITLE']."</h3>";
+								        	echo "<p>".$row['MESSAGE']."</p> </div></div>";
+			
+								        }
+
+
+								        mysqli_free_result($result);
+								    } else{
+								        echo "Aranan kayıtlar bulunamadı :( .";
+								    }
+								} else{
+								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
+								}						
+			
+					?>
 
   					</div>
 
 					  <!-- Controls -->
 					  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					    <span class="sr-only">Previous</span>
+					    <span class="sr-only">Önceki</span>
 					  </a>
 					  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
 					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					    <span class="sr-only">Next</span>
+					    <span class="sr-only">Sonraki</span>
 					  </a>
 					</div>
 					
@@ -249,92 +264,87 @@
     			<ul class="list-group">
 			  <li class="list-group-item">
 			  <div >
-    			<h4>Genel Duyurular<span class="badge" style="float:right; " >57</span></h4>
+    			<h4>Genel Duyurular<span class="badge" style="float:right; " ><?php 
+
+			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'Genel';");
+			   
+			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+
+    			echo $row['sayi'] ?></span></h4>
     			</div>
 			  </li>
 			   <li class="list-group-item" >
 			  <ul class="timeline">
 
-			<li class="timeline-inverted">
+			
+<?php
 
-				<div class="timeline-image" style="border-radius: 50%;">
+						if($con === false){
+					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
+						}
 
-					<h4>
-						Sayısal  <br /> Yöntemler<br /> 2016
-					</h4>
+								 	#Sorgu yapılıyor..
+							$sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DUYURU_TURU,announcements.DATE , announcements.ID	FROM announcements INNER JOIN users ON users.ID=announcements.USER_ID WHERE DUYURU_TURU='Genel' ORDER BY ID DESC LIMIT 3;";
 
-				</div>
-				<div class="timeline-panel">
+								if($result = mysqli_query($con, $sql)){
+								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
+										
+								        while($row = mysqli_fetch_array($result)){
 
-					<div class="timeline-heading">
-						<h4>Bana Acil Ulaşın diyorum size siz kim siniz</h4>
 
-					</div>
-					<div class="timeline-body">
-						<p class="text-muted">
-							Mobil proglama dersini benden alanlar...<br />
-						</p>
+								      echo "<li class='timeline-inverted'><div class='timeline-image' style='border-radius: 50%;'>";
+								    	
+									$originalDate = $row['DATE'];
+									$newDateDay = date("d", strtotime($originalDate));
+									$newDateMonth = date("F", strtotime($originalDate));
+									$newDateYear = date("Y", strtotime($originalDate));
+									
+									$ing_aylar = array("January","February","March","May","April","June","July","August","September","October","November","December");
+									    $tr_aylar = array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");
 
-					</div>
-					<div class="timeline-heading">
-						<h5 class="subheading">Yrd.Doç.Dr Burak İnner</h5>
+									    $newDateMonth = str_replace($ing_aylar,$tr_aylar,$newDateMonth);
 
-					</div>
-				</div>
-			</li>
-			<li class="timeline-inverted" style="margin-top: 30px;">
-				<div class="timeline-image" style="border-radius: 50%;">
-					<h4>
-						15 <br>Agustos <br>2016
-					</h4>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4>Sunumalarını Bana Yapacak Ogrencilerin Dikkatine</h4>
-					</div>
-					<div class="timeline-body">
-						<p class="text-muted">Staj sunumları ekte bulunan listedeki
-							sıraya göre ...</p>
-					</div>
-					<div class="timeline-heading">
-						<h5 class="subheading">Arş.Göv. Furkan Göz</h5>
-					</div>
-			</li>
-			<li class="timeline-inverted" style="margin-top: 30px;">
-				<div class="timeline-image" style="border-radius: 50%;">
-					<h4>
-						15 <br> Aralık <br>2016
-					</h4>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4>Kendinize gelin artık ders çalışın</h4>
-					</div>
-					<div class="timeline-body">
-						<p class="text-muted">Staj sunumları ekte bulunan listedeki
-							sıraya göre ...</p>
-					</div>
-					<div class="timeline-heading">
-						<h5 class="subheading">Arş.Göv. Furkan Göz</h5>
-					</div>
-			</li>
-			<li class="timeline-inverted" style="margin-top: 30px;">
-				<div class="timeline-image" style="border-radius:50%;">
-					<h4>
-						24 <br> Ocak <br>2016
-					</h4>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4>Sordum sarı çiceğe annen baban var mıdır diye ?</h4>
-					</div>
-					<div class="timeline-body">
-						<p class="text-muted">Çiçek yemil kafayı sen ne yaparsan boş...</p>
-					</div>
-					<div class="timeline-heading">
-						<h5 class="subheading">Arş.Göv. Furkan Göz</h5>
-					</div>
-			</li>
+								       echo "<h4>".$newDateDay."</br>".$newDateMonth."</br>".$newDateYear."</h4></div>"; 		
+
+								  //echo "<div class='timeline-panel'><div class='timeline-heading'><h4>".$row['TITLE']."</h4></div>";
+
+
+  			echo "<div class='timeline-panel'><div class='timeline-heading'>
+					 <a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."'><h4>".$row['TITLE']."</h4></a>";
+
+
+						 echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
+                    <div class='modal-dialog'>
+                      <div class='modal-content'>
+                        <div class='modal-header' style='background-color: #009E49;'>
+                          <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>×</span><span class='sr-only'>Close</span></button>
+                          <h4 style='color:white;' class='modal-title' id='myModalLabel'>";
+                          echo "<div>".$row['TITLE']."</div></h4></div>";
+                          
+                          $bosluk = array("\n","/g");
+                          $row['MESSAGE'] = str_replace($bosluk, "<br />", $row['MESSAGE']); 
+
+                          echo " <div class='modal-body'>
+                          <div class='duyuruMetni'>".$row['MESSAGE']."</div>";
+                          echo " <div class='modal-footer'>
+                          <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
+                        </div></div></div></div></div>";
+                        echo "<div class='timeline-body'><p class='text-muted'>".$row['MESSAGE']."<br /></p></div>";
+
+								  echo "<div class='timeline-heading'><h5 class='subheading'>".$row['NAME']."</h5></div></div></li>";
+			
+								    }
+
+
+								        mysqli_free_result($result);
+								    } else{
+								        echo "Aranan kayıtlar bulunamadı :( .";
+								    }
+								} else{
+								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
+								}						
+			
+	?>
 
 		</ul>
 		<div align="center">
@@ -360,91 +370,89 @@
     			<ul class="list-group">
 			  <li class="list-group-item" >
 			  <div >
-    			<h4>Bölüm Duyuruları<span class="badge" style="float:right;" >28</span></h4>
+    			<h4>Bölüm Duyuruları<span class="badge" style="float:right;" ><?php 
+
+			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'Bolum';");
+			   
+			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+
+    			echo $row['sayi'] ?></span></h4>
     			</div>
 			  </li>
 			   <li class="list-group-item" >
 			  <ul class="timeline">
 
-			<li class="timeline-inverted">
+			<?php
 
-				<div class="timeline-image">
+						if($con === false){
+					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
+						}
 
-					<h4>
-						29 <br /> Agustos <br /> 2016
-					</h4>
+								 	#Sorgu yapılıyor..
+							$sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DUYURU_TURU,announcements.DATE , announcements.ID	FROM announcements INNER JOIN users ON users.ID=announcements.USER_ID WHERE DUYURU_TURU='Bolum' ORDER BY ID DESC;";
 
-				</div>
-				<div class="timeline-panel">
+								if($result = mysqli_query($con, $sql)){
+								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
+										
+								        while($row = mysqli_fetch_array($result)){
 
-					<div class="timeline-heading">
-						<h4>Edestek.kocaeli.edu.tr Sistemini Kullandığım Dersleri Alan Öğrencilerin Dikkatine </h4>
 
-					</div>
-					<div class="timeline-body">
-						<p class="text-muted">
-							Mobil proglama dersini benden alanlar...<br />
-						</p>
+								      echo "<li class='timeline-inverted'><div class='timeline-image' style='border-radius: 50%;'>";
+								    	
+									$originalDate = $row['DATE'];
+									$newDateDay = date("d", strtotime($originalDate));
+									$newDateMonth = date("F", strtotime($originalDate));
+									$newDateYear = date("Y", strtotime($originalDate));
+									
+									$ing_aylar = array("January","February","March","May","April","June","July","August","September","October","November","December");
+									    $tr_aylar = array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");
 
-					</div>
-					<div class="timeline-heading">
-						<h5 class="subheading">Yrd.Doç.Dr Burak İnner</h5>
+									    $newDateMonth = str_replace($ing_aylar,$tr_aylar,$newDateMonth);
 
-					</div>
-				</div>
-			</li>
-			<li class="timeline-inverted" style="margin-top: 30px;">
-				<div class="timeline-image">
-					<h4>
-						4 <br> Nisan <br>2016
-					</h4>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4>Dünyaya geldiğim anda !</h4>
-					</div>
-					<div class="timeline-body">
-						<p class="text-muted">İki kapılı bir handa gidiyorum gündüz gece</p>
-					</div>
-					<div class="timeline-heading">
-						<h5 class="subheading">Arş.Göv. Furkan Göz</h5>
-					</div>
-			</li>
-			<li class="timeline-inverted" style="margin-top: 30px;">
-				<div class="timeline-image">
-					<h4>
-						15 <br>Mart <br>2016
-					</h4>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4>Uzun ince bir yoldayım Gidiyorum Gündüz gece</h4>
-					</div>
-					<div class="timeline-body">
-						<p class="text-muted">Bilmiyorum ne haldayım gidiyorum gündüz gece...</p>
-					</div>
-					<div class="timeline-heading">
-						<h5 class="subheading">Arş.Göv. Furkan Göz</h5>
-					</div>
-			</li>
-			<li class="timeline-inverted" style="margin-top: 30px;">
-				<div class="timeline-image">
-					<h4>
-						15 <br>Agustos <br>2016
-					</h4>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4>Sunumalarını Bana Yapacak Ogrencilerin Dikkatine</h4>
-					</div>
-					<div class="timeline-body">
-						<p class="text-muted">Staj sunumları ekte bulunan listedeki
-							sıraya göre ...</p>
-					</div>
-					<div class="timeline-heading">
-						<h5 class="subheading">Arş.Göv. Furkan Göz</h5>
-					</div>
-			</li>
+								       echo "<h4>".$newDateDay."</br>".$newDateMonth."</br>".$newDateYear."</h4></div>"; 		
+
+								  //echo "<div class='timeline-panel'><div class='timeline-heading'><h4>".$row['TITLE']."</h4></div>";
+
+
+  			echo "<div class='timeline-panel'><div class='timeline-heading'>
+					 <a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."'><h4>".$row['TITLE']."</h4></a>";
+
+
+						 echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
+                    <div class='modal-dialog'>
+                      <div class='modal-content'>
+                        <div class='modal-header' style='background-color: #009E49;'>
+                          <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>×</span><span class='sr-only'>Close</span></button>
+                          <h4 style='color:white;' class='modal-title' id='myModalLabel'>";
+                          echo "<div>".$row['TITLE']."</div></h4></div>";
+                          
+                          $bosluk = array("\n","/g");
+                          $row['MESSAGE'] = str_replace($bosluk, "<br />", $row['MESSAGE']); 
+
+                          echo " <div class='modal-body'>
+                          <div class='duyuruMetni'>".$row['MESSAGE']."</div>";
+                          echo " <div class='modal-footer'>
+                          <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
+                        </div></div></div></div></div>";
+                        echo "<div class='timeline-body'><p class='text-muted'>".$row['MESSAGE']."<br /></p></div>";
+
+								  echo "<div class='timeline-heading'><h5 class='subheading'>".$row['NAME']."</h5></div></div></li>";
+			
+								    }
+
+
+								        mysqli_free_result($result);
+								    } else{
+								        echo "Aranan kayıtlar bulunamadı :( .";
+								    }
+								} else{
+								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
+								}						
+			
+	?>
+
+	
+			
 		</ul>
 		<div align="center">
 			<ul class="zundi">
@@ -473,74 +481,74 @@
 			  <ul class="list-group">
 			  <li class="list-group-item" >
     			 <div >
-    			<h4>Etkinlikler <span class="badge" style="float:right;" >28</span></h4>
+    			<h4>Etkinlikler <span class="badge" style="float:right;" ><?php 
+
+			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'Etkinlik';");
+			   
+			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+
+    			echo $row['sayi'] ?></span></h4>
     			</div>
 			  </li>
-			   <li class="list-group-item" >
-					                 
-					<div class="event postcard-left">
-					<div class="event-date">
-					<span class="event-month">agu</span> <span class="event-day">7</span>
-					</div>
-					<div class="event-text">
-					<h3 style="margin: 0 0 5px 0;"><a href="http://events.stanford.edu/events/606/60641/" class="su-link" data-ua-action="hp-event" data-ua-label="id ">PMI-TR ve Proje Yönetimine Giriş Tanıtım Etkinliği</a></h3>
-					<p class="timestamp">11.00 - 17.00 arası</p>
-					</div>
-					</div>
+			           <?php
 
-			</li>
-		<li class="list-group-item" style="background: #ebf9e0;">
-					                 
-					<div class="event postcard-left">
-					<div class="event-date">
-					<span class="event-month">eyl</span> <span class="event-day">31</span>
-					</div>
-					<div class="event-text">
-					<h3 style="margin: 0 0 5px 0;"><a href="http://events.stanford.edu/events/606/60641/" class="su-link" data-ua-action="hp-event" data-ua-label="id ">CBD 2016: Carillon Concert and Quiet Contemplation</a></h3>
-					<p class="timestamp">12.00 - 16.00 arası</p>
-					</div>
-					</div>
 
-			</li>
-			<li class="list-group-item" >
-					                 
-					<div class="event postcard-left">
-					<div class="event-date">
-					<span class="event-month">Eki</span> <span class="event-day">4</span>
-					</div>
-					<div class="event-text">
-					<h3 style="margin: 0 0 5px 0;"><a href="http://events.stanford.edu/events/606/60641/" class="su-link" data-ua-action="hp-event" data-ua-label="id ">Tek Sağlık Olmadan Sağlıklı Dünya Mümkün müdür ? </a></h3>
-					<p class="timestamp">Konferans - 15:00</p>
-					</div>
-					</div>
+						if($con === false){
+					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
+						}
 
-			</li>
-			<li class="list-group-item" style="background: #ebf9e0;">
-					                 
-					<div class="event postcard-left">
-					<div class="event-date">
-					<span class="event-month">Eki</span> <span class="event-day">12</span>
-					</div>
-					<div class="event-text">
-					<h3 style="margin: 0 0 5px 0;"><a href="http://events.stanford.edu/events/606/60641/" class="su-link" data-ua-action="hp-event" data-ua-label="id ">Google Devfest Yarışması Kendimize Gelelim</a></h3>
-					<p class="timestamp">12 p.m.</p>
-					</div>
-					</div>
+								 	#Sorgu yapılıyor..
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Etkinlik';";
 
-			</li>
-			<li class="list-group-item" >
-					                 
-					<div class="event postcard-left">
-					<div class="event-date">
-					<span class="event-month">oca</span> <span class="event-day">8</span>
-					</div>
-					<div class="event-text">
-					<h3 style="margin: 0 0 5px 0;"><a href="http://events.stanford.edu/events/606/60641/" class="su-link" data-ua-action="hp-event" data-ua-label="id ">Öğretmen Adayları İçin Barış Eğitimi </a></h3>
-					<p class="timestamp">30 Ocak » 11:00 - 04 Şubat » 17:00</p>
-					</div>
-					</div>
+								if($result = mysqli_query($con, $sql)){
+								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
+										$sayac=1;
+								        while($row = mysqli_fetch_array($result)){
+								        	if($sayac%2==0){
+								        		echo "<li class='list-group-item' style='background: #ebf9e0;'>";
+								        	}else{
+								        		echo "<li class='list-group-item'>";
+								        	}
+								        	$sayac++;
+								      echo "<div class='event postcard-left'><div class='event-date'>
+								      <span class='event-month'>".$row['ETKINLIK_AY']."</span>
+								       <span class='event-day'>".$row['ETKINLIK_GUN']."</span></div>";
+								    	
+							
 
-			</li>
+echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']."</a></h3><p class='timestamp'>".$row['MESSAGE']."</p></div></div></li>";
+
+
+
+						 echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
+                    <div class='modal-dialog'>
+                      <div class='modal-content'>
+                        <div class='modal-header' style='background-color: #009E49;'>
+                          <button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>×</span><span class='sr-only'>Close</span></button>
+                          <h4 style='color:white;' class='modal-title' id='myModalLabel'>";
+                          echo "<div>".$row['TITLE']."</div></h4></div>";
+                          
+                          $bosluk = array("\n","/g");
+                          $row['MESSAGE'] = str_replace($bosluk, "<br />", $row['MESSAGE']); 
+
+                          echo " <div class='modal-body'>
+                          <div class='duyuruMetni'>".$row['MESSAGE']."</div>";
+                          echo " <div class='modal-footer'>
+                          <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
+                        </div></div></div></div></div>";
+			
+								        }
+
+
+								        mysqli_free_result($result);
+								    } else{
+								        echo "Aranan kayıtlar bulunamadı :( .";
+								    }
+								} else{
+								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
+								}						
+			
+	?>
 			  
 
 			  <li class="list-group-item" >
@@ -554,7 +562,13 @@
     					    				 <ul class="list-group">
 			  <li class="list-group-item" >
 			  <div >
-    			<h4>İş-Staj İlanları<span class="badge" style="float:right;" >4</span></h4>
+    			<h4>İş-Staj İlanları<span class="badge" style="float:right;" ><?php 
+
+			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'is-staj';");
+			   
+			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+
+    			echo $row['sayi'] ?></span></h4>
     			</div>
 			  </li>
 					<?php
@@ -564,14 +578,21 @@
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='is-staj';";
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='is-staj' LIMIT 3";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
-										
+										$sayac=1;
 								        while($row = mysqli_fetch_array($result)){
-									echo "<li class='list-group-item' style='background: #ebf9e0;'><div class='team-member'>";
-								
+								        	if($sayac%2==0){
+								       	echo "<li class='list-group-item' style='background: #ebf9e0;'><div class='team-member'>";
+
+								        	}else
+								        	{
+
+									echo "<li class='list-group-item'><div class='team-member'>";
+								        	}
+								$sayac++;
 									echo "<h3 style='margin: 0 0 5px 0;'><a href='#' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']." </a></h3>";
 									echo "<p class='text-muted'>".$row['MESSAGE']."</p>";
 									$originalDate = $row['DATE'];
@@ -620,7 +641,13 @@
     		<div class="row" >
     			 <div class="col-sm-12" style="    background-clip: content-box; background-color: #fff; " >
 
-                <h4  style="border-bottom: 1px solid #d5d0c0;color:#820000;margin-left: 12px;margin-right:10px;font-size: 20px">Haberler<span class="badge" style="float:right;margin-right:10px ">57<br/></span></h3>
+                <h4  style="border-bottom: 1px solid #d5d0c0;color:#820000;margin-left: 12px;margin-right:10px;font-size: 20px">Haberler<span class="badge" style="float:right;margin-right:10px "><?php 
+
+			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'Haber';");
+			   
+			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+
+    			echo $row['sayi'] ?><br/></span></h3>
                 <br/>
             </div>
             <div class="col-sm-12" style="    background-clip: content-box; background-color: #fff">
@@ -781,7 +808,7 @@
 		    							</div>                		
 						</div> <!-- end #inner-footer -->								
 					</footer> <!-- end .footer -->
-
+	
 </body>
 
 </html>
