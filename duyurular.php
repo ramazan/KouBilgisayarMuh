@@ -14,7 +14,7 @@
 		    </script>
 				<div class="row">
                 <div class="col-lg-12" style="margin-top: 15px">
-                <button  class='btn btn-success' onclick='duyuruEkle()'><span class='glyphicon glyphicon-plus'></span> Duyuru Ekle</button>
+                <button  class='btn btn-success' onclick='duyuruEkle()'><i class="fa fa-plus"></i> Duyuru Ekle</button>
                 <br/>
                 <br/>
              			<div class="panel panel-default">

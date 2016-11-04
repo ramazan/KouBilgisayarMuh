@@ -74,7 +74,7 @@ function profilGoster() {
 
 function kullaniciDivGizle() {
   
-  console.log( "user giris yaptı pnp! Kullanıcılar Sekmesi gizlendi!" );
+  console.log( "user giris yaptı , Kullanıcılar Sekmesi gizlendi!" );
   $("#side-menu > #nav_users").hide();
     $('#users_page').hide();
 
@@ -84,7 +84,6 @@ function kullaniciDivGizle() {
 
 function kullaniciEkle(){
   $('#kullanici_ekle_modal').modal('show');
-
 }
 
 
@@ -96,12 +95,15 @@ function KullaniciSil(ID){
  // console.log("siilinecek ID : " + ID);
     $('#KullaniciSilModal').modal('show');
     $('#kullaniciSilMesaj').text("Emin misiniz?");
-     console.log(" ID : " + ID);
-
+ 
+      console.log(" silinecek kullanıcı ID : " + ID);
+      
     $("#kullaniciSilButton").click(function(){
-        console.log(" ID : " + ID);
 
         var dataString = 'ID=' + ID; 
+
+        console.log("dataString: " + dataString);
+
          $.ajax({
             type: "POST",
             url: "kullaniciSil.php",
@@ -120,7 +122,7 @@ function KullaniciSil(ID){
         }, 2000);
       },
       error: function() {
-        alert("sictik pnp");
+        alert("Bi' şeyler ters gitti..");
       }
             });
 
@@ -131,22 +133,21 @@ function KullaniciSil(ID){
 
 
 $("#profileGuncelle").click(function(){
-      var password = $("#user_new_pass").val();
-      var password_again = $("#user_new_pass_c").val();
+      var yeniSifre = $("#yeni_sifre").val();
+      var yeniSifreTekrar = $("#yeni_sifre_tekrar").val();
 
-      
-       var dataString = 'password='+ password;
-
-        if(password=='' || password_again=='')
-        {
-            $("#pass_validate").text("Şifre Boş");
+       if(yeniSifre=="" || yeniSifreTekrar =="" ){
+        $("#profile_update_alert").show();
+        $("#pass_validate").text("Lütfen Bütün Alanları Doldurun!");
         }
-        else if(password != password_again){
-          $("pass_validate").text("Şifreler Eşleşmiyor!");
+        else if(yeniSifre != yeniSifreTekrar){
+          $("#profile_update_alert").show();
+          $("#pass_validate").text("Şifreler Eşleşmiyor!");
         }
         else
         {
-          // AJAX Code To Submit Form.
+          var dataString = 'password='+ yeniSifre;
+
           $.ajax({
           type: "POST",
           url: "sifredegistir.php",
@@ -156,14 +157,14 @@ $("#profileGuncelle").click(function(){
             $("#profile_update_alert").show();
             $("#pass_validate").text("Şifre değişti!");
             setTimeout(function() {
-              $("#user_new_pass").val("");
-              $("#user_new_pass_c").val("");
+              $("#yeni_sifre").val("");
+              $("#yeni_sifre_tekrar").val("");
             $("#profile_update_alert").hide();
       }, 3000);
     },
     error: function() {
-      $("#pass_validate").text("Boku yedik!");
-      alert("sictik pnp");
+      $("#pass_validate").text("Bi' şeyler ters gitti..");
+      alert("Bi' şeyler ters gitti..");
     }
           });
     }
@@ -225,7 +226,7 @@ $("#kullaniciKaydetButton").click(function(){
       }, 2500);
     },
     error: function() {
-      $("#kullaniciEkleMesaj").text("Boku yedik!");
+      $("#kullaniciEkleMesaj").text("Bi' şeyler ters gitti..");
     }
           });
   }
@@ -298,18 +299,14 @@ $("#duyuruKaydetButton").click(function(){
 
     }    
 	
-	else if ($("#is-stajDuyuru").is(":checked")) {
+    	else if ($("#is-stajDuyuru").is(":checked")) {
 
-      duyuruTuru = "is-staj";
-     
-     
-      var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
-       duyuruAjaxPost(dataString);
-      
-
-    }  
-	
-	
+        duyuruTuru = "is-staj";
+       
+       
+        var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
+         duyuruAjaxPost(dataString);
+      }  
 	
 
   }  // içerik else
@@ -327,7 +324,7 @@ function duyuruAjaxPost(dataString){
           data: dataString,
           cache: false,
             success: function() {
-             $("#duyuruEkleMesaj").find(".label-danger").addClass("label-success").removeClass("label-danger");
+           $("#duyuruEkleDiv").find(".label-danger").addClass("label-success").removeClass("label-danger");
 
             $("#duyuruEkleMesaj").text("Duyuru eklendi.");
             $("#duyuruEkleMesaj").show();
@@ -345,7 +342,7 @@ function duyuruAjaxPost(dataString){
                }, 2500);
              },
             error: function() {
-              $("#duyuruEkleMesaj").text("Boku yedik!");
+              $("#duyuruEkleMesaj").text("Bi' şeyler ters gitti..");
             }
     });
 }
@@ -378,7 +375,7 @@ function duyuruSil(ID){
             }, 2000);
           },
           error: function() {
-            alert("sictik pnp");
+            alert("Bi' şeyler ters gitti..");
           }
                 });
 

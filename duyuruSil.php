@@ -1,6 +1,6 @@
 <?php
 
-   include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
+   include_once 'dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 
     $ID=$_POST['ID'];
   
@@ -10,5 +10,5 @@
 
     //echo "kullanıcı Başarıyla eklendi!";
 
-    mysql_close($connection); // Connection Closed
+    mysql_close($con); // Connection Closed
 ?>

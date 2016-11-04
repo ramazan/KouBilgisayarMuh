@@ -6,7 +6,7 @@
 
 				<div class="row">
                 <div class="col-lg-12" style="margin-top: 15px">
-                <button  class='btn btn-success' onclick='kullaniciEkle()'><span class='glyphicon glyphicon-plus'></span> Kullanıcı Ekle</button>
+                <button  class='btn btn-success' onclick='kullaniciEkle()'><i class="fa fa-user-plus"></i> Kullanıcı Ekle</button>
                 <br/>
                 <br/>
              			<div class="panel panel-default">

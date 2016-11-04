@@ -20,13 +20,13 @@
 												<tr>
 													<td>Yeni Şifreniz:</td>
 													<td>
-														<input maxlength="45" id="user_new_pass" type="password">
+														<input maxlength="45" id="yeni_sifre" required type="password">
 													</td>
 												</tr>
 												<tr>
 													<td>Yeni Şifre Onayı:</td>
 													<td>
-														<input maxlength="45" id="user_new_pass_c" type="password">
+														<input maxlength="45" id="yeni_sifre_tekrar" required type="password">
 													</td>
 												</tr>
 											</tbody>

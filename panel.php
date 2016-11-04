@@ -45,13 +45,13 @@
                 <li class="dropdown nav-item"><a>Sayın,<b> <?php echo $login_session_name?></b> Hoşgeldiniz!</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle"  data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#" onclick="profilGoster()"><i class="fa fa-user fa-fw"></i> Profilim</a>
+                        <li><a href="#" onclick="profilGoster()"><i class="fa fa-user-secret"></i> Profilim</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Çıkış</a>
+                        <li><a href="logout.php"><i class="fa fa-power-off"></i>  Çıkış</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -63,17 +63,17 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#" onclick="duyuruGoster()"><i class="fa fa-dashboard fa-fw"></i> Duyurular</a>
+                            <a href="#" onclick="duyuruGoster()"><i class="fa fa-bullhorn"></i> Duyurular</a>
                         </li>
                        
                         <li id="nav_users">
-                            <a href="#" onclick="kullaniciGoster()"><i class="fa fa-table fa-fw"></i> Kullanıcılar</a>
+                            <a href="#" onclick="kullaniciGoster()"><i class="fa fa-users"></i> Kullanıcılar</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> İstatistik</a>
+                            <a href="#"><i class="glyphicon glyphicon-bullhorn"></i> İstatistik</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Dosya Yükle</a>
+                            <a href="#"><i class="fa fa-upload"></i> Dosya Yükle</a>
                         </li>
                        
                     </ul>
@@ -207,7 +207,7 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">Yeni Duyuru Ekle</h4>
 				</div>
-				<div class="modal-body">
+				<div id="duyuruEkleDiv" class="modal-body">
 					<p style="text-align: center; font-size: 15px;" id="duyuruEkleMesaj" class="label label-danger"></p>
 					<br>
 					<br>
@@ -268,14 +268,14 @@
 
       		                                <div class="form-group">
       		                              		<label for="duyuruLinkiAdi">Linkin Adı:</label>
-      		                                    <input class="form-control" placeholder="" id="duyuruLinkiAdi">
+      		                                    <input class="form-control" required placeholder="" id="duyuruLinkiAdi">
 
       		                                </div>
       		                        </div>
       		                           <div class="form-group col-sm-6">   
       		                                 <div class="form-group">
       		                              		<label for="duyuruLinki">Duyuruya eklenecek Link:</label>
-      		                                   <input class="form-control" placeholder="" id="duyuruLinki" type="text">
+      		                                   <input class="form-control" required placeholder="" id="duyuruLinki" type="text">
       		                                </div>
 
       		                          </div>   
@@ -434,13 +434,7 @@
                               // OP requested to close the modal
                               $('#messages').addClass('alert alert-success').text("Dosya yükleme başarılı!");
                               $('#duyuruLinki').val(response);
-							  $("#duyuruLinki").prop('disabled', true);
-
-					
-								
-								
-							  
-							  
+							                $("#duyuruLinki").prop('disabled', true);							  
                               setTimeout(function() {
                                $('#dosyaYukleModal').modal('hide');
                               }, 2000);

@@ -10,5 +10,5 @@
 
     //echo "kullanıcı Başarıyla eklendi!";
 
-    mysql_close($connection); // Connection Closed
+    mysql_close($con); // Connection Closed
 ?>
