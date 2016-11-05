@@ -48,7 +48,7 @@ function duyuruGoster() {
 
 
   $("#page-wrapper > div").hide();
-  $('#duyurular_page').show();
+  $('#duyurular_page').hide().delay(250).fadeIn(350);
 
   console.log("duyurlar acildi");
 
@@ -57,16 +57,31 @@ function duyuruGoster() {
 function kullaniciGoster() {
 
   $("#page-wrapper > div").hide();
-  $('#users_page').show();
+  $('#users_page').hide().delay(250).fadeIn(350);
 
   console.log("kullaniciGoster acildi");
+
+}
+
+function P_OnIzle()
+{
+  $('#Profil_Guncelle').hide();
+  $('#Profil_OnIzleme').hide().delay(250).fadeIn(350);
+
+  
+}
+function P_Guncelle()
+{
+  $('#Profil_OnIzleme').hide();
+  $('#Profil_Guncelle').hide().delay(250).fadeIn(350);
+
 
 }
 
 function profilGoster() {
    
   $("#page-wrapper > div").hide();
-  $('#profile_page').show();
+  $('#profile_page').hide().delay(250).fadeIn(350);
 
   console.log("Profil sayfasi acildi");
 

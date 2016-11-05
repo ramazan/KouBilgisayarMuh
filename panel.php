@@ -10,13 +10,16 @@
    <head>
 	    <title>Koü Ceng</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css" />
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css" />
 	    <link rel="stylesheet" href="./css/panel.css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
 
-    <link href="./vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+      <link href="./vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
-    <link href="./vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+      <link href="./vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
     <!-- Custom CSS -->
    </head>
    
@@ -43,25 +46,13 @@
 				
           <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown nav-item"><a>Sayın,<b> <?php echo $login_session_name?></b> Hoşgeldiniz!</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#">
-                        <i class="fa fa-user"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#" onclick="profilGoster()"><i class="fa fa-user-secret"></i> Profilim</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="logout.php"><i class="fa fa-power-off"></i>  Çıkış</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
+                <li class="dropdown nav-item"><a href="logout.php"><i class="fa fa-power-off"></i>  Çıkış</a></li>
             </ul>
 				
 			<div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                      
                         <li>
                             <a href="#" onclick="duyuruGoster()"><i class="fa fa-bullhorn"></i> Duyurular</a>
                         </li>
@@ -69,12 +60,14 @@
                         <li id="nav_users">
                             <a href="#" onclick="kullaniciGoster()"><i class="fa fa-users"></i> Kullanıcılar</a>
                         </li>
+                        <li><a href="#" onclick="profilGoster()"><i class="fa fa-user-secret"></i> Profilim</a>
                         <li>
                             <a href="#"><i class="glyphicon glyphicon-bullhorn"></i> İstatistik</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-upload"></i> Dosya Yükle</a>
                         </li>
+
                        
                     </ul>
                 </div>
