@@ -147,15 +147,17 @@ function KullaniciSil(ID){
 }
 
 
-$("#profileGuncelle").click(function(){
+$("#sifreGuncelle").click(function(){
       var yeniSifre = $("#yeni_sifre").val();
       var yeniSifreTekrar = $("#yeni_sifre_tekrar").val();
 
        if(yeniSifre=="" || yeniSifreTekrar =="" ){
+         $("#changePassword").find(".alert-success").addClass("alert-danger").removeClass("alert-success");
         $("#profile_update_alert").show();
         $("#pass_validate").text("Lütfen Bütün Alanları Doldurun!");
         }
         else if(yeniSifre != yeniSifreTekrar){
+          $("#changePassword").find(".alert-success").addClass("alert-danger").removeClass("alert-success");
           $("#profile_update_alert").show();
           $("#pass_validate").text("Şifreler Eşleşmiyor!");
         }
@@ -169,6 +171,8 @@ $("#profileGuncelle").click(function(){
           data: dataString,
           cache: false,
             success: function() {
+              $("#changePassword").find(".alert-danger").addClass("alert-success").removeClass("alert-danger");
+
             $("#profile_update_alert").show();
             $("#pass_validate").text("Şifre değişti!");
             setTimeout(function() {
@@ -186,6 +190,8 @@ $("#profileGuncelle").click(function(){
       
       return false;
 });
+
+
 
 /// Yeni Kullanıcı ekleme işlemi...............
 $("#kullaniciKaydetButton").click(function(){
@@ -246,6 +252,48 @@ $("#kullaniciKaydetButton").click(function(){
           });
   }
 });
+
+
+
+$("#AkademikBilgiGuncelle").click(function(){
+
+  var anabilimdali = $("#anabilimdali").val();
+  var odano   = $("#odano").val();
+  var telefon   = $("#telefon").val();
+  var website = $("#website").val();
+  var arastirmaalan = $( "#arastirmaalan" ).val();
+
+ 
+
+   //console.log("AdSoyad: " + AdSoyad+"  Email: " + Email +" Sifre : " +Sifre + "  Rol : " + Rol  ); 
+
+    // parametrelerin geçirilmesi
+    var dataString = 'anaBilimDali='+ anabilimdali + '&odaNo='+ odano + '&Telefon='+ telefon
+                     +'&Website='+ website +'&ArastirmaAlan='+ arastirmaalan ;
+
+    $.ajax({
+          type: "POST",
+          url: "kullaniciGuncelle.php",
+          data: dataString,
+          cache: false,
+            success: function() {
+            $("#AkademikMesaj").text("Bilgiler Başarıyla Kaydedildi.");
+            $("#AkademikMesajDiv").show();
+
+            setTimeout(function() {
+            $("#AkademikMesajDiv").hide();  // mesajın gizlenmesi
+            $("#AkademikMesaj").text(""); // modalin kapanması
+      }, 2500);
+    },
+    error: function() {
+      $("#AkademikMesaj").text("Bi' şeyler ters gitti..");
+    }
+          });
+  
+
+});
+
+
 
 
 

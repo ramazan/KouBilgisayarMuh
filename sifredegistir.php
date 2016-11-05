@@ -6,7 +6,7 @@
 	$newPassword=$_POST['password'];
 
 	//Şifreyi güncelle
-	mysqli_query($con,"UPDATE users SET PASSWORD= '".MD5($newPassword)."' WHERE EMAIL= '".$login_session_email."'");
+	mysqli_query($con,"UPDATE users SET PASSWORD= '".MD5($newPassword)."' WHERE ID= '".$login_session_user_id."'");
 
 	//echo "Şifre Başarıyla değişti!";
 
