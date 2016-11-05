@@ -24,14 +24,6 @@
 	rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
-	rel='stylesheet' type='text/css'>
-<link
-	href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
-	rel='stylesheet' type='text/css'>
-<link
-	href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
-	rel='stylesheet' type='text/css'>
 
 <!-- Theme CSS -->
 <link href="css/agency.min.css" rel="stylesheet">
@@ -329,7 +321,15 @@
                           echo " <div class='modal-footer'>
                           <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
                         </div></div></div></div></div>";
-                        echo "<div class='timeline-body'><p class='text-muted'>".$row['MESSAGE']."<br /></p></div>";
+
+
+						$row['MESSAGE']=mb_substr($row['MESSAGE'], 0,70,'utf-8');
+						$row['MESSAGE'] = $row['MESSAGE'] . "...";
+
+                        echo "<div class='timeline-body'><p class='text-muted'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."'>".$row['MESSAGE']."</a><br /></p></div>";
+
+
+
 
 								  echo "<div class='timeline-heading'><h5 class='subheading'>".$row['NAME']."</h5></div></div></li>";
 			
@@ -347,15 +347,7 @@
 	?>
 
 		</ul>
-		<div align="center">
-			<ul class="zundi">
-				<li class="active"><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
-			</ul>
-		</div>
+		<br><br>
 
 			  </li>
 			  </li>
@@ -389,7 +381,7 @@
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DUYURU_TURU,announcements.DATE , announcements.ID	FROM announcements INNER JOIN users ON users.ID=announcements.USER_ID WHERE DUYURU_TURU='Bolum' ORDER BY ID DESC;";
+							$sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DUYURU_TURU,announcements.DATE , announcements.ID	FROM announcements INNER JOIN users ON users.ID=announcements.USER_ID WHERE DUYURU_TURU='Bolum' ORDER BY ID DESC LIMIT 3 ;";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
@@ -434,9 +426,11 @@
                           echo " <div class='modal-footer'>
                           <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
                         </div></div></div></div></div>";
-
-
-                        echo "<div class='timeline-body'><p class='text-muted'>".$row['MESSAGE']."<br /></p></div>";
+  					
+  						  $row['MESSAGE']=mb_substr($row['MESSAGE'], 0,60,'utf-8');
+						  $row['MESSAGE'] = $row['MESSAGE'] . "...";
+                    
+                        echo "<div class='timeline-body'><p class='text-muted'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."'>".$row['MESSAGE']."</a><br /></p></div>";
 
 								  echo "<div class='timeline-heading'><h5 class='subheading'>".$row['NAME']."</h5></div></div></li>";
 			
@@ -456,15 +450,8 @@
 	
 			
 		</ul>
-		<div align="center">
-			<ul class="zundi">
-				<li class="active"><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
-			</ul>
-		</div>
+		<br>
+		<br>
 			  </li>
 			  <li class="list-group-item" >
     			<h4><span class="badge" style="float:right;" >Tüm Bölüm Duyuruları</span></h4>
@@ -500,7 +487,7 @@
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Etkinlik';";
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Etkinlik' LIMIT 4;";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
@@ -518,7 +505,8 @@
 								    	
 							
 
-echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']."</a></h3><p class='timestamp'>".$row['MESSAGE']."</p></div></div></li>";
+
+echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']."</a></h3><p class='timestamp'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."'>".$row['MESSAGE']."</a></p></div></div></li>";
 
 
 
@@ -586,34 +574,9 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
 										$sayac=1;
 								        while($row = mysqli_fetch_array($result)){
-								        	if($sayac%2==0){
-								       	echo "<li class='list-group-item' style='background: #ebf9e0;'><div class='team-member'>";
+								        	
 
-								        	}else
-								        	{
-
-									echo "<li class='list-group-item'><div class='team-member'>";
-								        	}
-								$sayac++;
-									
-								echo "<h3 style='margin: 0 0 5px 0;'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']." </a></h3>";
-									echo "<p class='text-muted'>".$row['MESSAGE']."</p>";
-
-							  
-						 					$originalDate = $row['DATE'];
-									$newDate = date("d F l", strtotime($originalDate));
-									
-									$ing_aylar = array("January","February","March","May","April","June","July","August","September","October","November","December");
-									    $tr_aylar = array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");
-									    
-									    $ing_gunler = array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
-									    $tr_gunler = array("Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar");
-									    $newDate = str_replace($ing_aylar,$tr_aylar,$newDate);
-									    $newDate = str_replace($ing_gunler,$tr_gunler,$newDate);
-
-									echo "<h4  style='text-align:right; color:#009745;'>".$newDate."</h4></div></li>";
-
-									echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
+echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
                     <div class='modal-dialog'>
                       <div class='modal-content'>
                         <div class='modal-header' style='background-color: #009E49;'>
@@ -629,6 +592,43 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
                           echo " <div class='modal-footer'>
                           <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
                         </div></div></div></div></div>";
+
+
+
+								        	if($sayac%2==0){
+								       	echo "<li class='list-group-item' style='background: #ebf9e0;'><div class='team-member'>";
+
+								        	}else
+								        	{
+
+											echo "<li class='list-group-item'><div class='team-member'>";
+								        	}
+								$sayac++;
+									
+
+  						  $row['MESSAGE']=mb_substr($row['MESSAGE'], 0,90,'utf-8');
+						  $row['MESSAGE'] = $row['MESSAGE'] . "...";
+
+								echo "<h3 style='margin: 0 0 5px 0;'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']." </a></h3>";
+									echo "<p class='text-muted'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."'>".$row['MESSAGE']."</a></p>";
+
+							  
+						 					$originalDate = $row['DATE'];
+									$newDate = date("d F l", strtotime($originalDate));
+									
+									$ing_aylar = array("January","February","March","May","April","June","July","August","September","October","November","December");
+									    $tr_aylar = array("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");
+									    
+									    $ing_gunler = array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
+									    $tr_gunler = array("Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar");
+									    $newDate = str_replace($ing_aylar,$tr_aylar,$newDate);
+									    $newDate = str_replace($ing_gunler,$tr_gunler,$newDate);
+
+									echo "<h4  style='text-align:right; color:#009745;'>".$newDate."</h4></div></li>";
+
+									
+
+
   
 
 			
@@ -682,19 +682,14 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Haber' LIMIT 3;";
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Haber' ORDER BY ID DESC   LIMIT 3;";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
 										$sayac=1;
 								        while($row = mysqli_fetch_array($result)){
 								        	
-								      	echo "  <div class='col-sm-3 news-item'> <div class='news-img'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'><img src='".$row['RESIM_LINK']."' 
-								      		class='img-responsive'/></a></div>";
-
-
-						      		echo " <div class='news-text'><h3><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'>".$row['TITLE']."</a></h3>";
-						      		echo " <p><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'>".$row['MESSAGE']."</a></p></div></div>";
+								    
 
 						 echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' style='display:none;'>
                     <div class='modal-dialog'>
@@ -712,6 +707,15 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
                           echo " <div class='modal-footer'>
                           <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
                         </div></div></div></div></div>";
+
+  $row['MESSAGE']=mb_substr($row['MESSAGE'], 0,110,'utf-8');
+						  $row['MESSAGE'] = $row['MESSAGE'] . "...";
+                          	echo "  <div class='col-sm-3 news-item'> <div class='news-img'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'><img src='".$row['RESIM_LINK']."' 
+								      		class='img-responsive'/></a></div>";
+
+
+						      		echo " <div class='news-text'><h3><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'>".$row['TITLE']."</a></h3>";
+						      		echo " <p><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'>".$row['MESSAGE']."</a></p></div></div>";
 			
 								        }
 
@@ -736,7 +740,7 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Haber' LIMIT 3 OFFSET 3;";
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Haber' ORDER BY ID ASC LIMIT 3;";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..

@@ -318,6 +318,8 @@ $("#duyuruKaydetButton").click(function(){
 
 function duyuruAjaxPost(dataString){
 
+  console.log(dataString);
+
   $.ajax({
           type: "POST",
           url: "duyuruEkle.php",
@@ -402,7 +404,7 @@ $("#LinkEkleButton").click(function(){
     }else{
 
 
-    var linkOlustur = "<br>Ek : <a style=\"color:#428bca\" href=\""+link+"\" target=\"_blank\">"+linkAdi+"</a>";
+    var linkOlustur = "<br><br>Ek : <a style=\"color:#428bca\" href=\""+link+"\" target=\"_blank\">"+linkAdi+"</a>";
 
 console.log(linkOlustur);
     var mesaj =$("#duyuruIcerigi").val();
