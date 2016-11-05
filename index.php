@@ -326,6 +326,9 @@
 						$row['MESSAGE']=mb_substr($row['MESSAGE'], 0,70,'utf-8');
 						$row['MESSAGE'] = $row['MESSAGE'] . "...";
 
+
+						if(strstr($row['MESSAGE'],"Ek : ")) $row['MESSAGE'] ='Ektedir..';
+
                         echo "<div class='timeline-body'><p class='text-muted'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."'>".$row['MESSAGE']."</a><br /></p></div>";
 
 
@@ -430,6 +433,9 @@
   						  $row['MESSAGE']=mb_substr($row['MESSAGE'], 0,60,'utf-8');
 						  $row['MESSAGE'] = $row['MESSAGE'] . "...";
                     
+
+                    	if(strstr($row['MESSAGE'],"Ek : ")) $row['MESSAGE'] ='Ektedir.';
+
                         echo "<div class='timeline-body'><p class='text-muted'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."'>".$row['MESSAGE']."</a><br /></p></div>";
 
 								  echo "<div class='timeline-heading'><h5 class='subheading'>".$row['NAME']."</h5></div></div></li>";
@@ -451,7 +457,7 @@
 			
 		</ul>
 		<br>
-		<br>
+		<br>	
 			  </li>
 			  <li class="list-group-item" >
     			<h4><span class="badge" style="float:right;" >Tüm Bölüm Duyuruları</span></h4>
@@ -708,7 +714,7 @@ echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dial
                           <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
                         </div></div></div></div></div>";
 
-  $row['MESSAGE']=mb_substr($row['MESSAGE'], 0,110,'utf-8');
+ 						 $row['MESSAGE']=mb_substr($row['MESSAGE'], 0,110,'utf-8');
 						  $row['MESSAGE'] = $row['MESSAGE'] . "...";
                           	echo "  <div class='col-sm-3 news-item'> <div class='news-img'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'><img src='".$row['RESIM_LINK']."' 
 								      		class='img-responsive'/></a></div>";

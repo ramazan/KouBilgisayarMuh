@@ -62,6 +62,48 @@ echo "<li><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' st
 
 
 
+<div class="modal fade in" id="duyuru36" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block; padding-right: 15px;">
+       <div class="modal-dialog">
+              <div class="modal-content">
+                        <div class="modal-header" style="background-color: #009E49;">
+                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class=" sr-only">Close</span>
+                              </button>
+                              <h4 style="color:white;" class="modal-title" id="myModalLabel">
+                                <div>Kısmi Zamanlı Öğrenci Çalıştırma Duyurusu</div>
+                              </h4>
+                          </div> 
+                          <div class="modal-body">
+                              <div class="duyuruMetni">FAKÜLTEMİZ BİRİMLERİNDE KISMİ ZAMANLI ÖĞRENCİ (İDARİ VE AKADEMİK BİRİMLERDE) ÇALIŞTIRMA DUYURUSU
+                              </div> 
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                            </div>
+                      </div>
+               </div>
+           </div>
+    </div>
+
+<div class="modal fade in" id="duyuru52" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block; padding-right: 15px;">
+          <div class="modal-dialog">
+                 <div class="modal-content">
+                     <div class="modal-header" style="background-color: #009E49;">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                            </button>
+                            <h4 style="color:white;" class="modal-title" id="myModalLabel">
+                              <div>PMI-TR ve Proje Yönetimine Giriş Tanıtım Etkinliği</div>
+                            </h4>
+                      </div> 
+                          <div class="modal-body">
+                              <div class="duyuruMetni">11.00 - 17.00 arası</div> 
+                              <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                            </div>
+
+                         </div>
+                 </div>
+          </div>
+   </div>
+
 
 
 
