@@ -61,14 +61,7 @@
                             <a href="#" onclick="kullaniciGoster()"><i class="fa fa-users"></i> Kullanıcılar</a>
                         </li>
                         <li><a href="#" onclick="profilGoster()"><i class="fa fa-user-secret"></i> Profilim</a>
-                        <li>
-                            <a href="#"><i class="glyphicon glyphicon-bullhorn"></i> İstatistik</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-upload"></i> Dosya Yükle</a>
-                        </li>
-
-                       
+                                             
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -281,7 +274,8 @@
 
     		                            </div>  
                           </div>
-                      <button class="btn btn-primary" data-toggle="modal" data-target="#dosyaYukleModal">Dosya Ekle</button>
+                      <button class="btn btn-primary" data-toggle="modal" data-target="#dosyaYukleModal">
+                      <i class="fa fa-upload"></i>  Dosya Ekle</button>
 
                   </div>
 
