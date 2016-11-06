@@ -36,8 +36,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 
-					        <a class="navbar-brand" style="    padding: 1px 8px;"><img
-                    src="img/kou_logo.png" alt="KOÜ" width="50" height="50"/></img> <a
+					        <a class="navbar-brand" href="index.php" style="padding: 1px 8px;"><img
+                    src="img/kou_logo.png" alt="KOÜ" width="50" height="50"/></img> <a href="index.php"
                     class="navbar-brand">Bilgisayar Muhendisligi
                   </a>
         
@@ -517,19 +517,39 @@
 
           </script>
 
-          <script src="./vendor/metisMenu/metisMenu.min.js"></script>
-
     <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-            responsive: true
+            responsive: true,
+            "bJQueryUI": false,
+            "bAutoWidth": false,
+            "oLanguage": {
+              "sEmptyTable": "No incompleted albums found!", //when empty
+                    "sSearch": "<span>Arama:</span> _INPUT_", //search
+                    "sLengthMenu": "<span>Kaç Kayıt Gösterilsin : </span>_MENU_  ", //label
+                    "sZeroRecords": "Eşleşen Kayıt Bulunmadı",  
+                    "sEmptyTable": "Bu Tabloda Hiç Veri Yok.",
+                    "oPaginate": { "sFirst": "İlk", "sLast": "Son", "sNext": "Sonraki", "sPrevious": "Önceki" } //pagination
+
+            }
         });
 
         $('#dataTables-kullanici').DataTable({
-            responsive: true
+              responsive: true,
+            "bJQueryUI": false,
+            "bAutoWidth": false,
+            "oLanguage": {
+              "sEmptyTable": "No incompleted albums found!", //when empty
+                    "sSearch": "<span>Arama:</span> _INPUT_", //search
+                    "sLengthMenu": "<span>Kaç Kayıt Gösterilsin : </span>_MENU_  ", //label
+                    "sZeroRecords": "Eşleşen Kayıt Bulunmadı",  
+                    "sEmptyTable": "Bu Tabloda Hiç Veri Yok.",
+                    "oPaginate": { "sFirst": "İlk", "sLast": "Son", "sNext": "Sonraki", "sPrevious": "Önceki" } //pagination
+
+            }
         });
 
 
