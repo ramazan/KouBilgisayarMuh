@@ -105,8 +105,13 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Yeni Kullanıcı Ekle</h4>
         </div>
-        <div class="modal-body">
+        <div id="kullaniciEkleDiv" class="modal-body">
+           <div id="loading_kullanici_ekle" style="display: none; text-align: center;">
+             <p><img src="img/ajax-loader.gif" />  Lütfen Bekleyin..</p>
+          </div>
+
           <p style="text-align: center; font-size: 15px;" id="kullaniciEkleMesaj" class="label label-danger"></p>
+         
           <br>
           <br>
                 <fieldset>
@@ -171,8 +176,15 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">Seçimi Onayla</h4>
 				</div>
-				<div class="modal-body" style="text-align: center;">
-					<p style="text-align: center; font-size: 15px;" id="kullaniciSilMesaj" class="label label-danger"></p>
+       
+				<div id="kullaniciSilDiv" class="modal-body" style="text-align: center;">
+				
+        	<div id="loading_kullanici_sil" style="display: none; text-align: center;">
+            <p><img src="img/ajax-loader.gif" />  Lütfen Bekleyin..</p>
+           </div>
+
+          <p style="text-align: center; font-size: 15px;" id="kullaniciSilMesaj" class="label label-danger"></p>
+           
 					<br>
 					<br>
 					<div style="text-align: center;"> <button id="kullaniciSilButton" class="btn btn-success">Sil</button>
@@ -195,6 +207,9 @@
 				</div>
 				<div id="duyuruEkleDiv" class="modal-body">
 					<p style="text-align: center; font-size: 15px;" id="duyuruEkleMesaj" class="label label-danger"></p>
+          <div id="loading_duyuru_ekle" style="display: none; text-align: center;">
+          <p><img src="img/ajax-loader.gif" />  Lütfen Bekleyin..</p>
+        </div>
 					<br>
 					<br>
 					      <fieldset>
@@ -332,7 +347,7 @@
 
                            </fieldset>
 				</div>
-				<div class=" modal-footer" style="text-align: center;">
+				<div class="modal-footer" style="text-align: center;">
 					<button id="duyuruKaydetButton" class="btn btn-success">Yayınla</button>
 					<button class="btn btn-primary" data-dismiss="modal">Vazgeç</button>
 				</div>
@@ -351,6 +366,11 @@
           <h4 class="modal-title">Seçimi Onayla</h4>
         </div>
         <div id="duyuruSilDiv" class="modal-body" style="text-align: center;">
+
+         <div id="loading_duyuru_sil" style="display: none; text-align: center;">
+          <p><img src="img/ajax-loader.gif" />  Lütfen Bekleyin..</p>
+        </div>
+
           <p style="text-align: center; font-size: 15px;" id="duyuruSilMesaj" class="label label-danger"></p>
           <br>
           <br>
@@ -375,6 +395,9 @@
                                 <h4 class="modal-title">Dosya Yükle</h4>
                             </div>
                             <div class="modal-body">
+                            <div id="loading_dosya_yukle" style="display: none; text-align: center;">
+                             <p><img src="img/ajax-loader.gif" />  Lütfen Bekleyin..</p>
+                          </div>
                                 <div id="messages"></div>
                                 <input type="file" name="file" id="file">
                             </div>
@@ -414,6 +437,8 @@
                       data        : formdata ? formdata : form.serialize(),
                       contentType : false,
                       processData : false,
+                      beforeSend: function() { $('#loading_dosya_yukle').show(); },
+                      complete: function() { $('#loading_dosya_yukle').hide(); }, 
 
                       success: function(response) {
                           if(response != 'error') {
@@ -458,8 +483,7 @@
                           if(response != 'error') {
 
                              // $('#messagesPhotoUploadMessage').text("Dosya yükleme başarılı!");
-                             $("#messagesPhotoUploadMessage").text("Profil resminiz başarıyla değiştirildi!");
-                                      $("#messagesPhotoUpload").show();
+                           
                               
                                 var dataString = 'fotograf_link='+ response;
 
@@ -468,8 +492,11 @@
                                       url: "kullaniciFotografGuncelle.php",
                                       data: dataString,
                                       cache: false,
+                                      beforeSend: function() { $('#loading_resim_guncelle').show(); },
+                                      complete: function() { $('#loading_resim_guncelle').hide(); }, 
                                         success: function() {
-                                     
+                                       $("#messagesPhotoUploadMessage").text("Profil resminiz başarıyla değiştirildi!");
+                                      $("#messagesPhotoUpload").show();
                                       setTimeout(function() {
                                       $("#messagesPhotoUpload").hide();  // mesajın gizlenmesi
                                       $("#messagesPhotoUploadMessage").text(""); // modalin kapanması

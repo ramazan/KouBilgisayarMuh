@@ -124,8 +124,10 @@ function KullaniciSil(ID){
             url: "kullaniciSil.php",
             data: dataString,
             cache: false,
+            beforeSend: function() { $('#loading_kullanici_sil').show(); },
+           complete: function() { $('#loading_kullanici_sil').hide(); },
               success: function() {
-         $("#kullaniciSilMesaj").find(".label-danger").addClass("label-success").removeClass("label-danger");
+                $("#kullaniciSilDiv").find(".label-danger").addClass("label-success").removeClass("label-danger");
          
               $("#kullaniciSilMesaj").text("Kullanıcı Silindi!");
                $("#users_page").load("kullanicilar.php"); // tablo yeniden yüklenmesi!.
@@ -170,6 +172,8 @@ $("#sifreGuncelle").click(function(){
           url: "sifredegistir.php",
           data: dataString,
           cache: false,
+          beforeSend: function() { $('#loading_sifre_guncelle').show(); },
+           complete: function() { $('#loading_sifre_guncelle').hide(); },
             success: function() {
               $("#changePassword").find(".alert-danger").addClass("alert-success").removeClass("alert-danger");
 
@@ -227,8 +231,10 @@ $("#kullaniciKaydetButton").click(function(){
           url: "kullaniciEkle.php",
           data: dataString,
           cache: false,
+           beforeSend: function() { $('#loading_kullanici_ekle').show(); },
+           complete: function() { $('#loading_kullanici_ekle').hide(); },
             success: function() {
-              $("#kullaniciEkleMesaj").find(".label-danger").addClass("label-success").removeClass("label-danger");
+                $("#kullaniciEkleDiv").find(".label-danger").addClass("label-success").removeClass("label-danger");
  
             $("#kullaniciEkleMesaj").text("Kullanıcı başarıyla kaydedildi.");
             $("#kullaniciEkleMesaj").show();
@@ -274,6 +280,8 @@ $("#AkademikBilgiGuncelle").click(function(){
           url: "kullaniciGuncelle.php",
           data: dataString,
           cache: false,
+          beforeSend: function() { $('#loading_akademik_guncelle').show(); },
+           complete: function() { $('#loading_akademik_guncelle').hide(); },
             success: function() {
             $("#AkademikMesaj").text("Bilgiler Başarıyla Kaydedildi.");
             $("#AkademikMesajDiv").show();
@@ -386,6 +394,8 @@ function duyuruAjaxPost(dataString){
           url: "duyuruEkle.php",
           data: dataString,
           cache: false,
+          beforeSend: function() { $('#loading_duyuru_ekle').show(); },
+           complete: function() { $('#loading_duyuru_ekle').hide(); },
             success: function() {
            $("#duyuruEkleDiv").find(".label-danger").addClass("label-success").removeClass("label-danger");
 
@@ -425,6 +435,8 @@ function duyuruSil(ID){
                 url: "duyuruSil.php",
                 data: dataString,
                 cache: false,
+                beforeSend: function() { $('#loading_duyuru_sil').show(); },
+               complete: function() { $('#loading_duyuru_sil').hide(); },
                   success: function() {
 
                 $("#duyuruSilDiv").find(".label-danger").addClass("label-success").removeClass("label-danger");

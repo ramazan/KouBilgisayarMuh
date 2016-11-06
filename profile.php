@@ -76,7 +76,9 @@
                                                 <div id="userSettingsContent" class="tab-content">
                                                 
                                                     <div class="tab-pane fade in active" id="profilePicture">
-
+                                                    <div id="loading_resim_guncelle" style="display: none; text-align: center;">
+                                                              <p><img src="img/ajax-loader.gif" />  Lütfen Bekleyin..</p>
+                                                    </div>
                                                      <div id="messagesPhotoUpload" class="alert alert-success" role="alert" style="text-align:center ; display: none;">
                                                             <b id="messagesPhotoUploadMessage"></b>
                                             </div> 
@@ -115,7 +117,9 @@
                                               </form>
                                                 </div>
                                                     <div class="tab-pane fade" id="changePassword">
-                                                      
+                                                      <div id="loading_sifre_guncelle" style="display: none; text-align: center;">
+                                                          <p><img src="img/ajax-loader.gif" />  Lütfen Bekleyin..</p>
+                                                      </div>
                                                         <div id="profile_update_alert" class="alert alert-success" role="alert" style="text-align:center ; display: none;">
                                                             <b id="pass_validate"></b>
                                                         </div>
@@ -133,7 +137,9 @@
                                                         </form>
                                                     </div>
                                                     <div class="tab-pane fade " id="Akademik">
-
+                                                        <div id="loading_akademik_guncelle" style="display: none; text-align: center;">
+                                                                  <p><img src="img/ajax-loader.gif" />  Lütfen Bekleyin..</p>
+                                                        </div>
                                                     <div id="AkademikMesajDiv" class="alert alert-success" role="alert" style="text-align:center ; display: none;">
                                                             <b id="AkademikMesaj"></b>
                                                         </div>
