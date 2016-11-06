@@ -169,10 +169,7 @@
 
 					</li>
 			
-			<li>				
-				<a  > <img
-					src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="KOÜ" width="20" height="20"> </a>
-					</li>					
+			 				
 						
 		</ul>
 

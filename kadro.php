@@ -177,10 +177,7 @@
 
 					</li>
 			
-			<li>				
-				<a  > <img
-					src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="KOÜ" width="20" height="20"> </a>
-					</li>					
+			 				
 						
 		</ul>
 
@@ -198,12 +195,12 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h2 class="section-title" style="text-align:center">Ögretim Elemanları</h2>
-			  </br>
+              <h2 class="section-title" style="text-align:center">Bölüm Personelimiz</h2>
+			  </br></br></br>
             </div>          
             <?php
 include_once './dbbaglantisi.php';  
-                $sql = "SELECT * FROM users;";
+                $sql = "SELECT * FROM users WHERE ROLE ='user';";
 
                 if($result = mysqli_query($con, $sql)){
                     if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
@@ -257,7 +254,12 @@ include_once './dbbaglantisi.php';
                     echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
                 }           
       
-  ?>			
+  ?>
+	
+
+
+
+			
           </div>
         </div>
       </section>
