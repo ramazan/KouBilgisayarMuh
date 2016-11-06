@@ -476,8 +476,6 @@
                                       cache: false,
                                         success: function() {
                                      
-                                     $("#profile_page").load("profile.php");
-
                                       setTimeout(function() {
                                       $("#messagesPhotoUpload").hide();  // mesajın gizlenmesi
                                       $("#messagesPhotoUploadMessage").text(""); // modalin kapanması

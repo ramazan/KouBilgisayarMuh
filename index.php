@@ -133,9 +133,9 @@
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Personel</li>
-								<li><a href="contacts.php">Öğretim Üyeleri</a></li>
-								<li><a href="kadro.php">Öğretim Elemanları</a></li>
-								<li><a href="sekreter.php">İdari Personel</a></li>
+								 
+								<li><a href="kadro.php">Bölüm Personelleri</a></li>
+								  
 								<li><a href="giris.php">Sisteme Giriş</a></li>
 							<li class="divider ek"></li>
 							
@@ -493,7 +493,7 @@
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Etkinlik' LIMIT 4;";
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Etkinlik' ORDER BY ID DESC LIMIT 4;";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
@@ -574,7 +574,7 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='is-staj' LIMIT 3";
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='is-staj' ORDER BY ID DESC LIMIT 3";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..

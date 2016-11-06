@@ -34,24 +34,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-<script>
-	$(document).ready(function() {
-		$("#oku").click(function() {
-			$('#myModal').modal('show');
-		});
-
-	});
-</script>
-<script>
-	$(document).ready(function() {
-		$("#mundi").click(function() {
-			$('#myModal').find('p').html('<p>Jiraya Bitch </p>');
-			$('#myModal').find('h4').html('<h4 class="modal-title"> Yemek Hane Listesi BITCH !</h4>')
-			$('#myModal').modal('show');
-		});
-
-	});
-</script>
+ 
 
 
 </head>
@@ -157,9 +140,9 @@
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Personel</li>
-								<li><a href="contacts.php">Öğretim Üyeleri</a></li>
-								<li><a href="kadro.php">Öğretim Elemanları</a></li>
-								<li><a href="sekreter.php">İdari Personel</a></li>
+								 
+								<li><a href="kadro.php">Bölüm Personelleri</a></li>
+								  
 								<li><a href="giris.php">Sisteme Giriş</a></li>
 							<li class="divider ek"></li>
 							

@@ -76,6 +76,10 @@
                                                 <div id="userSettingsContent" class="tab-content">
                                                 
                                                     <div class="tab-pane fade in active" id="profilePicture">
+
+                                                     <div id="messagesPhotoUpload" class="alert alert-success" role="alert" style="text-align:center ; display: none;">
+                                                            <b id="messagesPhotoUploadMessage"></b>
+                                            </div> 
                                                         
                                                         <?php
 
@@ -101,9 +105,7 @@
                                                         <br>
                                                                 
 
-                                             <div id="messagesPhotoUpload" class="alert alert-success" role="alert" style="text-align:center ; display: none;">
-                                                            <b id="messagesPhotoUploadMessage"></b>
-                                            </div>                   
+                                                              
                                             
                                             <form id="PhotoYukleForm" enctype="multipart/form-data" role="form">
                                                 <label>Yeni resim seçin:</label>

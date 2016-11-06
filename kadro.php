@@ -35,24 +35,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-<script>
-	$(document).ready(function() {
-		$("#oku").click(function() {
-			$('#myModal').modal('show');
-		});
-
-	});
-</script>
-<script>
-	$(document).ready(function() {
-		$("#mundi").click(function() {
-			$('#myModal').find('p').html('<p>Jiraya Bitch </p>');
-			$('#myModal').find('h4').html('<h4 class="modal-title"> Yemek Hane Listesi BITCH !</h4>')
-			$('#myModal').modal('show');
-		});
-
-	});
-</script>
+ 
 
 
 </head>
@@ -158,9 +141,9 @@
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Personel</li>
-								<li><a href="contacts.php">Öğretim Üyeleri</a></li>
-								<li><a href="kadro.php">Öğretim Elemanları</a></li>
-								<li><a href="sekreter.php">İdari Personel</a></li>
+								 
+								<li><a href="kadro.php">Bölüm Personelleri</a></li>
+                  
 								<li><a href="giris.php">Sisteme Giriş</a></li>
 							<li class="divider ek"></li>
 							
@@ -218,41 +201,63 @@
               <h2 class="section-title" style="text-align:center">Ögretim Elemanları</h2>
 			  </br>
             </div>          
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="category-box border-1 wow fadeInUpQuick animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;">
-                <div class="icon">
-                  <a href="http://bilgisayar.kocaeli.edu.tr/img/kadro/OGok.jpg"><img width="120" height="120" style="border-radius:50%"  src="http://bilgisayar.kocaeli.edu.tr/img/kadro/OGok.jpg"></a>
-                </div>
+            <?php
+include_once './dbbaglantisi.php';  
+                $sql = "SELECT * FROM users;";
 
-                <div class="category-header">  
-                  <a href="http://akademikpersonel.kocaeli.edu.tr/ogok/"><h4>Öğr. Gör. Dr. Onur GÖK</h4></a>
-                </div>
-                <div class="category-content">
+                if($result = mysqli_query($con, $sql)){
+                    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
+                        while($row = mysqli_fetch_array($result)){
+                    
+              echo  "<div class='col-md-3 col-sm-6 col-xs-12'>
+              <div class='category-box border-1 wow fadeInUpQuick animated' data-wow-delay='0.3s' style='visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;'>
+                <div class='icon'><a href='".$row['RESIM_LINK']."'><img width='120' height='120' style='border-radius:50%' 
+                 src='".$row['RESIM_LINK']."'></a>
+                </div>";                        
+
+                echo " <div class='category-header'>  
+                  <a href='".$row['WEBSITE']."'><h4>".$row['NAME']."</h4></a>
+                </div>";
+
+
+                echo "<div class='category-content'>
                   <ul>
                     <li>
-                      <a href="mailto:ogok@kocaeli.edu.tr" style="color:#333">E-posta :</a>
-                      <sapn class="category-counter"> ogok@kocaeli.edu.tr</sapn>
+                      <a href='mailto:".$row['EMAIL']."' style='color:#333'>E-posta :</a>
+                      <span class='category-counter'>".$row['EMAIL']."</span>
                     </li>
                     <li>
-                      <a style="color:#333">Oda No :</a>
-                      <sapn class="category-counter">3021</sapn>
+                      <a style='color:#333'>Oda No :</a>
+                      <span class='category-counter'>".$row['ODA_NO']."</span>
                     </li>
                     <li>
-                      <a style="color:#333">Telefon :</a>
-                      <sapn class="category-counter">303 3595</sapn>
+                      <a style='color:#333'>Telefon :</a>
+                      <span class='category-counter'>".$row['TELEFON']."</span>
                     </li>
                     <li>
-                      <a style="color:#333" >Ana Bilim Dalı :</a>
-                      <sapn class="category-counter">Bilgisayar Bilimleri</sapn>
+                      <a style='color:#333' >Ana Bilim Dalı :</a>
+                      <span class='category-counter'>".$row['ANA_BILIM_DALI']."</span>
                     </li>
-                    <li>
-                      <a style="color:#333">Araştırma Alanları :</a>
-                      <sapn class="category-counter">Bilgisayar Ağları, Nesneye Yönelik Programlama, Veri Yapıları ve Algoritmalar, Bilgisayar Mimarisi</sapn>
+                    <li>";
+
+                    echo " <a style='color:#333'>Araştırma Alanları :</a>
+                      <span class='category-counter'>".$row['ARASTIRMA_ALAN']."</span>
                     </li>
                   </ul>
                 </div>
               </div>
-            </div>
+            </div>";
+                        }
+
+                        mysqli_free_result($result);
+                    } else{
+                        echo "Aranan kayıtlar bulunamadı :( .";
+                    }
+                } else{
+                    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
+                }           
+      
+  ?>
              <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="category-box border-2 wow fadeInUpQuick animated" data-wow-delay="0.6s" style="visibility: visible;-webkit-animation-delay: 0.6s; -moz-animation-delay: 0.6s; animation-delay: 0.6s;">
                 <div class="icon">
