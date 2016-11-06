@@ -73,15 +73,6 @@
                 <!-- /.col-lg-12 -->
 
 		<!-- Kullanıcılar Sayfası Sonu -->
-<script>
-    $(document).ready(function() {
-        $('#dataTables-kullanici').DataTable({
-            responsive: true
-        });
-
-
-    });
-    </script>
 
 
 	

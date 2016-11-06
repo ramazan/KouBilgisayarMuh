@@ -3,15 +3,7 @@
 	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 	include_once './session.php';  
 	?>
-		<script>
-		    $(document).ready(function() {
-		        $('#dataTables-example').DataTable({
-		            responsive: true
-		        })
-
-
-		    });
-		    </script>
+		
 				<div class="row">
                 <div class="col-lg-12" style="margin-top: 15px">
                 <button  class='btn btn-success' onclick='duyuruEkle()'><i class="fa fa-plus"></i> Duyuru Ekle</button>
