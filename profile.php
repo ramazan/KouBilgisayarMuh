@@ -23,7 +23,7 @@
 
                                                                 echo "<div  class='col-lg-2 col-md-3' >
                                         <div align='center'>
-                                        <img class='img-responsive img-profile'   src='".$row['RESIM_LINK']."' alt=''>
+                                        <img class='img-responsive img-profile' width='147px' height='147px'   src='".$row['RESIM_LINK']."' alt=''>
                                         </div>
                                         <div class='list-group' style='margin-top: 10px'>
                                            <a href='#' class='list-group-item active' style='border-color: #34495e;background-color: #34495e;'>Ön İzleme</a>
@@ -85,7 +85,7 @@
                                                                     if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
                                                                         while($row = mysqli_fetch_array($result)){
                                                                     
-                                                                    echo  "<img class='img-responsive img-profile'
+                                                                    echo  "<img class='img-responsive img-profile' width='147px' height='147px'
                                                                             src='".$row['RESIM_LINK']."'>";                        
                                                                         }
 
@@ -99,15 +99,15 @@
                                             
                                                     ?>
                                                         <br>
-                                                        <form role="form" style="padding-right:16px ">
-                                                            <div class="form-group">
-                                                                <label>Yeni resim seçin:</label>
-                                                                <input type="file">
-                                                                <p class="help-block"><i class="fa fa-warning"></i> Resim: JPG, GIF, PNG olmalıdır</p>
-                                                                <button type="submit" class="btn btn-success" >Profil resminizi güncelleyin</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
+                                                                
+                                            <form id="PhotoYukleForm" enctype="multipart/form-data" role="form">
+                                                <label>Yeni resim seçin:</label>
+                                                    <div id="messagesPhotoUpload"></div>
+                                                    <input type="file" name="file" id="file">
+                                             <p class="help-block"><i class="fa fa-warning"></i> Resim: JPG, GIF, PNG olmalıdır</p>          
+                                                 <button type="submit" class="btn btn-success" >Profil resminizi güncelleyin</button>
+                                              </form>
+                                                </div>
                                                     <div class="tab-pane fade" id="changePassword">
                                                       
                                                         <div id="profile_update_alert" class="alert alert-success" role="alert" style="text-align:center ; display: none;">
@@ -177,7 +177,7 @@
                                     echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
                                 }                       
             
-    ?>
+                                 ?>
                                                             <button class="btn btn-info" id="AkademikBilgiGuncelle">Güncelle</button>
                                                        </form>
                                                     </div>

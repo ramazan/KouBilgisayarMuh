@@ -37,11 +37,12 @@
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
 								       
-								     echo "<div class='panel-body'><table width='100%'' class='table table-striped table-bordered table-hover' id='dataTables-example'>";
+								      echo "<div class='panel-body'>
+                            <table width='100%'' class='table table-striped table-bordered table-hover' id='dataTables-example'>";
 
-								            
+								        
 
-								                echo "<thead>
+								            echo "<thead>
                                     <tr>
                                         <th>#</th>
                                         <th>Başlık</th>
@@ -50,7 +51,6 @@
                                         <th>Sil</th>
                                     </tr>
                                 </thead><tbody>";
-
 								            $sayac=0;
 								        while($row = mysqli_fetch_array($result)){
 								            echo "<tr class='odd gradeA'>";
@@ -63,7 +63,7 @@
 								            echo "</tr>";
 								        }
 
-								        echo "</tbody></table>";
+								        echo "</tbody></table></div>";
 								       
 								        mysqli_free_result($result);
 								    } else{
@@ -133,11 +133,7 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->
-        <?php
-   if ($login_session_role == "user") {
-   	echo "</div>";
-   }
-   ?>
+     
 
 
 	

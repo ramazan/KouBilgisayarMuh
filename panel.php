@@ -438,6 +438,60 @@
                   });
                   e.preventDefault();
               });
+
+
+
+
+ $('#PhotoYukleForm').submit(function(e) {
+
+                  var form = $(this);
+                  var formdata = false;
+                  if(window.FormData){
+                      formdata = new FormData(form[0]);
+                  }
+
+                  var formAction = form.attr('action');
+
+                  $.ajax({
+                      type        : 'POST',
+                      url         : 'dosyaYukle.php',
+                      cache       : false,
+                      data        : formdata ? formdata : form.serialize(),
+                      contentType : false,
+                      processData : false,
+
+                      success: function(response) {
+                          if(response != 'error') {
+
+                              $('#messagesPhotoUpload').addClass('alert alert-success').text("Dosya yükleme başarılı!");
+                              
+                                var dataString = 'fotograf_link='+ response;
+
+                                $.ajax({
+                                      type: "POST",
+                                      url: "kullaniciFotografGuncelle.php",
+                                      data: dataString,
+                                      cache: false,
+                                        success: function() {
+                                    $('#messagesPhotoUpload').addClass('alert alert-success').text("Profil resminiz başarıyla değiştirildi!");
+
+                                        setTimeout(function() {
+                                        $("#messagesPhotoUpload").hide(""); // modalin kapanması
+                                  }, 2500);
+                                },
+                                error: function() {
+                                  $("#messagesPhotoUpload").text("Bi' şeyler ters gitti..");
+                                }
+                                });       
+                             
+                          } else {
+                              $('#messagesPhotoUpload').addClass('alert alert-danger').text("Hata oluştu.");
+                          }
+                      }
+                  });
+                  e.preventDefault();
+              });
+
           </script>
 
           <script src="./vendor/metisMenu/metisMenu.min.js"></script>
