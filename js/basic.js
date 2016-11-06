@@ -263,13 +263,11 @@ $("#AkademikBilgiGuncelle").click(function(){
   var website = $("#website").val();
   var arastirmaalan = $( "#arastirmaalan" ).val();
 
- 
-
-   //console.log("AdSoyad: " + AdSoyad+"  Email: " + Email +" Sifre : " +Sifre + "  Rol : " + Rol  ); 
 
     // parametrelerin geçirilmesi
     var dataString = 'anaBilimDali='+ anabilimdali + '&odaNo='+ odano + '&Telefon='+ telefon
                      +'&Website='+ website +'&ArastirmaAlan='+ arastirmaalan ;
+
 
     $.ajax({
           type: "POST",

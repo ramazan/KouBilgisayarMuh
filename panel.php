@@ -463,7 +463,9 @@
                       success: function(response) {
                           if(response != 'error') {
 
-                              $('#messagesPhotoUpload').addClass('alert alert-success').text("Dosya yükleme başarılı!");
+                             // $('#messagesPhotoUploadMessage').text("Dosya yükleme başarılı!");
+                             $("#messagesPhotoUploadMessage").text("Profil resminiz başarıyla değiştirildi!");
+                                      $("#messagesPhotoUpload").show();
                               
                                 var dataString = 'fotograf_link='+ response;
 
@@ -473,11 +475,13 @@
                                       data: dataString,
                                       cache: false,
                                         success: function() {
-                                    $('#messagesPhotoUpload').addClass('alert alert-success').text("Profil resminiz başarıyla değiştirildi!");
+                                     
+                                     $("#profile_page").load("profile.php");
 
-                                        setTimeout(function() {
-                                        $("#messagesPhotoUpload").hide(""); // modalin kapanması
-                                  }, 2500);
+                                      setTimeout(function() {
+                                      $("#messagesPhotoUpload").hide();  // mesajın gizlenmesi
+                                      $("#messagesPhotoUploadMessage").text(""); // modalin kapanması
+                                      }, 2500);
                                 },
                                 error: function() {
                                   $("#messagesPhotoUpload").text("Bi' şeyler ters gitti..");

@@ -100,9 +100,13 @@
                                                     ?>
                                                         <br>
                                                                 
+
+                                             <div id="messagesPhotoUpload" class="alert alert-success" role="alert" style="text-align:center ; display: none;">
+                                                            <b id="messagesPhotoUploadMessage"></b>
+                                            </div>                   
+                                            
                                             <form id="PhotoYukleForm" enctype="multipart/form-data" role="form">
                                                 <label>Yeni resim seçin:</label>
-                                                    <div id="messagesPhotoUpload"></div>
                                                     <input type="file" name="file" id="file">
                                              <p class="help-block"><i class="fa fa-warning"></i> Resim: JPG, GIF, PNG olmalıdır</p>          
                                                  <button type="submit" class="btn btn-success" >Profil resminizi güncelleyin</button>
@@ -127,7 +131,6 @@
                                                         </form>
                                                     </div>
                                                     <div class="tab-pane fade " id="Akademik">
-                                                    <form role="form" style="padding-right:16px ">
 
                                                     <div id="AkademikMesajDiv" class="alert alert-success" role="alert" style="text-align:center ; display: none;">
                                                             <b id="AkademikMesaj"></b>
@@ -179,7 +182,6 @@
             
                                  ?>
                                                             <button class="btn btn-info" id="AkademikBilgiGuncelle">Güncelle</button>
-                                                       </form>
                                                     </div>
                                                 </div>
                                             </div>
