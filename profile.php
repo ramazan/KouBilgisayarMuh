@@ -31,14 +31,14 @@
                                          </div>
                                     </div>";
                                                               
-                                                  echo "<div class='col-lg-7 col-md-5' >
+                                                  echo "<div class='col-lg-6 col-md-5' >
                                 <h1 style='font-size: 26px;font-weight: 400;text-align:center;'>". $login_session_name."</h1><br>";
                                 echo "<h1 style='font-size: 20px;font-weight: 400;'>Araştırma Alanlarınız:</h1>
                                 <ul class='list-inline'>";
                                     
                               echo "<li><i class='fa fa-trophy fa-muted'></i>".$row['ARASTIRMA_ALAN']."</li></ul></div>";
 
-                              echo "<div class='col-lg-3 col-md-4' >
+                              echo "<div class='col-lg-4 col-md-4' >
                                 <h1 style='font-size: 20px;font-weight: 400;'>İletişim Bilgileriniz:</h1>
                                 <p><i class='fa fa-globe fa-muted fa-fw'></i>  <a href='#'>".$row['WEBSITE']."</a></p><p><i class='fa fa-phone fa-muted fa-fw'></i> ".$row['TELEFON']."</p><p><i class='fa fa-envelope-o fa-muted fa-fw'></i><a href='#'>".$row['EMAIL']." </a></p> <hr style='border-top: 1px solid #333;'/><p><i class='fa fa-envelope-o fa-info fa-fw'></i>Ana Bilim Dalı: ".$row['ANA_BILIM_DALI']."</p><p><i class='fa fa-envelope-o fa-info fa-fw'></i>Oda No: ".$row['ODA_NO']."</p> </div>";
                         }

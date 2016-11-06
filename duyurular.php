@@ -67,7 +67,7 @@
 								       
 								        mysqli_free_result($result);
 								    } else{
-								       echo "<div style='text-align:center' class='alert alert-danger'><b>Henüz Hiç Duyurunuz Yok!<b></div>";
+								       echo "<div style='text-align:center' class='alert alert-danger'>Henüz Hiç Duyurunuz Yok!</div>";
 								    }
 								} else{
 								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
@@ -117,7 +117,7 @@
 
 								        mysqli_free_result($result);
 								    } else{
-								        echo "<div style='text-align:center' class='alert alert-danger'><b>Henüz Hiç Duyurunuz Yok!<b></div>";
+								        echo "<div style='text-align:center' class='alert alert-danger'>Henüz Hiç Duyurunuz Yok!</div>";
 								    }
 								} else{
 								    echo "Hata: SQL'e giderken ayağım takıldı.. $sql. " . mysqli_error($con);
