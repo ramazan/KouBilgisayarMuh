@@ -15,7 +15,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 		  <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css" />
 	    <link rel="stylesheet" href="./css/panel.css" />
-		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+		  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" />
 
       <link href="./vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
@@ -131,18 +131,19 @@
                     </div>
                         
                                         <div class="form-group">
-                                           <input class="form-control" required placeholder="Ad ve Soyad Giriniz" id="adSoyad" type="text">
+                                           <input class="form-control" style="font-family:Arial,FontAwesome" 
+                                           required placeholder="&#xf007;  Ad ve Soyad Giriniz" id="adSoyad" type="text">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" required placeholder="E-mail Giriniz" id="mailAdresi" type="text">
+                                            <input class="form-control" style="font-family:Arial,FontAwesome" required placeholder="&#xf1d9; E-mail Giriniz" id="mailAdresi" type="text">
                            
                                         </div>
                                           
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Şifreyi Giriniz" id="sifre" type="password" required value="">
+                                            <input class="form-control" style="font-family:Arial,FontAwesome" placeholder="&#xf023;  Şifreyi Giriniz" id="sifre" type="password" required value="">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Şifreyi tekrar Giriniz" id="sifreTekrar" required type="password" value="">
+                                            <input class="form-control" style="font-family:Arial,FontAwesome" placeholder="&#xf023;  Şifreyi tekrar Giriniz" id="sifreTekrar" required type="password" value="">
                                         </div>
                                         <div>
                                           <b>Rol:</b>

@@ -158,16 +158,16 @@
                                         while($row = mysqli_fetch_array($result)){
                                       
                                             echo " <div class='form-group'>
-                                                                <label> Ana Bilim Dalınız:</label>
+                                                                <label><i class='fa fa-laptop'></i> Ana Bilim Dalınız:</label>
                                                                 <input class='form-control' id='anabilimdali' value='".$row['ANA_BILIM_DALI']."'>
                                                             </div>
                                                             <div class='form-group'>
-                                                                <label> Oda NO:</label>
+                                                                <label><i class='fa fa-home'></i> Oda NO:</label>
                                                                 <input class='form-control' id='odano' value='".$row['ODA_NO']."' >
                                                             </div>
                                                            
                                                             <div class='form-group'>
-                                                                <label> Telefon:</label>
+                                                                <label><i class='fa fa-phone-square'></i> Telefon:</label>
                                                                 <input class='form-control' id='telefon' value='".$row['TELEFON']."'  type='text'>
                                                             </div>
                                                              <div class='form-group'>

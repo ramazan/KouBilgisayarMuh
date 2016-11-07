@@ -34,6 +34,7 @@
     <head>
         <title>Bilgisayar Mühendisliği - Akademisyen Girişi</title>
         <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="css/giris.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,10 +64,12 @@
                             <form accept-charset="UTF-8" role="form" method="POST" action="">
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control" required placeholder="E-mail" name="email" type="text">
+                                        <input class="form-control" required placeholder="&#xf007;  E-mail" name="email"
+                                         type="text" style="font-family:Arial,FontAwesome" >
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" required placeholder="Şifre" name="password" type="password" value="">
+                                        <input class="form-control" required placeholder="&#xf023;   Şifre" name="password"
+                                         type="password" value="" style="font-family:Arial, FontAwesome">
                                     </div>
                                     <input class="btn btn-lg btn-success btn-block" type="submit" value="Giriş">
                                 </fieldset>
