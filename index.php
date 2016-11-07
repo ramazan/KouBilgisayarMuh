@@ -320,9 +320,12 @@
                         </div></div></div></div></div>";
 
 
-						$row['MESSAGE']=mb_substr($row['MESSAGE'], 0,70,'utf-8');
-						$row['MESSAGE'] = $row['MESSAGE'] . "...";
+                        if(strlen($row['MESSAGE']) >= 30){
 
+							$row['MESSAGE']=mb_substr($row['MESSAGE'], 0,60,'utf-8');
+							$row['MESSAGE'] = $row['MESSAGE'] . "...";
+
+						}	
 
 						if(strstr($row['MESSAGE'],"Ek : ")) $row['MESSAGE'] ='Ektedir..';
 
@@ -427,8 +430,12 @@
                           <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
                         </div></div></div></div></div>";
   					
-  						  $row['MESSAGE']=mb_substr($row['MESSAGE'], 0,60,'utf-8');
-						  $row['MESSAGE'] = $row['MESSAGE'] . "...";
+  						  if(strlen($row['MESSAGE']) >= 30){
+
+							$row['MESSAGE']=mb_substr($row['MESSAGE'], 0,60,'utf-8');
+							$row['MESSAGE'] = $row['MESSAGE'] . "...";
+
+						}
                     
 
                     	if(strstr($row['MESSAGE'],"Ek : ")) $row['MESSAGE'] ='Ektedir.';
@@ -609,8 +616,12 @@ echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dial
 								$sayac++;
 									
 
-  						  $row['MESSAGE']=mb_substr($row['MESSAGE'], 0,90,'utf-8');
-						  $row['MESSAGE'] = $row['MESSAGE'] . "...";
+  						  if(strlen($row['MESSAGE']) >= 30){
+
+							$row['MESSAGE']=mb_substr($row['MESSAGE'], 0,90,'utf-8');
+							$row['MESSAGE'] = $row['MESSAGE'] . "...";
+
+						}
 
 								echo "<h3 style='margin: 0 0 5px 0;'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-event' data-ua-label='id'>".$row['TITLE']." </a></h3>";
 									echo "<p class='text-muted'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."'>".$row['MESSAGE']."</a></p>";
@@ -711,8 +722,12 @@ echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dial
                           <button type='button' class='btn btn-default' data-dismiss='modal'>Kapat</button>
                         </div></div></div></div></div>";
 
- 						 $row['MESSAGE']=mb_substr($row['MESSAGE'], 0,110,'utf-8');
-						  $row['MESSAGE'] = $row['MESSAGE'] . "...";
+ 					if(strlen($row['MESSAGE']) >= 30){
+
+							$row['MESSAGE']=mb_substr($row['MESSAGE'], 0,110,'utf-8');
+							$row['MESSAGE'] = $row['MESSAGE'] . "...";
+
+						}
                           	echo "  <div class='col-sm-3 news-item'> <div class='news-img'><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' class='su-link' data-ua-action='hp-news'><img src='".$row['RESIM_LINK']."' 
 								      		class='img-responsive'/></a></div>";
 
