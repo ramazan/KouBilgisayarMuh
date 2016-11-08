@@ -124,7 +124,7 @@
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Yönetim</li>
-							<li><a href="#section41">Bilgisayar Mühendisliği Yönetimi</a></li>
+							<li><a href="yonetim.php">Bilgisayar Mühendisliği Yönetimi</a></li>
 							<li class="divider ek"></li>
 							
 						</ul>
