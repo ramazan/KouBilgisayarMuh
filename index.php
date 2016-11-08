@@ -211,7 +211,7 @@
 			  </li>
 			  </li>
 			  <li class="list-group-item" >
-    			<h4><span class="badge" style="float:right;" >Tüm Genel Duyurular</span></h4>
+    			<h4><a class="badge" style="float:right;" href="genelDuyuru.php" >Tüm Genel Duyurular</a></h4>
     			<br/>
 			  </li>
 
@@ -320,7 +320,7 @@
 		<br>	
 			  </li>
 			  <li class="list-group-item" >
-    			<h4><span class="badge" style="float:right;" >Tüm Bölüm Duyuruları</span></h4>
+    			<h4><a class="badge" style="float:right;" href="bolumDuyuru.php">Tüm Bölüm Duyuruları</a></h4>
     			<br/>
 			  </li>
 
@@ -408,7 +408,7 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
 			  
 
 			  <li class="list-group-item" >
-    			<h4><span class="badge" style="float:right;" >Tüm Etkinlikler</span></h4>
+    			<h4><a class="badge" style="float:right;" href="tumEtkinlik.php">Tüm Etkinlikler</a></h4>
     			<br/>
 			  </li>
 			</ul>
@@ -516,7 +516,7 @@ echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dial
 					?>
 			  </li>
 			    <li class="list-group-item" >
-    			<h4><span class="badge" style="float:right;" >Tüm İlanlar</span></h4>
+    			<h4><a class="badge" style="float:right;" href="tumStaj.php" >Tüm İlanlar</a></h4>
     			<br/>
 			  </li>
 	</ul>
@@ -655,7 +655,7 @@ echo "<li><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' st
 	?>
 
             </ul>
-            <p class="more-link"><a href="http://news.stanford.edu" class="su-link" data-ua-action="news.stanford.edu"><i class="fa fa-chevron-circle-right"></i> <span>Tümü</span></a></p>
+            <p class="more-link"><a href="tumHaber.php" ><i class="fa fa-chevron-circle-right"></i> <span>Tümü</span></a></p>
             <br/>
             <br/>
           </div>
