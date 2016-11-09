@@ -31,11 +31,6 @@
 <!-- Theme CSS -->
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
- 
-
 
 </head>
 	<?php include_once "navbar.php" ?>
@@ -89,12 +84,6 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.284502305772!2d2
 		</div>
     </div>
 </div>
-	
-	
-	
-	
-
-	
 	
 	<script src="vendor/jquery/jquery.min.js"></script>
 

@@ -32,11 +32,6 @@
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css" type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
- 
-
 
 </head>
 

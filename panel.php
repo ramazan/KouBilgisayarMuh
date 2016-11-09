@@ -8,7 +8,7 @@
 <html>
    
    <head>
-	    <title>Koü Ceng</title>
+	    <title>Koü Ceng. Admin Paneli</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,6 @@
       <link href="./vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
       <link href="./vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-    <!-- Custom CSS -->
    </head>
    
    <body>
@@ -38,7 +37,7 @@
                 
 					        <a class="navbar-brand" href="index.php" style="padding: 1px 8px;"><img
                     src="img/kou_logo.png" alt="KOÜ" width="50" height="50"/></img> <a href="index.php"
-                    class="navbar-brand">Bilgisayar Muhendisligi
+                    class="navbar-brand">Bilgisayar Mühendisligi
                   </a>
         
 				</div>
@@ -358,7 +357,7 @@
 	<!-- DUYURU EKLEModal end -->
 
 
-  <!-- DuyuruSilModal Sil Modal -->
+  <!-- DuyuruSil Modal -->
   <div id="DuyuruSilModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -415,7 +414,6 @@
 
 
 		<!-- JAVASCRIPT Dosyaları -->
-		<script type="text/javascript" src="./vendor/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="./vendor/jquery/jquery.js"></script>
 		<script type="text/javascript" src="./vendor/bootstrap/js/bootstrap.js"></script>
 		<script type="text/javascript" src="./js/basic.js"></script>			
@@ -562,9 +560,6 @@
    </body>
    
 </html>
- 
-
-    <!-- Metis Menu Plugin JavaScript -->
     
 
 
@@ -574,11 +569,5 @@
 		<style type="text/css">#users_page{display:none}</style>
 		<script type="text/javascript">kullaniciDivGizle();</script> 
 		<?php	
-	}else{
-		?>
-		<script type="text/javascript"> 
-				    console.log( "admin giris yaptı pnp!  Kullanıcılar Sekmesi açık!!!!!" );
-		</script>
-		<?php
 	}
 ?>

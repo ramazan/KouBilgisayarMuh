@@ -8,7 +8,6 @@
 							<div class="col-md-4">								
 								<div id="footer-logo" style="margin-top: 19px"></div>
 		    				</div>
-		    				<!-- Contact Info -->
 		    				<div class="col-md-4">
 		    					<h5 class="footer-title" style="padding-left:15px">İletişim</h5>
 								<p style="padding-left: 20px">KOÜ Mühendislik Fakültesi (B Blok)<br/>
@@ -74,22 +73,11 @@
 											</span>									
 											<span class="social-type-tooltip" style="left:-5px;">linkedin</span>
 										</li>
-									</a>
-									<a href="https://www.snapchat.com/add/pacificlutheran" target="_blank">
-										<li>
-											<span class="fa-stack">
-												<i class="fa fa-circle fa-stack-2x"></i>
-												<i class="fa fa-snapchat-ghost fa-stack-1x"></i>
-											</span>									
-											<span class="social-type-tooltip" style="left:-9px;">snapchat</span>
-										</li>
-									</a>
-									
+									</a>	
 									
 								</ul>
 								<br/>
 		    				</div>
-		    				<!-- Global Footer Links -->
 		    				<div class="col-md-4">
 		    					<h5 class="footer-title" style="padding-left: 15px">Faydalı Linkler</h5>
 		    					<div style="padding-left: 20px">
@@ -108,5 +96,5 @@
 		    				</div>
 		    							</div>
 		    							</div>                		
-						</div> <!-- end #inner-footer -->								
-					</footer> <!-- end .footer -->
+						</div> 							
+					</footer> 

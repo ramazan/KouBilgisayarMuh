@@ -28,8 +28,8 @@
 <!-- Theme CSS -->
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- jQuery -->
+	<script src="vendor/jquery/jquery.min.js"></script>
 </head>
 
 <body id="page-top" class="index" style="background:#f8f8f8;">
@@ -667,15 +667,6 @@ echo "<li><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' st
             <br/>
 			 <br/>
 	</div>
-	
-    	
-
-    	
-    	
-
-                           
-	<!-- jQuery -->
-	<script src="vendor/jquery/jquery.min.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>

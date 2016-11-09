@@ -11,10 +11,8 @@
 
 <title>Kocaeli Üniversitesi Bilgisayar Muhendisligi</title>
 
-<!-- Bootstrap Core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom Fonts -->
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
@@ -28,15 +26,11 @@
 	href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
 	rel='stylesheet' type='text/css'>
 
-<!-- Theme CSS -->
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
- 
-
 
 </head>
 
@@ -47,7 +41,6 @@
     <span class="header_shadow" style="top:74px"></span>
 	
 <div class="wrapper">
-      <!-- Categories Homepage Section Start -->
       <section id="categories-homepage">
         <div class="container">
           <div class="row">
@@ -123,7 +116,6 @@
 	
 	<script src="vendor/jquery/jquery.min.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <?php include_once "footer.php" ?>
