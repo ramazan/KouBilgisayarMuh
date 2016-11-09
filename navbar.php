@@ -27,7 +27,7 @@
 							<ul class="dropdown-menu" style="background-color: #2E363F;border-radius: 6px;">
 								<li><a style="color:#afafaf" href="">Tarihçe</a></li>
 
-								<li><a style="color:#afafaf" href="#section42">Hakkımızda</a></li>
+								<li><a style="color:#afafaf" href="hakkinda.php">Hakkımızda</a></li>
 								<li><a style="color:#afafaf" href="#section40">Misyon</a></li>
 								<li><a style="color:#afafaf" href="#section43">Vizyon</a></li>
 								<li><a style="color:#afafaf" href="#section43">Ana Bilim Dalları</a></li>
