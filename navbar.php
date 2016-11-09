@@ -28,10 +28,9 @@
 								<li><a style="color:#afafaf" href="">Tarihçe</a></li>
 
 								<li><a style="color:#afafaf" href="hakkinda.php">Hakkımızda</a></li>
-								<li><a style="color:#afafaf" href="#section40">Misyon</a></li>
-								<li><a style="color:#afafaf" href="#section43">Vizyon</a></li>
-								<li><a style="color:#afafaf" href="#section43">Ana Bilim Dalları</a></li>
-								<li><a style="color:#afafaf" href="#section43">Program Çıktıları</a></li>
+								<li><a style="color:#afafaf" href="MisyonVizyon.php">Misyon-Vizyon</a></li>
+								<li><a style="color:#afafaf" href="AnaBilimdali.php">Ana Bilim Dalları</a></li>
+								<li><a style="color:#afafaf" href="ProgramCikti.php">Program Çıktıları</a></li>
 							</ul></li>
 			<li class="dropdown dropdown-large">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Eğitim <b class="caret"></b></a>
@@ -41,7 +40,7 @@
 						<ul>
 							<li class="dropdown-header">Lisans</li>
 							<li><a href="http://mf.kocaeli.edu.tr/ogrenci/formlar.php" target="_blank">Dilekçe Formları</a></li>
-								<li><a href="#section42">Ders Planı</a></li>
+								<li><a href="DersPlani.php">Ders Planı</a></li>
 								<li><a href="#section40">Ders İçerikleri</a></li>
 								
 								<li><a href="#section40">Proje ve Bitirme</a></li>
@@ -54,7 +53,7 @@
 							<li class="dropdown-header">Y.Lisans</li>
 							<li><a href="#section41">Çalışma Alanları</a></li>
 							<li><a href="#section42">Ders Listesi</a></li>
-							<li><a href="#section40">Ders Programı</a></li>
+							<li><a href="http://bilgisayar.kocaeli.edu.tr/files/208_Ders_Programi.zip">Ders Programı</a></li>
 							<li><a href="#section43">Tezler</a></li>
 							<li class="divider ek"></li>
 						</ul>
@@ -64,7 +63,7 @@
 							
 							<li class="dropdown-header">Doktora</li>
 							<li><a href="#section42">Ders Listesi</a></li>
-							<li><a href="#section40">Ders Programı</a></li>
+							<li><a href="DersProgram.php">Ders Programı</a></li>
 							<li><a href="#">Tezler</a></li>
 							<li><a href="#">Çalışma Alanları</a></li>
 							<li class="divider ek"></li>
