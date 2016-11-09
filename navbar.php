@@ -40,7 +40,7 @@
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Lisans</li>
-							<li><a href="#section41">Dilekçe Formları</a></li>
+							<li><a href="http://mf.kocaeli.edu.tr/ogrenci/formlar.php" target="_blank">Dilekçe Formları</a></li>
 								<li><a href="#section42">Ders Planı</a></li>
 								<li><a href="#section40">Ders İçerikleri</a></li>
 								
@@ -74,12 +74,10 @@
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Ekler</li>
-							<li><a href="#section41">Aday Öğrenciler</a></li>
 							<li><a href="#section42">Mezunlar</a></li>
 							<li><a href="#section40">Müdek</a></li>
-							<li><a href="#section43">Akademik Takvim</a></li>
-							<li><a href="#section43">İntibak Öğrencileri</a></li>
-							<li><a href="#section43">Diploma Sorgulama</a></li>
+							<li><a href="http://odb.kocaeli.edu.tr/akademik_takvim.php" target="_blank">Akademik Takvim</a></li>
+							<li><a href="https://ogr.kocaeli.edu.tr/KOUBS/Genel/Diplomasorgu/diplomanosorgu.cfm" target="_blank">Diploma Sorgulama</a></li>
 							<li class="divider ek"></li>
 							
 						</ul>
@@ -94,37 +92,39 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Akademik <b class="caret"></b></a>
 				
 				<ul class="dropdown-menu dropdown-menu-large row">
+					<li class="col-md-6">
+						<ul>
+							<li class="dropdown-header">Araştırma</li>
+							<li><a href="http://bilgisayar.kocaeli.edu.tr/akilli_sistemler_lab/" target="_blank">Akıllı Sistemler Araştırma	Laboratuvarı</a></li>
+								<li><a href="http://bilgisayar.kocaeli.edu.tr/akilli_sistemler_lab/" target="_blank">Bilgisayar Ağları ve Haberleşme Araştırma Laboratuvarı</a></li>
+								<li><a href="http://embedded.kocaeli.edu.tr/" target="_blank" >Gömülü ve Algılayıcı Sistemler Araştırma Laboratuvarı</a></li>
+								<li><a href="http://ipcv.kocaeli.edu.tr/" target="_blank">Görüntü İşleme Araştırma Labaratuvarı</a></li>
+								<li><a href="http://yapbenzet.kocaeli.edu.tr/" target="_blank">Yapay Zeka ve Benzetim Sistemleri Araştırma Laboratuvarı</a></li>
+								<li><a href="http://ibel.kocaeli.edu.tr/" target="_blank">İnsan Bilgisayar Etkileşimi Araştırma Laboratuvarı</a></li>
+								<li class="divider ek"></li>
+								
+							
+						</ul>
+					</li>					
+					<li class="col-sm-3">
+						<ul>
+							<li class="dropdown-header">Yönetim</li>
+							<li><a href="yonetim.php">Bilgisayar Mühendisliği Yönetimi</a></li>
+							<li class="divider ek"></li>
+							
+						</ul>
+					</li>
+
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Personel</li>
 								 
 								<li><a href="kadro.php">Bölüm Personelleri</a></li>
+								
+								<li><a href="gelistiriciler.php">Geliştiriciler</a></li>	
 								  
 								<li><a href="giris.php">Sisteme Giriş</a></li>
-
-								<li><a href="gelistiriciler.php">Geliştiriciler</a></li>								
-							<li class="divider ek"></li>
 							
-						</ul>
-					</li>
-					<li class="col-md-6">
-						<ul>
-							<li class="dropdown-header">Araştırma</li>
-							<li><a href="http://bilgisayar.kocaeli.edu.tr/akilli_sistemler_lab/">Akıllı Sistemler Araştırma	Laboratuvarı</a></li>
-								<li><a href="http://bilgisayar.kocaeli.edu.tr/akilli_sistemler_lab/">Bilgisayar Ağları ve Haberleşme Araştırma Laboratuvarı</a></li>
-								<li><a href="http://embedded.kocaeli.edu.tr/">Gömülü ve Algılayıcı Sistemler Araştırma Laboratuvarı</a></li>
-								<li><a href="http://ipcv.kocaeli.edu.tr/">Görüntü İşleme Araştırma Labaratuvarı</a></li>
-								<li><a href="http://yapbenzet.kocaeli.edu.tr/">Yapay Zeka ve Benzetim Sistemleri Araştırma Laboratuvarı</a></li>
-								<li><a href="http://ibel.kocaeli.edu.tr/">İnsan Bilgisayar Etkileşimi Araştırma Laboratuvarı</a></li>
-								<li class="divider ek"></li>
-								
-							
-						</ul>
-					</li>
-					<li class="col-sm-3">
-						<ul>
-							<li class="dropdown-header">Yönetim</li>
-							<li><a href="yonetim.php">Bilgisayar Mühendisliği Yönetimi</a></li>
 							<li class="divider ek"></li>
 							
 						</ul>
