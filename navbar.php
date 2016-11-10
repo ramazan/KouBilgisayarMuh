@@ -25,7 +25,7 @@
 							data-toggle="dropdown">Hakkımızda<span class="caret"></span></a>
 
 							<ul class="dropdown-menu" style="background-color: #2E363F;border-radius: 6px;">
-								<li><a style="color:#afafaf" href="">Tarihçe</a></li>
+								<li><a style="color:#afafaf" href="tarihce.php">Tarihçe</a></li>
 
 								<li><a style="color:#afafaf" href="hakkinda.php">Hakkımızda</a></li>
 								<li><a style="color:#afafaf" href="MisyonVizyon.php">Misyon-Vizyon</a></li>
@@ -41,9 +41,9 @@
 							<li class="dropdown-header">Lisans</li>
 							<li><a href="http://mf.kocaeli.edu.tr/ogrenci/formlar.php" target="_blank">Dilekçe Formları</a></li>
 								<li><a href="DersPlani.php">Ders Planı</a></li>
-								<li><a href="#section40">Ders İçerikleri</a></li>
-								
-								<li><a href="#section40">Proje ve Bitirme</a></li>
+								<li><a href="Dersicerik.php">Ders İçerikleri</a></li>
+								<li><a href="http://bilgisayar.kocaeli.edu.tr/files/208_Ders_Programi.zip">Ders Programı</a></li>
+								<li><a href="proje.php">Proje ve Bitirme</a></li>
 							<li class="divider ek"></li>
 							
 						</ul>
@@ -51,10 +51,10 @@
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Y.Lisans</li>
-							<li><a href="#section41">Çalışma Alanları</a></li>
-							<li><a href="#section42">Ders Listesi</a></li>
-							<li><a href="http://bilgisayar.kocaeli.edu.tr/files/208_Ders_Programi.zip">Ders Programı</a></li>
-							<li><a href="#section43">Tezler</a></li>
+							<li><a href="calisma.php">Çalışma Alanları</a></li>
+							<li><a href="derslistesi.php">Ders Listesi</a></li>
+							<li><a href="http://bilgisayar.kocaeli.edu.tr/files/2016-2017_Guz_Lisansustu.pdf">Ders Programı</a></li>
+							
 							<li class="divider ek"></li>
 						</ul>
 					</li>
@@ -62,10 +62,9 @@
 						<ul>
 							
 							<li class="dropdown-header">Doktora</li>
-							<li><a href="#section42">Ders Listesi</a></li>
-							<li><a href="DersProgram.php">Ders Programı</a></li>
-							<li><a href="#">Tezler</a></li>
-							<li><a href="#">Çalışma Alanları</a></li>
+							<li><a href="derslistesi.php">Ders Listesi</a></li>
+							<li><a href="http://bilgisayar.kocaeli.edu.tr/files/2016-2017_Guz_Lisansustu.pdf">Ders Programı</a></li>
+							<li><a href="calisma.php">Çalışma Alanları</a></li>
 							<li class="divider ek"></li>
 							
 						</ul>
@@ -73,8 +72,8 @@
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Ekler</li>
-							<li><a href="#section42">Mezunlar</a></li>
-							<li><a href="#section40">Müdek</a></li>
+							<li><a href="https://www.facebook.com/groups/25429857332/">Mezunlar</a></li>
+							<li><a href="mudek.php">Müdek</a></li>
 							<li><a href="http://odb.kocaeli.edu.tr/akademik_takvim.php" target="_blank">Akademik Takvim</a></li>
 							<li><a href="https://ogr.kocaeli.edu.tr/KOUBS/Genel/Diplomasorgu/diplomanosorgu.cfm" target="_blank">Diploma Sorgulama</a></li>
 							<li class="divider ek"></li>
