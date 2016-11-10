@@ -89,10 +89,7 @@ include_once "navbar.php"
   </tr>
   <tr>
   
-  <tr>Kablosuz Haberleşme ve Gezgin Sistemler</td>
-    <td>Dağıtık sistemler algoritmaların temeli, problemler, hata toleransı göz önüne alınarakdağıtık uygulamalar dizayn etmek ve anlamak için gerekli modeller ve yöntemler. Web Servisler.</td>
  
-  </tr>
   
 </tbody></table>
 
