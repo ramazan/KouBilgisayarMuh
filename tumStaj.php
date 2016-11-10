@@ -57,7 +57,7 @@ include_once "navbar.php"
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='is-staj' ORDER BY ID DESC";
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='is-staj'  AND  STATUS='1' ORDER BY ID DESC";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..

@@ -61,7 +61,7 @@ include_once "navbar.php"
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DUYURU_TURU,announcements.DATE , announcements.ID	FROM announcements INNER JOIN users ON users.ID=announcements.USER_ID WHERE DUYURU_TURU='Genel' ORDER BY ID DESC;";
+							$sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DUYURU_TURU,announcements.DATE , announcements.ID	FROM announcements INNER JOIN users ON users.ID=announcements.USER_ID WHERE DUYURU_TURU='Genel' AND  STATUS='1' ORDER BY ID DESC;";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..

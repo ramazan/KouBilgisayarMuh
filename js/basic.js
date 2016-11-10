@@ -16,6 +16,7 @@ function etkinlikGoster(){
      $("#duyuruDivIcerik").show();
      $("#tarihDiv").hide();
      $("#resimEkleDiv").hide();
+     $("#yayinSuresiDiv").show();
   
   }else if ($("#etkinlikDuyuru").is(":checked")){
       $("#linkEkleDiv").hide();
@@ -23,13 +24,16 @@ function etkinlikGoster(){
       $("#duyuruDivIcerik").show();
       $("#tarihDiv").show();
       $("#resimEkleDiv").hide();
+     $("#yayinSuresiDiv").show();
 
   }else if($("#haberDuyuru").is(":checked") || $("#Slider").is(":checked") ){
      $("#linkEkleDiv").hide();
       $("#LinkDiv").hide();
       $("#duyuruDivIcerik").show();
       $("#tarihDiv").hide();
-      $("#resimEkleDiv").show();
+      $("#resimEkleDiv").show();     
+      $("#yayinSuresiDiv").show();
+
 
   }else if($("#is-stajDuyuru").is(":checked")){
      $("#linkEkleDiv").hide();
@@ -37,6 +41,8 @@ function etkinlikGoster(){
       $("#duyuruDivIcerik").show();
       $("#tarihDiv").hide();
       $("#resimEkleDiv").hide();
+      $("#yayinSuresiDiv").show();
+
 
   }
 
@@ -308,6 +314,11 @@ $("#duyuruKaydetButton").click(function(){
   var baslik = $("#duyuruBasligi").val();
   var icerik   = $("#duyuruIcerigi").val();
   var duyuruTuru;
+  var yayinSuresi = $('#yayinSuresi').val();
+  if(yayinSuresi == "Sürekli yayında kalsın"){
+    yayinSuresi = 'NULL';
+    console.log("surekli yayında " + yayinSuresi);
+  }
 
   if(baslik=="" || icerik ==""){
       $("#duyuruEkleMesaj").text("Lütfen Bütün Alanları Doldurun!");
@@ -319,14 +330,16 @@ $("#duyuruKaydetButton").click(function(){
       duyuruTuru = "Genel" ;
 
           // parametrelerin geçirilmesi
-    var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
-    duyuruAjaxPost(dataString)
+    var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru 
+    + '&yayinSuresi='+ yayinSuresi;
+    duyuruAjaxPost(dataString);
     
     } else if($("#bolumDuyuru").is(":checked")){
       duyuruTuru = "Bolum" ;
           // parametrelerin geçirilmesi
-    var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
-    duyuruAjaxPost(dataString)
+    var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
+    + '&yayinSuresi='+ yayinSuresi;
+    duyuruAjaxPost(dataString);
 
     } else if($("#etkinlikDuyuru").is(":checked")){
       var etlinlikGun = $("#tarihGun").val();
@@ -335,8 +348,8 @@ $("#duyuruKaydetButton").click(function(){
 
           // parametrelerin geçirilmesi
          var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
-        + '&etlinlikGun='+ etlinlikGun + '&etlinlikAy='+ etlinlikAy;
-        duyuruAjaxPost(dataString)
+        + '&etlinlikGun='+ etlinlikGun + '&etlinlikAy='+ etlinlikAy+ '&yayinSuresi='+ yayinSuresi;
+        duyuruAjaxPost(dataString);
 
     }else if($("#haberDuyuru").is(":checked")){
      
@@ -348,7 +361,7 @@ $("#duyuruKaydetButton").click(function(){
 			  $("#duyuruEkleMesaj").show();
       }else{
       var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
-        + '&resimLink='+ resimLink;
+        + '&resimLink='+ resimLink+ '&yayinSuresi='+ yayinSuresi;
         duyuruAjaxPost(dataString)
       }
 
@@ -362,7 +375,7 @@ $("#duyuruKaydetButton").click(function(){
 			  $("#duyuruEkleMesaj").show();
       }else{
       var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
-        + '&resimLink='+ resimLink; 
+        + '&resimLink='+ resimLink+ '&yayinSuresi='+ yayinSuresi; 
         duyuruAjaxPost(dataString);
       }
 

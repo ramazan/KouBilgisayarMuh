@@ -299,7 +299,7 @@
                    <div class="row">
 
                             <div class="form-group col-sm-5">
-                                <label for="tarih">Gün Seçiniz:</label>
+                                <label for="tarih">Etkinlik Gününü Seçiniz:</label>
                                 <select class="form-control" id="tarihGun">
                                   
                                  <?php
@@ -310,9 +310,10 @@
                                   ?>
 								  
                                 </select>
-                              </div>
+                            </div>
+
                             <div class="form-group col-sm-5">
-                                <label for="tarih">Ay Seçiniz:</label>
+                                <label for="tarih">Etkinlik Ayını Seçiniz:</label>
                                 <select class="form-control" id="tarihAy">
                                   <option>Oca</option>
                                   <option>Şub</option>
@@ -342,6 +343,21 @@
                             </div> 
                     </div>
                </div>  
+                    <div id="yayinSuresiDiv" class="col-sm-6" style="display: none;">
+                                <label for="yayinSuresi">Kaç gün yayında kalsın ? :</label>
+                                <select class="form-control" id="yayinSuresi">
+                                  
+                                  <option selected>Sürekli yayında kalsın</option>
+                                 <?php
+                                      for ($i=1; $i <=31 ; $i++) { 
+                                      
+                                         echo "<option>".$i."</option>"; 
+                                      }
+                                  ?>
+                  
+                                </select>
+                            </div>
+
 
 
 
