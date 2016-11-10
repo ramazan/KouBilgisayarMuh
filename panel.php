@@ -291,7 +291,7 @@
                           </div>
                       <button class="btn btn-primary" data-toggle="modal" data-target="#dosyaYukleModal">
                       <i class="fa fa-upload"></i>  Dosya Ekle</button>
-
+                      <br><br>
                   </div>
 
                 <div id="tarihDiv" style="display: none;"> 
@@ -343,7 +343,10 @@
                             </div> 
                     </div>
                </div>  
-                    <div id="yayinSuresiDiv" class="col-sm-6" style="display: none;">
+                    <div id="yayinSuresiDiv" style="display: none;">
+                       <div class="row">
+
+                          <div class="form-group col-sm-6">   
                                 <label for="yayinSuresi">Kaç gün yayında kalsın ? :</label>
                                 <select class="form-control" id="yayinSuresi">
                                   
@@ -356,7 +359,9 @@
                                   ?>
                   
                                 </select>
-                            </div>
+                             </div>
+                              </div> 
+                    </div>
 
 
 

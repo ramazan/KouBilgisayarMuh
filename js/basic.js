@@ -362,7 +362,7 @@ $("#duyuruKaydetButton").click(function(){
       }else{
       var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru
         + '&resimLink='+ resimLink+ '&yayinSuresi='+ yayinSuresi;
-        duyuruAjaxPost(dataString)
+        duyuruAjaxPost(dataString);
       }
 
     }else if ($("#Slider").is(":checked")) {
@@ -386,7 +386,7 @@ $("#duyuruKaydetButton").click(function(){
         duyuruTuru = "is-staj";
        
        
-        var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru;
+        var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&duyuruTuru='+ duyuruTuru+ '&yayinSuresi='+ yayinSuresi;
          duyuruAjaxPost(dataString);
       }  
 	
