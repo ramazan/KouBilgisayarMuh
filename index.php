@@ -1,4 +1,4 @@
-	<?php
+<?php
 	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 
 	?>
@@ -6,14 +6,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <meta name="description" content="">
 <meta name="author" content="">
-
 <title>Kocaeli Üniversitesi Bilgisayar Muhendisligi</title>
 
 <!-- Bootstrap Core CSS -->
@@ -28,24 +25,19 @@
 <!-- Theme CSS -->
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
-	<!-- jQuery -->
-	<script src="vendor/jquery/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="vendor/jquery/jquery.min.js"></script>
 </head>
 
 <body id="page-top" class="index" style="background:#f8f8f8;">
-
-	<?php include_once "navbar.php" ?>
-    <span class="header_shadow" style="top:74px"></span>
-    
-    <div class="container-fluid" style="margin-top: 100px" >
-    	<div class="row" >
-    		<div class="col-md-8"  >
-
-    				<div id="myCarousel" class="carousel slide"  data-ride="carousel" style="border: 3px solid #d9d4c6;" >
-				  <div class="carousel-inner"  role="listbox" style="border: 1px solid #fff; background-color:#d9d4c6">
-				   
-				    
-<?php
+<?php include_once "navbar.php" ?>
+<span class="header_shadow" style="top:74px"></span>
+<div class="container-fluid" style="margin-top: 100px" >
+  <div class="row" >
+    <div class="col-md-8"  >
+      <div id="myCarousel" class="carousel slide"  data-ride="carousel" style="border: 3px solid #d9d4c6;" >
+        <div class="carousel-inner"  role="listbox" style="border: 1px solid #fff; background-color:#d9d4c6">
+          <?php
 
 						if($con === false){
 					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
@@ -84,45 +76,30 @@
 								}						
 			
 					?>
-
-  					</div>
-
-					  <!-- Controls -->
-					  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					    <span class="sr-only">Önceki</span>
-					  </a>
-					  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					    <span class="sr-only">Sonraki</span>
-					  </a>
-					</div>
-					
-
-								<br/>
-					    		<div class="row" >
-			
-    	   
-
-                
-    		<div class="col-sm-6" style="margin-top: 20px" >
-    			<ul class="list-group">
-			  <li class="list-group-item">
-			  <div >
-    			<h4>Genel Duyurular<span class="badge" style="float:right; " ><?php 
+        </div>
+        
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Önceki</span> </a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Sonraki</span> </a> </div>
+      <br/>
+      <div class="row" >
+        <div class="col-sm-6" style="margin-top: 20px" >
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div >
+                <h4>Genel Duyurular<span class="badge" style="float:right; " >
+                  <?php 
 
 			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'Genel';");
 			   
 			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 
-    			echo $row['sayi'] ?></span></h4>
-    			</div>
-			  </li>
-			   <li class="list-group-item" >
-			  <ul class="timeline">
-
-			
-<?php
+    			echo $row['sayi'] ?>
+                  </span></h4>
+              </div>
+            </li>
+            <li class="list-group-item" >
+              <ul class="timeline">
+                <?php
 
 						if($con === false){
 					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
@@ -204,36 +181,35 @@
 								}						
 			
 	?>
-
-		</ul>
-		<br><br>
-
-			  </li>
-			  </li>
-			  <li class="list-group-item" >
-    			<h4><a class="badge" style="float:right;" href="genelDuyuru.php" >Tüm Genel Duyurular</a></h4>
-    			<br/>
-			  </li>
-
-  </ul>
-    		</div>
-    		<div class="col-sm-6" style="margin-top:20px" >
-    			<ul class="list-group">
-			  <li class="list-group-item" >
-			  <div >
-    			<h4>Bölüm Duyuruları<span class="badge" style="float:right;" ><?php 
+              </ul>
+              <br>
+              <br>
+            </li>
+            </li>
+            <li class="list-group-item" >
+              <h4><a class="badge" style="float:right;" href="genelDuyuru.php" >Tüm Genel Duyurular</a></h4>
+              <br/>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6" style="margin-top:20px" >
+          <ul class="list-group">
+            <li class="list-group-item" >
+              <div >
+                <h4>Bölüm Duyuruları<span class="badge" style="float:right;" >
+                  <?php 
 
 			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'Bolum';");
 			   
 			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 
-    			echo $row['sayi'] ?></span></h4>
-    			</div>
-			  </li>
-			   <li class="list-group-item" >
-			  <ul class="timeline">
-
-			<?php
+    			echo $row['sayi'] ?>
+                  </span></h4>
+              </div>
+            </li>
+            <li class="list-group-item" >
+              <ul class="timeline">
+                <?php
 
 						if($con === false){
 					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
@@ -312,40 +288,34 @@
 								}						
 			
 	?>
-
-	
-			
-		</ul>
-		<br>
-		<br>	
-			  </li>
-			  <li class="list-group-item" >
-    			<h4><a class="badge" style="float:right;" href="bolumDuyuru.php">Tüm Bölüm Duyuruları</a></h4>
-    			<br/>
-			  </li>
-
-  </ul>
-    		</div>
-
-    		</div>
-    			
-    			</div>
-
-
-    			<div class="col-md-4 yo" id="event-list">
-			  <ul class="list-group">
-			  <li class="list-group-item" >
-    			 <div >
-    			<h4>Etkinlikler <span class="badge" style="float:right;" ><?php 
+              </ul>
+              <br>
+              <br>
+            </li>
+            <li class="list-group-item" >
+              <h4><a class="badge" style="float:right;" href="bolumDuyuru.php">Tüm Bölüm Duyuruları</a></h4>
+              <br/>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 yo" id="event-list">
+      <ul class="list-group">
+        <li class="list-group-item" >
+          <div >
+            <h4>Etkinlikler <span class="badge" style="float:right;" >
+              <?php 
 
 			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'Etkinlik';");
 			   
 			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 
-    			echo $row['sayi'] ?></span></h4>
-    			</div>
-			  </li>
-			           <?php
+    			echo $row['sayi'] ?>
+              </span></h4>
+          </div>
+        </li>
+        <?php
 
 
 						if($con === false){
@@ -405,29 +375,28 @@ echo "<div class='event-text'><h3 style='margin: 0 0 5px 0;'><a href='#' data-to
 								}						
 			
 	?>
-			  
-
-			  <li class="list-group-item" >
-    			<h4><a class="badge" style="float:right;" href="tumEtkinlik.php">Tüm Etkinlikler</a></h4>
-    			<br/>
-			  </li>
-			</ul>
-			 
-  </div>
-      			    			<div class="col-md-4" >
-    					    				 <ul class="list-group">
-			  <li class="list-group-item" >
-			  <div >
-    			<h4>İş-Staj İlanları<span class="badge" style="float:right;" ><?php 
+        <li class="list-group-item" >
+          <h4><a class="badge" style="float:right;" href="tumEtkinlik.php">Tüm Etkinlikler</a></h4>
+          <br/>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4" >
+      <ul class="list-group">
+        <li class="list-group-item" >
+          <div >
+            <h4>İş-Staj İlanları<span class="badge" style="float:right;" >
+              <?php 
 
 			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'is-staj';");
 			   
 			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 
-    			echo $row['sayi'] ?></span></h4>
-    			</div>
-			  </li>
-					<?php
+    			echo $row['sayi'] ?>
+              </span></h4>
+          </div>
+        </li>
+        <?php
 
 						if($con === false){
 					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
@@ -514,37 +483,35 @@ echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dial
 								}						
 			
 					?>
-			  </li>
-			    <li class="list-group-item" >
-    			<h4><a class="badge" style="float:right;" href="tumStaj.php" >Tüm İlanlar</a></h4>
-    			<br/>
-			  </li>
-	</ul>
-
-    			</div>
-
-
-    		</div>
-
-
-    	</div>
-		<div class="bgGrey">
-    	<div class="container-fluid" >
-    		<div class="row" >
-    			 <div class="col-sm-12" style="    background-clip: content-box; background-color: #fff; " >
-
-                <h4  style="border-bottom: 1px solid #d5d0c0;color:#820000;margin-left: 12px;margin-right:10px;font-size: 20px">Haberler<span class="badge" style="float:right;margin-right:10px "><?php 
+        </li>
+        <li class="list-group-item" >
+          <h4><a class="badge" style="float:right;" href="tumStaj.php" >Tüm İlanlar</a></h4>
+          <br/>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="bgGrey">
+  <div class="container-fluid" >
+    <div class="row" >
+      <div class="col-sm-12" style="    background-clip: content-box; background-color: #fff; " >
+        <h4  style="border-bottom: 1px solid #d5d0c0;color:#820000;margin-left: 12px;margin-right:10px;font-size: 20px">
+        Haberler<span class="badge" style="float:right;margin-right:10px ">
+        <?php 
 
 			  $ses_sql = mysqli_query($con,"SELECT COUNT(*) as sayi FROM announcements WHERE DUYURU_TURU = 'Haber';");
 			   
 			   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 
-    			echo $row['sayi'] ?><br/></span></h3>
-                <br/>
-            </div>
-            <div class="col-sm-12" style="    background-clip: content-box; background-color: #fff">
-
-<?php
+    			echo $row['sayi'] ?>
+        <br/>
+        </span>
+        </h3>
+        <br/>
+      </div>
+      <div class="col-sm-12" style="    background-clip: content-box; background-color: #fff">
+        <?php
 
 
 						if($con === false){
@@ -603,10 +570,10 @@ echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dial
 								}						
 			
 	?>
-<div class="col-sm-3" id="more-news">
-            <h4 style="color: #5cb85c">Daha Fazla Haber</h4>
-            <ul>
-             <?php
+        <div class="col-sm-3" id="more-news">
+          <h4 style="color: #5cb85c">Daha Fazla Haber</h4>
+          <ul>
+            <?php
 
 
 						if($con === false){
@@ -653,30 +620,25 @@ echo "<li><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' st
 								}						
 			
 	?>
+          </ul>
+          <p class="more-link"><a href="tumHaber.php" ><i class="fa fa-chevron-circle-right"></i> <span>Tümü</span></a></p>
+          <br/>
+          <br/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+</div>
 
-            </ul>
-            <p class="more-link"><a href="tumHaber.php" ><i class="fa fa-chevron-circle-right"></i> <span>Tümü</span></a></p>
-            <br/>
-            <br/>
-          </div>
-		  
-                  	</div>           
-    		</div>
-    	</div>
-		  <br/>
-            <br/>
-			 <br/>
-	</div>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
+<!-- Bootstrap Core JavaScript --> 
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <?php 
 
 include_once "footer.php"
 
 ?>
-	
 </body>
-
 </html>

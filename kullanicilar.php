@@ -2,19 +2,14 @@
 	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 ?>
 
-    
-
-				<div class="row">
-                <div class="col-lg-12" style="margin-top: 15px">
-                <button  class='btn btn-success' onclick='kullaniciEkle()'><i class="fa fa-user-plus"></i> Kullanıcı Ekle</button>
-                <br/>
-                <br/>
-             			<div class="panel panel-default">
-                        <div class="panel-heading">
-                            Kullanıcılar Listesi
-                        </div>
-
-					<?php
+<div class="row">
+  <div class="col-lg-12" style="margin-top: 15px">
+    <button  class='btn btn-success' onclick='kullaniciEkle()'><i class="fa fa-user-plus"></i> Kullanıcı Ekle</button>
+    <br/>
+    <br/>
+    <div class="panel panel-default">
+      <div class="panel-heading"> Kullanıcılar Listesi </div>
+      <?php
 
 						if($con === false){
 					    die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
@@ -64,15 +59,12 @@
 
 			
 					?>
-           
-		       </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.panel-body --> 
+  </div>
+  <!-- /.panel --> 
+</div>
+<!-- /.col-lg-12 --> 
 
-		<!-- Kullanıcılar Sayfası Sonu -->
+<!-- Kullanıcılar Sayfası Sonu --> 
 
-
-	
