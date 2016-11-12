@@ -686,6 +686,8 @@ include_once "footer.php"
 
 
 <?php
+
+date_default_timezone_set("Europe/Istanbul");
 if($con === false){
               die("HATA: Veritabanı bağlantısı kurulamadı. " . mysqli_connect_error());
             }
@@ -697,6 +699,8 @@ if($con === false){
                     if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
                     
                         while($row = mysqli_fetch_array($result)){
+
+			
 
                            $dateBugun = new DateTime();
  

@@ -35,7 +35,7 @@
 			<li class="dropdown dropdown-large">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Eğitim <b class="caret"></b></a>
 				
-				<ul class="dropdown-menu dropdown-menu-large row">
+				<ul class="dropdown-menu dropdown-menu-large row" style="background-color: #2E363F;border-radius: 6px;">
 					<li class="col-sm-3">
 						<ul>
 							<li class="dropdown-header">Lisans</li>
@@ -89,7 +89,7 @@
 			<li class="dropdown dropdown-large">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Akademik <b class="caret"></b></a>
 				
-				<ul class="dropdown-menu dropdown-menu-large row">
+				<ul class="dropdown-menu dropdown-menu-large row" style="background-color: #2E363F;border-radius: 6px;">
 					<li class="col-md-6">
 						<ul>
 							<li class="dropdown-header">Araştırma</li>
