@@ -528,8 +528,8 @@ echo "<div class='modal fade' id='duyuru".$row['ID']."' tabindex='-1' role='dial
 
 
     	</div>
-		<div class="bgGrey">
-    	<div class="container-fluid" >
+		<div class="a">
+    	<div class="container-fluid"  style="background-clip: content-box; background-color: #fff">
     		<div class="row" >
     			 <div class="col-sm-12" style="    background-clip: content-box; background-color: #fff; " >
 

@@ -69,7 +69,7 @@
 
 
 	<!-- Sayfalar div başlangıcı -->
-	<div id="page-wrapper" class="ekran">
+	<div id="page-wrapper">
 
 	<!-- Duyurular Sayfası Başlangıcı -->
 		<div id="duyurular_page">
