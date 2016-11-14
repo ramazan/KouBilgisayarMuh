@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>404 Not Found</title>
+<meta charset="utf-8">
+<link href="css/ErrorStyle.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+	<div class="wrap">
+		<br> <br>
+		<div class="header">
+			<img src="img/kou_logo.png" width="50" height="50" title="error" />
+			<h1>Bilgisayar Mühendisliği</h1>
+			<br>
+			<h2>Yönlendiriliyorsunuz.. bekleyin <span id="count">5</span></h2>
+		</div>
+		<div class="content">
+			<img src="img/error-img.png" title="error" />
+			<p>
+				<span><label>M</label>aalesef... </span>Aradığınız Sayfa Bulunamadı.
+			</p>
+			<div class="copy-right">
+				<p>Kocaeli Üniversitesi Bilgisayar Mühendisliği</p>
+			</div>
+		</div>
+	</div>
+	<script>
+		setTimeout(function() {
+			window.location = "index.php";
+		}, 5000);
+		
+		//yönlendirme geri sayım
+		var counter = 5;
+		var interval = setInterval(function() {
+		    counter--;
+		    document.getElementById("count").innerHTML = counter;
+		    if (counter == 0) {
+		        clearInterval(interval);
+		    }
+		}, 1000);
+		
+		
+		
+	</script>
+</body>
+</html>
