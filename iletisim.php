@@ -29,7 +29,7 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Theme CSS -->
-<link href="css/agency.min.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
 
 </head>

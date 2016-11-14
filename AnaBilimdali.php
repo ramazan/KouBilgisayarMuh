@@ -29,9 +29,9 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Theme CSS -->
-<link href="css/agency.min.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css" type="text/css">
+<link rel="stylesheet" href="css/profil_ayrinti.css" type="text/css">
 
 </head>
 
@@ -44,9 +44,9 @@
 <div class="wrapper">
       <!-- Categories Homepage Section Start -->
       <section id="categories-homepage">
-        <div class="container">
+         <div class="container" style="margin-top:150px; ">
           <div class="row">
-		  
+            <div class="col-md-12">
 		  <div style="text-align:center;border-bottom: 2px solid #333; padding-bottom:8px;"></div>
             <h3 style="text-align:center;border-bottom: 2px solid #333; padding-bottom:8px;">Bilgisayar  Yazılım </h3>
 			  <br><br>
@@ -239,6 +239,7 @@
 			
           </div>
         </div>
+         </div>
       </section>	
 	
 	<script src="vendor/jquery/jquery.min.js"></script>

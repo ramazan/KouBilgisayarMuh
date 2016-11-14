@@ -26,7 +26,7 @@
 	rel="stylesheet" type="text/css">
 
 <!-- Theme CSS -->
-<link href="css/agency.min.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
 	<!-- jQuery -->
 	<script src="vendor/jquery/jquery.min.js"></script>

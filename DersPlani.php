@@ -21,7 +21,7 @@
 	rel="stylesheet" type="text/css">
 
 
-<link href="css/agency.min.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -35,9 +35,10 @@ include_once "navbar.php"
 ?>
     <span class="header_shadow" style="top:74px"></span>
 	
-	</br></br></br></br></br>
-	</br>
-	  <h3 style="text-align:center; border: 1px solid #333">1. Yarıyıl </h3>
+	<div class="container" >
+    <div class="row">
+      <div class="col-lg-12" style="margin-top: 150px;">
+	   <div style="text-align:center; border: 1px solid #333; background-color:#eaf3f3"> <h3 >1. Yarıyıl </h3></div>
 	<table class="responstable">
   
   <tbody><tr>
@@ -121,9 +122,9 @@ include_once "navbar.php"
   </tr>
   
 </tbody></table>
-<h3 style="text-align:center;border-bottom: 2px solid #333; padding-bottom:8px;"> </h3>
+<hr style=" border: 1px solid #333;"> </hr>
 		<br><br>
-   <div> <h3 style="text-align:center; border: 1px solid #333">2. Yarıyıl </h3></div>
+   <div style="text-align:center; border: 1px solid #333;background-color: #eaf3f3"> <h3 >2. Yarıyıl </h3></div>
   <table class="responstable">
   
   <tbody><tr>
@@ -199,8 +200,14 @@ include_once "navbar.php"
     <td>3</td>
   </tr>
   
-</tbody></table>    
-<h3 style="text-align:center;border-bottom: 2px solid #333; padding-bottom:8px;"> </h3>
+</tbody></table>  
+
+<hr style=" border: 1px solid #333;"> </hr>
+</div>
+  </div>
+    </div>
+  
+
   
 	
 	

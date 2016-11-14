@@ -21,7 +21,7 @@
 	rel="stylesheet" type="text/css">
 
 
-<link href="css/agency.min.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -34,11 +34,11 @@
 include_once "navbar.php"
 ?>
     <span class="header_shadow" style="top:74px"></span>
-	
-	</br></br></br></br></br>
-	</br>
-	  <h3 style="text-align:center; border: 1px solid #333">Bilgisayar Mühendisliği Yüksek Lisans Ders Listesi </h3>
-	<table class="responstable">
+	<div class="container" >
+    <div class="row">
+      <div class="col-lg-12" style="margin-top: 150px;">
+	  <h3 style="text-align:center; border: 1px solid #333;">Bilgisayar Mühendisliği Yüksek Lisans Ders Listesi </h3>
+	<table class="responstable" >
   
   <tbody><tr>
     <th>Ders Adı</th>
@@ -92,6 +92,11 @@ include_once "navbar.php"
  
   
 </tbody></table>
+</div>
+</div>
+
+</div>
+
 
 
   
