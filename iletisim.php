@@ -12,10 +12,10 @@
 <title>Kocaeli Üniversitesi Bilgisayar Muhendisligi</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
+<link href="assets/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" type="text/css">
@@ -85,10 +85,10 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.284502305772!2d2
     </div>
 </div>
 	
-	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="assets/jquery/jquery.min.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<?php include_once "footer.php" ?>
 
 

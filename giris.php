@@ -33,8 +33,8 @@
 
     <head>
         <title>Bilgisayar Mühendisliği - Akademisyen Girişi</title>
-        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="css/giris.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -83,8 +83,8 @@
             </div>
         </div>
         <!-- JAVASCRIPT SOURCES -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/jquery/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     </body>
 
     </html>

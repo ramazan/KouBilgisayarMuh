@@ -17,10 +17,10 @@
 <title>Kocaeli Üniversitesi Bilgisayar Muhendisligi</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
+<link href="assets/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" type="text/css">
@@ -29,7 +29,7 @@
 <link href="css/index.css" rel="stylesheet">
 <link href="css/dummy.css" rel="stylesheet">
 	<!-- jQuery -->
-	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="assets/jquery/jquery.min.js"></script>
 </head>
 
 <body id="page-top" class="index" style="background:#f8f8f8;">
@@ -669,7 +669,7 @@ echo "<li><a href='#' data-toggle='modal' data-target='#duyuru".$row['ID']."' st
 	</div>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
 <?php 
 

@@ -12,10 +12,10 @@
 <title>Kocaeli Üniversitesi Bilgisayar Muhendisligi</title>
 
 
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
+<link href="assets/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" type="text/css">
@@ -204,8 +204,8 @@ Bu ders BİL103 Bilgisayar Programlama I dersinde işlenen temel programlama kav
   
 	
 	
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/jquery/jquery.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </br></br>
   <?php
 include_once "footer.php"

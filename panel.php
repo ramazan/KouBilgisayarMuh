@@ -13,13 +13,13 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-		  <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css" />
+		  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
 	    <link rel="stylesheet" href="./css/panel.css" />
-		  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" />
+		  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
 
-      <link href="./vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+      <link href="./assets/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
-      <link href="./vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+      <link href="./assets/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
    </head>
    
    <body>
@@ -435,8 +435,8 @@
 
 
 		<!-- JAVASCRIPT Dosyaları -->
-		<script type="text/javascript" src="./vendor/jquery/jquery.js"></script>
-		<script type="text/javascript" src="./vendor/bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="./assets/jquery/jquery.js"></script>
+		<script type="text/javascript" src="./assets/bootstrap/js/bootstrap.js"></script>
 		<script type="text/javascript" src="./js/basic.js"></script>			
    <script>
     //dosya yukleme işlemi          
@@ -537,9 +537,9 @@
 
           </script>
 
-    <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="./assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="./assets/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="./assets/datatables-responsive/dataTables.responsive.js"></script>
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({

@@ -352,7 +352,7 @@ jQuery.extend( {
 	},
 
 	// Convert dashed to camelCase; used by the css and data modules
-	// Microsoft forgot to hump their vendor prefix (#9572)
+	// Microsoft forgot to hump their assets prefix (#9572)
 	camelCase: function( string ) {
 		return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
 	},
@@ -4279,7 +4279,7 @@ jQuery.fn.extend( {
 			div.style.cssText =
 
 				// Support: Firefox<29, Android 2.3
-				// Vendor-prefix box-sizing
+				// assets-prefix box-sizing
 				"-webkit-box-sizing:content-box;-moz-box-sizing:content-box;" +
 				"box-sizing:content-box;display:block;margin:0;border:0;" +
 				"padding:1px;width:1px;zoom:1";
@@ -6547,7 +6547,7 @@ var documentElement = document.documentElement;
 	container.appendChild( div );
 
 	// Support: Firefox<29, Android 2.3
-	// Vendor-prefix box-sizing
+	// assets-prefix box-sizing
 	support.boxSizing = div.style.boxSizing === "" || div.style.MozBoxSizing === "" ||
 		div.style.WebkitBoxSizing === "";
 
@@ -6614,7 +6614,7 @@ var documentElement = document.documentElement;
 		div.style.cssText =
 
 			// Support: Android 2.3
-			// Vendor-prefix box-sizing
+			// assets-prefix box-sizing
 			"-webkit-box-sizing:border-box;box-sizing:border-box;" +
 			"position:relative;display:block;" +
 			"margin:auto;border:1px;padding:1px;" +
@@ -6647,7 +6647,7 @@ var documentElement = document.documentElement;
 			contents.style.cssText = div.style.cssText =
 
 				// Support: Android 2.3
-				// Vendor-prefix box-sizing
+				// assets-prefix box-sizing
 				"-webkit-box-sizing:content-box;-moz-box-sizing:content-box;" +
 				"box-sizing:content-box;display:block;margin:0;border:0;padding:0";
 			contents.style.marginRight = contents.style.width = "0";
@@ -6858,15 +6858,15 @@ var
 	emptyStyle = document.createElement( "div" ).style;
 
 
-// return a css property mapped to a potentially vendor prefixed property
-function vendorPropName( name ) {
+// return a css property mapped to a potentially assets prefixed property
+function assetsPropName( name ) {
 
-	// shortcut for names that are not vendor prefixed
+	// shortcut for names that are not assets prefixed
 	if ( name in emptyStyle ) {
 		return name;
 	}
 
-	// check for vendor prefixed names
+	// check for assets prefixed names
 	var capName = name.charAt( 0 ).toUpperCase() + name.slice( 1 ),
 		i = cssPrefixes.length;
 
@@ -7090,7 +7090,7 @@ jQuery.extend( {
 			style = elem.style;
 
 		name = jQuery.cssProps[ origName ] ||
-			( jQuery.cssProps[ origName ] = vendorPropName( origName ) || origName );
+			( jQuery.cssProps[ origName ] = assetsPropName( origName ) || origName );
 
 		// gets hook for the prefixed version
 		// followed by the unprefixed version
@@ -7156,7 +7156,7 @@ jQuery.extend( {
 
 		// Make sure that we're working with the right name
 		name = jQuery.cssProps[ origName ] ||
-			( jQuery.cssProps[ origName ] = vendorPropName( origName ) || origName );
+			( jQuery.cssProps[ origName ] = assetsPropName( origName ) || origName );
 
 		// gets hook for the prefixed version
 		// followed by the unprefixed version
