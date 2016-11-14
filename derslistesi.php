@@ -94,7 +94,6 @@ include_once "navbar.php"
 </tbody></table>
 </div>
 </div>
-
 </div>
 
 
