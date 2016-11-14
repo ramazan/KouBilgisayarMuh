@@ -712,7 +712,6 @@ ul.list-inline {
 .responstable td {
 	display: block;
 	word-wrap: break-word;
-	max-width: 7em;
 }
 .responstable td:first-child {
 	display: table-cell;
