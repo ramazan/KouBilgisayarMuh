@@ -56,16 +56,12 @@ function duyuruGoster() {
   $("#page-wrapper > div").hide();
   $('#duyurular_page').hide().delay(250).fadeIn(350);
 
-  console.log("duyurlar acildi");
-
 }
 
 function kullaniciGoster() {
 
   $("#page-wrapper > div").hide();
   $('#users_page').hide().delay(250).fadeIn(350);
-
-  console.log("kullaniciGoster acildi");
 
 }
 
@@ -81,7 +77,6 @@ function P_Guncelle()
   $('#Profil_OnIzleme').hide();
   $('#Profil_Guncelle').hide().delay(250).fadeIn(350);
 
-
 }
 
 function profilGoster() {
@@ -89,15 +84,13 @@ function profilGoster() {
   $("#page-wrapper > div").hide();
   $('#profile_page').hide().delay(250).fadeIn(350);
 
-  console.log("Profil sayfasi acildi");
 
 }
 
 function kullaniciDivGizle() {
   
-  console.log( "user giris yaptı , Kullanıcılar Sekmesi gizlendi!" );
   $("#side-menu > #nav_users").hide();
-    $('#users_page').hide();
+  $('#users_page').hide();
 
 
 }; 
@@ -113,17 +106,14 @@ function duyuruEkle(){
 }
 
 function KullaniciSil(ID){
- // console.log("siilinecek ID : " + ID);
+
     $('#KullaniciSilModal').modal('show');
     $('#kullaniciSilMesaj').text("Emin misiniz?");
  
-      console.log(" silinecek kullanıcı ID : " + ID);
       
     $("#kullaniciSilButton").click(function(){
 
         var dataString = 'ID=' + ID; 
-
-        console.log("dataString: " + dataString);
 
          $.ajax({
             type: "POST",
@@ -226,8 +216,6 @@ $("#kullaniciKaydetButton").click(function(){
       Rol ="admin" ;
      }    
 
-   //console.log("AdSoyad: " + AdSoyad+"  Email: " + Email +" Sifre : " +Sifre + "  Rol : " + Rol  ); 
-
     // parametrelerin geçirilmesi
     var dataString = 'adSoyad='+ UnvanAdSoyad + '&email='+ Email + '&sifre='+ Sifre +'&rol='+ Rol ;
 
@@ -317,7 +305,6 @@ $("#duyuruKaydetButton").click(function(){
   var yayinSuresi = $('#yayinSuresi').val();
   if(yayinSuresi == "Sürekli yayında kalsın"){
     yayinSuresi = 'NULL';
-    console.log("surekli yayında " + yayinSuresi);
   }
 
   if(baslik=="" || icerik ==""){
@@ -400,8 +387,6 @@ $("#duyuruKaydetButton").click(function(){
 
 function duyuruAjaxPost(dataString){
 
-  console.log(dataString);
-
   $.ajax({
           type: "POST",
           url: "duyuruEkle.php",
@@ -434,12 +419,11 @@ function duyuruAjaxPost(dataString){
 }
 
 function duyuruSil(ID){
- // console.log("siilinecek ID : " + ID);
+
     $('#DuyuruSilModal').modal('show');
     $('#duyuruSilMesaj').text("Emin misiniz?");
 
     $("#duyuruSilButton").click(function(){
-        console.log(" ID : " + ID);
 
         var dataString = 'ID=' + ID; 
         
@@ -492,7 +476,6 @@ $("#LinkEkleButton").click(function(){
 
     var linkOlustur = "<br><br>Ek : <a style=\"color:#428bca\" href=\""+link+"\" target=\"_blank\">"+linkAdi+"</a>";
 
-console.log(linkOlustur);
     var mesaj =$("#duyuruIcerigi").val();
 
     var yeniMesaj = mesaj + linkOlustur;

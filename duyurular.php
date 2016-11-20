@@ -5,7 +5,7 @@
 	?>
 		<script>
     $(document).ready(function() {
-        $('#dataTables-example').DataTable({
+        $('#dataTables-duyurular').DataTable({
             responsive: true,
             "bJQueryUI": false,
             "bAutoWidth": false,
@@ -48,7 +48,7 @@
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..
 								       
 								      echo "<div class='panel-body'>
-                            <table width='100%'' class='table table-striped table-bordered table-hover' id='dataTables-example'>";
+                            <table width='100%'' class='table table-striped table-bordered table-hover' id='dataTables-duyurular'>";
 
 								        
 
@@ -95,7 +95,7 @@
 								       
 								     
 								        echo "<div class='panel-body'>
-                            <table width='100%'' class='table table-striped table-bordered table-hover' id='dataTables-example'>";
+                            <table width='100%'' class='table table-striped table-bordered table-hover' id='dataTables-duyurular'>";
 
 								        
 
