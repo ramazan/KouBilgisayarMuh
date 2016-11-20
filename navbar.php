@@ -25,7 +25,7 @@
 							data-toggle="dropdown">Hakkımızda<span class="caret"></span></a>
 
 							<ul class="dropdown-menu" style="background-color: #2E363F;border-radius: 6px;">
-								<li><a style="color:#afafaf" href="www.umutvakum.com">Tarihçe</a></li>
+								<li><a style="color:#afafaf" href="">Tarihçe</a></li>
 
 								<li><a style="color:#afafaf" href="#section42">Hakkımızda</a></li>
 								<li><a style="color:#afafaf" href="#section40">Misyon</a></li>
@@ -108,11 +108,12 @@
 					<li class="col-md-6">
 						<ul>
 							<li class="dropdown-header">Araştırma</li>
-							<li><a href="#section41">Akıllı Sistemler Araştırma	Laboratuvarı</a></li>
-								<li><a href="#section42">Bilgisayar Ağları ve Haberleşme Araştırma Laboratuvarı</a></li>
-								<li><a href="#section42">Gömülü ve Algılayıcı Sistemler Araştırma Laboratuvarı</a></li>
-								<li><a href="#section42">Yapay Zeka ve Benzetim Sistemleri Araştırma Laboratuvarı</a></li>
-								<li><a href="#section42">İnsan Bilgisayar Etkileşimi Araştırma Laboratuvarı</a></li>
+							<li><a href="http://bilgisayar.kocaeli.edu.tr/akilli_sistemler_lab/">Akıllı Sistemler Araştırma	Laboratuvarı</a></li>
+								<li><a href="http://bilgisayar.kocaeli.edu.tr/akilli_sistemler_lab/">Bilgisayar Ağları ve Haberleşme Araştırma Laboratuvarı</a></li>
+								<li><a href="http://embedded.kocaeli.edu.tr/">Gömülü ve Algılayıcı Sistemler Araştırma Laboratuvarı</a></li>
+								<li><a href="http://ipcv.kocaeli.edu.tr/">Görüntü İşleme Araştırma Labaratuvarı</a></li>
+								<li><a href="http://yapbenzet.kocaeli.edu.tr/">Yapay Zeka ve Benzetim Sistemleri Araştırma Laboratuvarı</a></li>
+								<li><a href="http://ibel.kocaeli.edu.tr/">İnsan Bilgisayar Etkileşimi Araştırma Laboratuvarı</a></li>
 								<li class="divider ek"></li>
 								
 							

@@ -19,7 +19,7 @@
 								   <a href="mailto:concierge@plu.edu">bilgisayar@kocaeli.edu.tr</a>
 								</p>
 								<ul class="social-media-icons" style="padding-left: 15px">
-									<a href="http://www.facebook.com/Pacific.Lutheran.University" target="_blank">
+									<a href="https://www.facebook.com/kocaeliuni1992" target="_blank">
 										<li>
 											<span class="fa-stack">
 												<i class="fa fa-circle fa-stack-2x"></i>
@@ -29,7 +29,7 @@
 										</li>
 									</a>
 									
-									<a href="http://twitter.com/PLUNEWS" target="_blank">
+									<a href="https://twitter.com/kocaeliuni1992" target="_blank">
 										<li>
 											<span class="fa-stack">
 												<i class="fa fa-circle fa-stack-2x"></i>
@@ -38,7 +38,7 @@
 											<span class="social-type-tooltip" style="left:-2px;">twitter</span>
 										</li>
 									</a>
-									<a href="http://instagram.com/pacificlutheran" target="_blank">
+									<a href="https://www.instagram.com/kocaeliuni1992/" target="_blank">
 										<li>
 											<span class="fa-stack">
 												<i class="fa fa-circle fa-stack-2x"></i>
@@ -47,7 +47,26 @@
 											<span class="social-type-tooltip" style="left:-11px;">instagram</span>
 										</li>
 									</a>
-									<a href="http://www.linkedin.com/edu/school?id=19647&trk=tyah&trkInfo=tas%3APacific%20Lutheran%20%2Cidx%3A3-1-4" target="_blank">
+									
+									<a href="https://www.youtube.com/c/kocaeli%C3%BCniversitesi" target="_blank">
+										<li>
+											<span class="fa-stack">
+												<i class="fa fa-circle fa-stack-2x"></i>
+												<i class="fa fa-youtube fa-stack-1x"></i>
+											</span>									
+											<span class="social-type-tooltip" style="left:-9px;">youtube</span>
+										</li>
+									</a>
+									<a href="https://plus.google.com/+kocaeli%C3%BCniversitesi" target="_blank">
+										<li>
+											<span class="fa-stack">
+												<i class="fa fa-circle fa-stack-2x"></i>
+												<i class="fa fa-google-plus fa-stack-1x"></i>
+											</span>									
+											<span class="social-type-tooltip" style="left:-9px;">google-plus</span>
+										</li>
+									</a>
+									<a href="https://tr.linkedin.com/edu/kocaeli-%C3%BCniversitesi-17380" target="_blank">
 										<li>
 											<span class="fa-stack">
 												<i class="fa fa-circle fa-stack-2x"></i>
@@ -78,13 +97,13 @@
 								line-height: 30px;"> Kocaeli Üniversitesi</a><br/>
 								<i  class="fa fa-users"></i><a  href="http://bilsis.kocaeli.edu.tr/" style="text-decoration: none;	font-size: 14px;
 								line-height: 30px;"> Öğrenci Bilgi Sistemi</a><br/>
-							    <i class="fa fa-child"></i><a id="mundi" style="text-decoration: none;	font-size: 14px;
+							    <i class="fa fa-child"></i><a  href="http://sksdb.kocaeli.edu.tr/?p=yemek_listesi/" style="text-decoration: none;	font-size: 14px;
 								line-height: 30px;"> Kou Günlük Yemek Listesi</a><br/>
-								<i class="fa fa-bar-chart"></i><a style="text-decoration: none;	font-size: 14px;
+								<i class="fa fa-bar-chart"></i><a href="http://ogr.kocaeli.edu.tr/KOUBS/Istatistik/index.cfm" style="text-decoration: none;	font-size: 14px;
 								line-height: 30px;"> Istatistik</a><br/>
-								<i class="fa fa-map-marker"></i><a style="text-decoration: none;	font-size: 14px;
+								<i class="fa fa-map-marker"></i><a  href="http://mf.kocaeli.edu.tr" style="text-decoration: none;	font-size: 14px;
 								line-height: 30px;"> Mühendislik Fakültesi</a><br/>
-								<i class="fa fa-book"></i><a style="text-decoration: none;	font-size: 14px;
+								<i class="fa fa-book"></i><a href="http://kutuphane.kocaeli.edu.tr/anasayfa.php" style="text-decoration: none;	font-size: 14px;
 								line-height: 30px;"> Kocaeli Üniversitesi Kütüphane</a><br/>
 		    				</div>
 		    							</div>
