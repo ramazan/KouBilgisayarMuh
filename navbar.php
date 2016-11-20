@@ -101,6 +101,8 @@
 								<li><a href="kadro.php">Bölüm Personelleri</a></li>
 								  
 								<li><a href="giris.php">Sisteme Giriş</a></li>
+
+								<li><a href="gelistiriciler.php">Geliştiriciler</a></li>								
 							<li class="divider ek"></li>
 							
 						</ul>
