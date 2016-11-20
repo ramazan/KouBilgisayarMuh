@@ -1,3 +1,8 @@
+<?php
+    include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
+    include_once './session.php';  
+    ?>
+
 <div class="row" >
 	<div class="col-lg-12" style="border:2px solid #ddd;margin-top: 20px;background-color: #ecf0f1;" >
 	  <ul class="nav nav-tabs">
