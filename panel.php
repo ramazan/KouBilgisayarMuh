@@ -38,7 +38,7 @@
                 </button>
                 
 					        <a class="navbar-brand" href="index.php" style="padding: 1px 8px;"><img
-                    src="img/kou_logo.png" alt="KOÜ" width="50" height="50"/></img> <a href="index.php"
+                    src="img/kou_logo.png" alt="KOÜ" width="50" height="50"/></img> <a href="index.php" target="_blank" 
                     class="navbar-brand">Bilgisayar Mühendisligi
                   </a>
         
@@ -516,12 +516,13 @@
                                       beforeSend: function() { $('#loading_resim_guncelle').show(); },
                                       complete: function() { $('#loading_resim_guncelle').hide(); }, 
                                         success: function() {
+                                          $("#profile_page").load("profile.php");
                                        $("#messagesPhotoUploadMessage").text("Profil resminiz başarıyla değiştirildi!");
                                       $("#messagesPhotoUpload").show();
                                       setTimeout(function() {
                                       $("#messagesPhotoUpload").hide();  // mesajın gizlenmesi
                                       $("#messagesPhotoUploadMessage").text(""); // modalin kapanması
-                                      }, 2500);
+                                      }, 3000);
                                 },
                                 error: function() {
                                   $("#messagesPhotoUpload").text("Bi' şeyler ters gitti..");

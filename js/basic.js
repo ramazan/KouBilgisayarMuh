@@ -283,7 +283,9 @@ $("#AkademikBilgiGuncelle").click(function(){
             setTimeout(function() {
             $("#AkademikMesajDiv").hide();  // mesajın gizlenmesi
             $("#AkademikMesaj").text(""); // modalin kapanması
-      }, 2500);
+            $("#profile_page").load("profile.php");
+
+      }, 3000);
     },
     error: function() {
       $("#AkademikMesaj").text("Bi' şeyler ters gitti..");
