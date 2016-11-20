@@ -17,7 +17,9 @@
 	    <link rel="stylesheet" href="./css/panel.css" />
 		  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
 
-      <link href="./assets/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+      <link href="./assets/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet"> 
+        <script type="text/javascript" src="./assets/jquery/jquery.js"></script>
+
 
       <link href="./assets/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
    </head>
@@ -435,7 +437,6 @@
 
 
 		<!-- JAVASCRIPT Dosyaları -->
-		<script type="text/javascript" src="./assets/jquery/jquery.js"></script>
 		<script type="text/javascript" src="./assets/bootstrap/js/bootstrap.js"></script>
 		<script type="text/javascript" src="./js/basic.js"></script>			
    <script>
@@ -540,44 +541,7 @@
     <script src="./assets/datatables/js/jquery.dataTables.min.js"></script>
     <script src="./assets/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="./assets/datatables-responsive/dataTables.responsive.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true,
-            "bJQueryUI": false,
-            "bAutoWidth": false,
-            "oLanguage": {
-              "sEmptyTable": "No incompleted albums found!", //when empty
-                    "sSearch": "<span>Arama:</span> _INPUT_", //search
-                    "sLengthMenu": "<span>Kaç Kayıt Gösterilsin : </span>_MENU_  ", //label
-                    "sZeroRecords": "Eşleşen Kayıt Bulunmadı",  
-                    "sEmptyTable": "Bu Tabloda Hiç Veri Yok.",
-                    "oPaginate": { "sFirst": "İlk", "sLast": "Son", "sNext": "Sonraki", "sPrevious": "Önceki" } //pagination
-
-            }
-        });
-
-        $('#dataTables-kullanici').DataTable({
-              responsive: true,
-            "bJQueryUI": false,
-            "bAutoWidth": false,
-            "oLanguage": {
-              "sEmptyTable": "No incompleted albums found!", //when empty
-                    "sSearch": "<span>Arama:</span> _INPUT_", //search
-                    "sLengthMenu": "<span>Kaç Kayıt Gösterilsin : </span>_MENU_  ", //label
-                    "sZeroRecords": "Eşleşen Kayıt Bulunmadı",  
-                    "sEmptyTable": "Bu Tabloda Hiç Veri Yok.",
-                    "oPaginate": { "sFirst": "İlk", "sLast": "Son", "sNext": "Sonraki", "sPrevious": "Önceki" } //pagination
-
-            }
-        });
-
-
-        
-    });
-    </script>
-
-          
+              
    </body>
    
 </html>

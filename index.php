@@ -52,7 +52,7 @@
 						}
 
 								 	#Sorgu yapılıyor..
-							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Slider' AND  STATUS='1' ;";
+							$sql = "SELECT * FROM announcements WHERE DUYURU_TURU='Slider' AND  STATUS='1' ORDER BY ID DESC ;";
 
 								if($result = mysqli_query($con, $sql)){
 								    if(mysqli_num_rows($result) > 0){ #Dönen sorgu boş değilse , uygun formatta ekrana basılıyor..

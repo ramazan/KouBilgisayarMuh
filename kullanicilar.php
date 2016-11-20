@@ -2,6 +2,28 @@
 	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 ?>
 
+<script>
+    $(document).ready(function() {
+           $('#dataTables-kullanici').DataTable({
+              responsive: true,
+            "bJQueryUI": false,
+            "bAutoWidth": false,
+            "oLanguage": {
+              "sEmptyTable": "No incompleted albums found!", //when empty
+                    "sSearch": "<span>Arama:</span> _INPUT_", //search
+                    "sLengthMenu": "<span>Kaç Kayıt Gösterilsin : </span>_MENU_  ", //label
+                    "sZeroRecords": "Eşleşen Kayıt Bulunmadı",  
+                    "sEmptyTable": "Bu Tabloda Hiç Veri Yok.",
+                    "oPaginate": { "sFirst": "İlk", "sLast": "Son", "sNext": "Sonraki", "sPrevious": "Önceki" } //pagination
+
+            }
+        });
+
+
+        
+    });
+    </script>
+
 <div class="row">
   <div class="col-lg-12" style="margin-top: 15px">
     <button  class='btn btn-success' onclick='kullaniciEkle()'><i class="fa fa-user-plus"></i> Kullanıcı Ekle</button>
