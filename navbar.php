@@ -25,6 +25,7 @@
 							data-toggle="dropdown">Hakkımızda<span class="caret"></span></a>
 
 							<ul class="dropdown-menu" style="background-color: #2E363F;border-radius: 6px;">
+								<li><a style="color:#afafaf" href="www.umutvakum.com">Tarihçe</a></li>
 
 								<li><a style="color:#afafaf" href="#section42">Hakkımızda</a></li>
 								<li><a style="color:#afafaf" href="#section40">Misyon</a></li>
