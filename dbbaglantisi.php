@@ -1,7 +1,7 @@
 <?php
 
 //Database bağlantı bilgileri..
-$con = mysqli_connect("217.116.192.20", "ramazan", "123456", "kou_ceng") 
+$con = mysqli_connect("217.116.192.20", "ramazan", "11111", "kou_ceng") 
 	or die("Error " . sqli_error($con));
 
 $con->set_charset("utf8");
