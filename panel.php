@@ -167,8 +167,7 @@
     </div>
   </div>
   <!-- Add User Modal end -->
-
-
+  
 
 		<!-- Kullanici Sil Modal -->
 	<div id="KullaniciSilModal" class="modal fade" role="dialog">
@@ -507,6 +506,8 @@
                            
                               
                                 var dataString = 'fotograf_link='+ response;
+                                
+                                console.log(dataString);
 
                                 $.ajax({
                                       type: "POST",
@@ -516,7 +517,7 @@
                                       beforeSend: function() { $('#loading_resim_guncelle').show(); },
                                       complete: function() { $('#loading_resim_guncelle').hide(); }, 
                                         success: function() {
-                                          $("#profile_page").load("profile.php");
+                                        $("#profile_page").load("profile.php");
                                        $("#messagesPhotoUploadMessage").text("Profil resminiz başarıyla değiştirildi!");
                                       $("#messagesPhotoUpload").show();
                                       setTimeout(function() {
@@ -527,7 +528,7 @@
                                 error: function() {
                                   $("#messagesPhotoUpload").text("Bi' şeyler ters gitti..");
                                 }
-                                });       
+                                });     
                              
                           } else {
                               $('#messagesPhotoUpload').addClass('alert alert-danger').text("Hata oluştu.");

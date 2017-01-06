@@ -6,9 +6,12 @@
     //$handle->allowed = 'image/*';
 
     if($handle->uploaded) {
-        $handle->Process('uploads');
+        $handle->Process('uploads/');
         if($handle->processed) {
-            echo $handle->file_dst_pathname;
+            $response =  $handle->file_dst_path . $handle->file_dst_name; //$handle->file_dst_pathname;  
+            $response =  str_replace("/\\","/",$response);
+
+            echo $response;
         } else {
             echo 'HATA!';
         }

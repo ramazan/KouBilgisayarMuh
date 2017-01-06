@@ -67,7 +67,7 @@
 
 								        	}
 
-								        	echo "<img src=".$row['RESIM_LINK']." width='1100' height='400' alt=''>";
+								        	echo "<a href='".$row['RESIM_LINK']."' target='_blank'><img src=".$row['RESIM_LINK']." width='1100' height='400' alt=''></a>";
 								        	echo "<div class='carousel-caption'>";
 								        	echo " <h3 style='font-size: 20px'>".$row['TITLE']."</h3>";
 								        	echo "<p>".$row['MESSAGE']."</p> </div></div>";

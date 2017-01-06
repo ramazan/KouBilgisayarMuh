@@ -1,4 +1,0 @@
-# Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
-RewriteBase /
-
-ErrorDocument 404 http://koubilgisayar.pe.hu/error.html

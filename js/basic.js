@@ -53,8 +53,9 @@ function etkinlikGoster(){
 function duyuruGoster() {
 
 
-  $("#page-wrapper > div").hide();
-  $('#duyurular_page').hide().delay(250).fadeIn(350);
+  $("#page-wrapper > div").hide();   /// butun divleri gizle
+  $('#duyurular_page').hide().delay(250).fadeIn(350);  // duyurular_page divini göster
+
 
 }
 
@@ -62,6 +63,14 @@ function kullaniciGoster() {
 
   $("#page-wrapper > div").hide();
   $('#users_page').hide().delay(250).fadeIn(350);
+
+}
+
+
+function profilGoster() {
+   
+  $("#page-wrapper > div").hide();
+  $('#profile_page').hide().delay(250).fadeIn(350);
 
 }
 
@@ -79,19 +88,11 @@ function P_Guncelle()
 
 }
 
-function profilGoster() {
-   
-  $("#page-wrapper > div").hide();
-  $('#profile_page').hide().delay(250).fadeIn(350);
-
-
-}
 
 function kullaniciDivGizle() {
   
   $("#side-menu > #nav_users").hide();
   $('#users_page').hide();
-
 
 }; 
 
@@ -126,9 +127,11 @@ function KullaniciSil(ID){
                 $("#kullaniciSilDiv").find(".label-danger").addClass("label-success").removeClass("label-danger");
          
               $("#kullaniciSilMesaj").text("Kullanıcı Silindi!");
-               $("#users_page").load("kullanicilar.php"); // tablo yeniden yüklenmesi!.
+
+               $("#users_page").load("kullanicilar.php"); // sayfanın yeniden yüklenmesi!.
 
          setTimeout(function() {
+            
             $("#kullaniciSilMesaj").text("");
 
               $("#KullaniciSilModal").modal('hide');
@@ -239,7 +242,7 @@ $("#kullaniciKaydetButton").click(function(){
             $("#sifre").val('');
             $("#sifreTekrar").val('');;
 
-            $("#users_page").load("kullanicilar.php"); // tablo yeniden yüklenmesi!.
+            $("#users_page").load("kullanicilar.php"); // sayfanın yeniden yüklenmesi!.
             
             setTimeout(function() {
             $("#kullaniciEkleMesaj").hide();  // mesajın gizlenmesi
@@ -456,6 +459,71 @@ function duyuruSil(ID){
         
     }); // click fonksiyonu
 
+}
+
+function duyuruGuncelle(ID){
+
+    $('#duyuru'+ID).modal('show');
+
+$("#duyuruGuncelleButton"+ID).click(function(){
+
+  var baslik = $("#duyuruGuncelleBasligi"+ID).val();
+  var icerik   = $("#duyuruGuncelleIcerigi"+ID).val();
+  var yayinSuresi = $('#duyuruGuncelleYayinSuresi'+ID).val();
+  if(yayinSuresi == "Sürekli yayında kalsın"){
+    yayinSuresi = 'NULL';
+  }
+
+  if(baslik=="" || icerik ==""){
+      $("#duyuruGuncelleleMesaj"+ID).text("Lütfen Bütün Alanları Doldurun!");
+    $("#duyuruGuncelleleMesaj"+ID).show();
+  }
+  else{
+
+    
+   var dataString = 'baslik='+ baslik + '&icerik='+ icerik + '&yayinSuresi='+ yayinSuresi + '&ID='+ ID;
+
+
+    $.ajax({
+          type: "POST",
+          url: "duyuruGuncelle.php",
+          data: dataString,
+          cache: false,
+          beforeSend: function() { $('#loading_duyuru_guncelle'+ID).show(); },
+           complete: function() { $('#loading_duyuru_guncelle'+ID).hide(); },
+            success: function() {
+           $("#duyuruGuncelleDiv"+ID).find(".label-danger").addClass("label-success").removeClass("label-danger");
+
+            $("#duyuruGuncelleleMesaj"+ID).text("Duyuru Güncellendi.");
+            $("#duyuruGuncelleleMesaj"+ID).show();
+
+            
+              setTimeout(function() {
+              $("#duyuruGuncelleleMesaj").hide();  // mesajın gizlenmesi
+              $('#duyuru'+ID).modal('hide'); // modalin kapanması
+
+               }, 2500);
+
+              setTimeout(function() {
+            
+                 $("#duyurular_page").load("duyurular.php"); // tablo yeniden yüklenmesi!.
+
+               }, 2600);
+             },
+            error: function() {
+              $("#duyuruGuncelleleMesaj").text("Bi' şeyler ters gitti..");
+            }
+    });
+
+
+
+
+
+
+  }  // içerik else
+
+ 
+});
 }
 
 

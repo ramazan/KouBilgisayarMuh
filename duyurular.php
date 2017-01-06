@@ -1,4 +1,3 @@
-
 	<?php
 	include_once './dbbaglantisi.php';    #Database bilgileri burdan alınıyor.
 	include_once './session.php';  
@@ -58,7 +57,7 @@
                                         <th>Başlık</th>
                                         <th>İçerik</th>
                                         <th>Tür</th>
-                                        <th>Sil</th>
+                                        <th>#</th>   
                                     </tr>
                                 </thead><tbody>";
 								            $sayac=0;
@@ -69,11 +68,100 @@
 								                echo "<td>" . $row['TITLE'] . "</td>";
 								                echo "<td>" . $row['MESSAGE'] . "</td>";
 								                echo "<td class='center'>" . $row['DUYURU_TURU'] . "</td>";
-								                echo "<td><button class='btn btn-danger btn-sm' data-title='Delete' data-toggle='modal' onclick='duyuruSil(".$row['ID'].")'><span class='glyphicon glyphicon-trash'></span></button</td>";
+								                echo "<td><button class='btn btn-danger btn-sm' data-title='Delete' data-toggle='modal' onclick='duyuruSil(".$row['ID'].")'><span class='glyphicon glyphicon-trash'></span></button><br><br>";
+								                 echo "<button class='btn btn-primary btn-sm'  data-toggle='modal' onclick='duyuruGuncelle(".$row['ID'].")'><span class='glyphicon glyphicon-edit'></span></button></td>";
+								                 echo"<div id='duyuru".$row['ID']."' class='modal fade' role='dialog'>
+		<div class='modal-dialog'>
+			<div class='modal-content'>
+				<div class='modal-header' align='center'>
+					<button type='button' class='close' data-dismiss='modal'>&times;</button>
+					<h4 class='modal-title'>Duyuru Güncelle</h4>
+				</div>
+				<div id='duyuruGuncelleDiv".$row['ID']."' class='modal-body'>
+					<p style='text-align: center; font-size: 15px;' id='duyuruGuncelleleMesaj".$row['ID']."' class='label label-danger'></p>
+          <div id='loading_duyuru_guncelle".$row['ID']."' style='display: none; text-align: center;'>
+          <p><img src='img/ajax-loader.gif' />  Lütfen Bekleyin..</p>
+        </div>
+					<br>
+					<br>
+					      <fieldset>
+
+
+                                 <div id='duyuruGuncelleDivIcerik' >
+                                <div class='form-group' >
+                              		<label for='duyuruGuncelleBasligi".$row['ID']."'>Duyuru Başlığı:</label>
+                                   <input class='form-control' required placeholder='Duyuru Başlığı' id='duyuruGuncelleBasligi".$row['ID']."' type='text'
+                                    value='". $row['TITLE'] ."'>
+                                     
+                                   </input>
+                                </div>
+                                <div class='form-group'>
+                              		<label for='duyuruGuncelleIcerigi'>Duyuru İçeriği:</label>
+                                    <textarea class='form-control'  required rows='5' placeholder='Duyuru İçeriği' 
+                                    id='duyuruGuncelleIcerigi".$row['ID']."'>". $row['MESSAGE'] ."</textarea>
+
+                                </div>
+
+
+                    </div>            								
+
+
+  			<div id='duyuruGuncelleyayinDiv'>
+                       <div class='row'>
+
+                          <div class='form-group col-sm-12'>   
+                                <label>Yayın Süresi Durumu :</label>
+                               "; if($row['YAYIN_SURESI'] != "0000-00-00")
+                               		$row['YAYIN_SURESI'] = $row['YAYIN_SURESI'] ." tarihinde yayından kalkacak.";
+                               	  else
+                               	  		$row['YAYIN_SURESI'] = "Sürekli yayında kalsın";
+
+                               		echo "". $row['YAYIN_SURESI'] ."
+
+                             </div>
+                              </div> 
+                    </div>
+                
+                    <div id='duyuruGuncelleyayinSuresiDiv'>
+                       <div class='row'>
+
+                          <div class='form-group col-sm-6'>   
+                                <label for='duyuruGuncelleYayinSuresi".$row['ID']."'>Kaç gün yayında kalsın ? :</label>
+                                <select class='form-control' id='duyuruGuncelleYayinSuresi".$row['ID']."'>
+                                  
+
+                                  <option selected>Sürekli yayında kalsın</option>"; for ($i=1; $i <=31 ; $i++) { 
+                                      
+                                         echo '<option>'.$i.'</option>'; 
+                                      }
+                               		
+                  
+                                echo "</select>
+                             </div>
+                              </div> 
+                    </div>
+
+
+
+
+                           </fieldset>
+				</div>
+				<div class='modal-footer' style='text-align: center;'>
+					<button id='duyuruGuncelleButton".$row['ID']."' class='btn btn-success'>Güncelle</button>
+					<button class='btn btn-primary' data-dismiss='modal'>Vazgeç</button>
+				</div>
+			</div>
+		</div>
+	</div>";
 								            echo "</tr>";
+
+
 								        }
 
 								        echo "</tbody></table></div>";
+
+
+								        echo "";
 								       
 								        mysqli_free_result($result);
 								    } else{
@@ -87,7 +175,7 @@
 						 }else{
 
 
-						 $sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DUYURU_TURU,announcements.DATE , announcements.ID
+						 $sql = "SELECT users.NAME,announcements.TITLE,announcements.MESSAGE,announcements.DUYURU_TURU,announcements.DATE , announcements.ID,announcements.YAYIN_SURESI
 						FROM announcements INNER JOIN users ON users.ID=announcements.USER_ID ORDER BY ID";
 
 								if($result = mysqli_query($con, $sql)){
@@ -106,19 +194,103 @@
                                         <th>İçerik</th>
                                         <th>Tür</th>
                                         <th>Ekleyen</th>
-                                        <th>Sil</th>
+                                        <th>#</th>
                                     </tr>
                                 </thead><tbody>";
 								            $sayac=0;
 								        while($row = mysqli_fetch_array($result)){
 								            echo "<tr class='odd gradeA'>";
 								            $sayac++;
+								            
 								                echo "<td>" . $sayac . "</td>";
 								                echo "<td>" . $row['TITLE'] . "</td>";
 								                echo "<td>" . $row['MESSAGE'] . "</td>";
 								                echo "<td class='center'>" . $row['DUYURU_TURU'] . "</td>";
 								                echo "<td class='center'>" . $row['NAME'] . "</td>";
-								                echo "<td><button class='btn btn-danger btn-sm' data-title='Delete' data-toggle='modal' onclick='duyuruSil(".$row['ID'].")'><span class='glyphicon glyphicon-trash'></span></button</td>";
+								                echo "<td><button class='btn btn-danger btn-sm' data-title='Delete' data-toggle='modal' onclick='duyuruSil(".$row['ID'].")'><span class='glyphicon glyphicon-trash'></span></button><br><br>";
+								                 echo "<button class='btn btn-primary btn-sm'  data-toggle='modal' onclick='duyuruGuncelle(".$row['ID'].")'><span class='glyphicon glyphicon-edit'></span></button></td>";
+								                 echo"<div id='duyuru".$row['ID']."' class='modal fade' role='dialog'>
+		<div class='modal-dialog'>
+			<div class='modal-content'>
+				<div class='modal-header' align='center'>
+					<button type='button' class='close' data-dismiss='modal'>&times;</button>
+					<h4 class='modal-title'>Duyuru Güncelle</h4>
+				</div>
+				<div id='duyuruGuncelleDiv".$row['ID']."' class='modal-body'>
+					<p style='text-align: center; font-size: 15px;' id='duyuruGuncelleleMesaj".$row['ID']."' class='label label-danger'></p>
+          <div id='loading_duyuru_guncelle".$row['ID']."' style='display: none; text-align: center;'>
+          <p><img src='img/ajax-loader.gif' />  Lütfen Bekleyin..</p>
+        </div>
+					<br>
+					<br>
+					      <fieldset>
+
+
+                                 <div id='duyuruGuncelleDivIcerik' >
+                                <div class='form-group' >
+                              		<label for='duyuruGuncelleBasligi".$row['ID']."'>Duyuru Başlığı:</label>
+                                   <input class='form-control' required placeholder='Duyuru Başlığı' id='duyuruGuncelleBasligi".$row['ID']."' type='text'
+                                    value='". $row['TITLE'] ."'>
+                                     
+                                   </input>
+                                </div>
+                                <div class='form-group'>
+                              		<label for='duyuruGuncelleIcerigi'>Duyuru İçeriği:</label>
+                                    <textarea class='form-control'  required rows='5' placeholder='Duyuru İçeriği' 
+                                    id='duyuruGuncelleIcerigi".$row['ID']."'>". $row['MESSAGE'] ."</textarea>
+
+                                </div>
+
+
+                    </div>            								
+
+
+  			<div id='duyuruGuncelleyayinDiv'>
+                       <div class='row'>
+
+                          <div class='form-group col-sm-12'>   
+                                <label>Yayın Süresi Durumu :</label>
+                               "; if($row['YAYIN_SURESI'] != "0000-00-00")
+                               		$row['YAYIN_SURESI'] = $row['YAYIN_SURESI'] ." tarihinde yayından kalkacak.";
+                               	  else
+                               	  		$row['YAYIN_SURESI'] = "Sürekli yayında kalsın";
+                               		echo "". $row['YAYIN_SURESI'] ."
+
+                             </div>
+                              </div> 
+                    </div>
+                
+                    <div id='duyuruGuncelleyayinSuresiDiv'>
+                       <div class='row'>
+
+                          <div class='form-group col-sm-6'>   
+                                <label for='duyuruGuncelleYayinSuresi".$row['ID']."'>Kaç gün yayında kalsın ? :</label>
+                                <select class='form-control' id='duyuruGuncelleYayinSuresi".$row['ID']."'>
+                                  
+
+                                  <option selected>Sürekli yayında kalsın</option>"; for ($i=1; $i <=31 ; $i++) { 
+                                      
+                                         echo '<option>'.$i.'</option>'; 
+                                      }
+                               		
+                  
+                                echo "</select>
+                             </div>
+                              </div> 
+                    </div>
+
+
+
+
+                           </fieldset>
+				</div>
+				<div class='modal-footer' style='text-align: center;'>
+					<button id='duyuruGuncelleButton".$row['ID']."' class='btn btn-success'>Güncelle</button>
+					<button class='btn btn-primary' data-dismiss='modal'>Vazgeç</button>
+				</div>
+			</div>
+		</div>
+	</div>";
 								            echo "</tr>";
 								        }
 
